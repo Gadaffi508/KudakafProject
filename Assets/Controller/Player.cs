@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player: MonoBehaviour
 {
@@ -15,12 +14,13 @@ public class Player: MonoBehaviour
     
     private Rigidbody2D rb;
     private PlayerInputController _playerInputController;
-    
+    private Animator anim;
     private bool jump;
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _playerInputController = GetComponent<PlayerInputController>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,8 +32,13 @@ public class Player: MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
         }
-
+        
+        anim.SetFloat("speed",Math.Abs(rb.velocity.x));
+        
         CursorObj.transform.Translate(CursorMovement());
+
+        Flip();
+        Run();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -45,4 +50,28 @@ public class Player: MonoBehaviour
     }
 
     private Vector3 CursorMovement() => _playerInputController.CursorPos * Time.deltaTime * CursorSpeed;
+
+    private Vector3 FlipVector(int x) => new Vector3(x,1,1);
+
+    private void Flip()
+    {
+        if (rb.velocity.x > 0)
+        {
+            transform.localScale = FlipVector(1);
+        }
+
+        if (rb.velocity.x < 0)
+        {
+            transform.localScale = FlipVector(-1);
+        }
+    }
+
+    public void Run()
+    {
+        if (_playerInputController.RunPrees)
+        {
+            speed = 10;
+        }
+        else speed = 5;
+    }
 }

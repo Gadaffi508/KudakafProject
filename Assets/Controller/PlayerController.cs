@@ -53,6 +53,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RunPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""8651c670-d437-4510-a652-50b4d867833b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Cursor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfe3cc44-94c4-4f96-8641-86e3d3d5566f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +119,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Cursor = m_GamePlay.FindAction("Cursor", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
+        m_GamePlay_RunPressed = m_GamePlay.FindAction("RunPressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +182,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Cursor;
     private readonly InputAction m_GamePlay_Jump;
+    private readonly InputAction m_GamePlay_RunPressed;
     public struct GamePlayActions
     {
         private @PlayerController m_Wrapper;
@@ -168,6 +190,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Cursor => m_Wrapper.m_GamePlay_Cursor;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
+        public InputAction @RunPressed => m_Wrapper.m_GamePlay_RunPressed;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +209,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnJump;
+                @RunPressed.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
+                @RunPressed.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
+                @RunPressed.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +225,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @RunPressed.started += instance.OnRunPressed;
+                @RunPressed.performed += instance.OnRunPressed;
+                @RunPressed.canceled += instance.OnRunPressed;
             }
         }
     }
@@ -208,5 +237,6 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnCursor(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnRunPressed(InputAction.CallbackContext context);
     }
 }
