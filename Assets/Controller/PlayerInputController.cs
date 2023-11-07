@@ -12,8 +12,21 @@ public class PlayerInputController : MonoBehaviour
 
     internal bool RunPrees;
 
+    public static PlayerInputController _Controller;
+    public static PlayerInputController Controller
+    {
+        get
+        {
+            if (_Controller is null)
+                Debug.LogError("Controller is null");
+            return _Controller;
+        }
+    }
+
     private void Awake()
     {
+        _Controller = this;
+        
         playerInput = new PlayerController();
 
         playerInput.GamePlay.Move.performed += ctx =>currentMovement = ctx.ReadValue<Vector2>();

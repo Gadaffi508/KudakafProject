@@ -8,9 +8,6 @@ public class Player: MonoBehaviour
     [Range (0,20)]
     public float speed;
     public float jumpForce;
-
-    public GameObject CursorObj;
-    public float CursorSpeed;
     
     private Rigidbody2D rb;
     private PlayerInputController _playerInputController;
@@ -25,7 +22,7 @@ public class Player: MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = new Vector2(_playerInputController.currentMovement.x * speed,rb.velocity.y);
+        rb.velocity = RigidBodyVelocityMove();
 
         if (_playerInputController.JumpPressed && jump)
         {
@@ -34,8 +31,6 @@ public class Player: MonoBehaviour
         }
         
         anim.SetFloat("speed",Math.Abs(rb.velocity.x));
-        
-        CursorObj.transform.Translate(CursorMovement());
 
         Flip();
         Run();
@@ -43,35 +38,23 @@ public class Player: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            jump = true;
-        }
+        if (other.gameObject.CompareTag("Ground")) jump = true;
     }
 
-    private Vector3 CursorMovement() => _playerInputController.CursorPos * Time.deltaTime * CursorSpeed;
-
+    private Vector2 RigidBodyVelocityMove() => new Vector2(_playerInputController.currentMovement.x * speed,rb.velocity.y);
+    
     private Vector3 FlipVector(int x) => new Vector3(x,1,1);
 
     private void Flip()
     {
-        if (rb.velocity.x > 0)
-        {
-            transform.localScale = FlipVector(1);
-        }
+        if (rb.velocity.x > 0) transform.localScale = FlipVector(1);
 
-        if (rb.velocity.x < 0)
-        {
-            transform.localScale = FlipVector(-1);
-        }
+        if (rb.velocity.x < 0) transform.localScale = FlipVector(-1);
     }
 
     public void Run()
     {
-        if (_playerInputController.RunPrees)
-        {
-            speed = 10;
-        }
+        if (_playerInputController.RunPrees) speed = 10;
         else speed = 5;
     }
 }
