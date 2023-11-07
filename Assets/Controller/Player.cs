@@ -9,10 +9,15 @@ public class Player: MonoBehaviour
     public float speed;
     public float jumpForce;
     
+    [SerializeField] private float dashSpeed;
+    [Range(0, 1)]
+    [SerializeField] private float dashDuration;
+    
     private Rigidbody2D rb;
     private PlayerInputController _playerInputController;
     private Animator anim;
     private bool jump;
+    private bool isDashing = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +27,7 @@ public class Player: MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = RigidBodyVelocityMove();
+        if(!isDashing) rb.velocity = RigidBodyVelocityMove();
 
         if (_playerInputController.JumpPressed && jump)
         {
@@ -34,6 +39,8 @@ public class Player: MonoBehaviour
 
         Flip();
         Run();
+        
+        if (_playerInputController.DashPress && !isDashing) StartCoroutine(Dash());
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -56,5 +63,13 @@ public class Player: MonoBehaviour
     {
         if (_playerInputController.RunPrees) speed = 10;
         else speed = 5;
+    }
+    
+    private IEnumerator Dash()
+    {
+        rb.AddForce(Vector2.right * transform.localScale.x * dashSpeed);
+        isDashing = true;
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
     }
 }

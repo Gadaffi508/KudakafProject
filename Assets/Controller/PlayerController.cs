@@ -62,13 +62,22 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DashPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""4ca03ae0-4c65-436f-a408-141934fb64ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""07fb408c-67d1-453d-b76e-26428ca755a0"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
@@ -108,6 +117,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""RunPressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d293e627-7b0d-41e0-9382-7d510bd08158"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_Cursor = m_GamePlay.FindAction("Cursor", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         m_GamePlay_RunPressed = m_GamePlay.FindAction("RunPressed", throwIfNotFound: true);
+        m_GamePlay_DashPressed = m_GamePlay.FindAction("DashPressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,6 +204,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_Cursor;
     private readonly InputAction m_GamePlay_Jump;
     private readonly InputAction m_GamePlay_RunPressed;
+    private readonly InputAction m_GamePlay_DashPressed;
     public struct GamePlayActions
     {
         private @PlayerController m_Wrapper;
@@ -191,6 +213,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @Cursor => m_Wrapper.m_GamePlay_Cursor;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
         public InputAction @RunPressed => m_Wrapper.m_GamePlay_RunPressed;
+        public InputAction @DashPressed => m_Wrapper.m_GamePlay_DashPressed;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -212,6 +235,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @RunPressed.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
                 @RunPressed.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
                 @RunPressed.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRunPressed;
+                @DashPressed.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDashPressed;
+                @DashPressed.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDashPressed;
+                @DashPressed.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnDashPressed;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -228,6 +254,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @RunPressed.started += instance.OnRunPressed;
                 @RunPressed.performed += instance.OnRunPressed;
                 @RunPressed.canceled += instance.OnRunPressed;
+                @DashPressed.started += instance.OnDashPressed;
+                @DashPressed.performed += instance.OnDashPressed;
+                @DashPressed.canceled += instance.OnDashPressed;
             }
         }
     }
@@ -238,5 +267,6 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnCursor(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRunPressed(InputAction.CallbackContext context);
+        void OnDashPressed(InputAction.CallbackContext context);
     }
 }
