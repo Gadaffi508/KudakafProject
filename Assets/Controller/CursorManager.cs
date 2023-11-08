@@ -6,17 +6,12 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public float CursorSpeed;
-
-    public float MinX, MaxX;
-    public float MinY, MaxY;
+    public GameObject CursorObj;
 
     private void Update()
     {
-        transform.Translate(CursorMovement());
-        transform.position = CursorRestriction();
+        CursorObj.transform.Rotate(CursorMovement());
     }
     
-    private Vector3 CursorMovement() => PlayerInputController.Controller.CursorPos * Time.deltaTime * CursorSpeed;
-    
-    private Vector2 CursorRestriction() => new Vector2(Mathf.Clamp(transform.position.x,MinX,MaxX),Mathf.Clamp(transform.position.y,MinY, MaxY));
+    private Vector3 CursorMovement() => new Vector3(0,0,-PlayerInputController.Controller.CursorPos.x * Time.deltaTime * CursorSpeed);
 }
