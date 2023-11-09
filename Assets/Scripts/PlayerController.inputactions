@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FirePressed",
+                    "type": "Button",
+                    "id": "86252a4f-acc0-4dff-941a-c4c43e75fb77",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -104,6 +113,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "DashPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43dc4122-42d6-4488-9f4f-4a664154a480",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirePressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

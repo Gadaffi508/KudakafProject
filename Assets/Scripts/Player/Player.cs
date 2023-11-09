@@ -15,14 +15,12 @@ public class Player: MonoBehaviour
     
     private Rigidbody2D rb;
     private PlayerInputController _playerInputController;
-    private Animator anim;
     private bool jump;
     private bool isDashing = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _playerInputController = GetComponent<PlayerInputController>();
-        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -35,9 +33,6 @@ public class Player: MonoBehaviour
             jump = false;
         }
         
-        anim.SetFloat("speed",Math.Abs(rb.velocity.x));
-
-        Flip();
         Run();
         
         if (_playerInputController.DashPress && !isDashing) StartCoroutine(Dash());
@@ -49,15 +44,6 @@ public class Player: MonoBehaviour
     }
 
     private Vector2 RigidBodyVelocityMove() => new Vector2(_playerInputController.currentMovement.x * speed,rb.velocity.y);
-    
-    private Vector3 FlipVector(int x) => new Vector3(x,1,1);
-
-    private void Flip()
-    {
-        if (rb.velocity.x > 0) transform.localScale = FlipVector(1);
-
-        if (rb.velocity.x < 0) transform.localScale = FlipVector(-1);
-    }
 
     public void Run()
     {
@@ -67,7 +53,7 @@ public class Player: MonoBehaviour
     
     private IEnumerator Dash()
     {
-        rb.AddForce(Vector2.right * transform.localScale.x * dashSpeed);
+        rb.AddForce(Vector2.right *transform.GetComponentInChildren<PlayerSpiteManager>().LocalX* dashSpeed);
         isDashing = true;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;

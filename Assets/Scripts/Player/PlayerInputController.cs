@@ -9,6 +9,7 @@ public class PlayerInputController : MonoBehaviour
     internal Vector2 currentMovement;
     internal Vector2 CursorPos;
     internal bool JumpPressed;
+    internal bool FirePressed;
     internal bool DashPress;
 
     internal bool RunPrees;
@@ -36,6 +37,8 @@ public class PlayerInputController : MonoBehaviour
         playerInput.GamePlay.DashPressed.performed += ctx => DashPress = ctx.ReadValueAsButton();
 
         playerInput.GamePlay.RunPressed.performed += ctx => RunPrees = ctx.ReadValueAsButton();
+        
+        playerInput.GamePlay.FirePressed.performed += ctx => FirePressed = ctx.ReadValueAsButton();
     }
 
     private void OnEnable()
