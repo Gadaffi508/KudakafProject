@@ -159,6 +159,7 @@ MonoBehaviour:
   CursorSpeed: 200
   CursorObj: {fileID: 1975794172}
   FirePrefabs: {fileID: 4538975244053011511, guid: b0409e5e6e95cca40a25ae840c141178, type: 3}
+  FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
   FirePos: {fileID: 985574113}
 --- !u!114 &224418667
 MonoBehaviour:

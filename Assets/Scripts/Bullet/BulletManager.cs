@@ -11,6 +11,7 @@ public class BulletManager : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject,5f);
     }
 
     private void FixedUpdate()
@@ -18,8 +19,11 @@ public class BulletManager : MonoBehaviour
         rb.AddForce(transform.right* m_Thrust);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.name == "Ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }

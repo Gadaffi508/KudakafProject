@@ -9,6 +9,7 @@ public class CursorManager : MonoBehaviour
     public GameObject CursorObj;
 
     public GameObject FirePrefabs;
+    public GameObject FireEffect;
     public Transform FirePos;
 
     private bool fire = true;
@@ -19,7 +20,9 @@ public class CursorManager : MonoBehaviour
 
         if (PlayerInputController.Controller.FirePressed && fire)
         {
-            GameObject bullet = Instantiate(FirePrefabs, FirePos.position, FirePos.rotation);
+            GameObject bullet = InstateFireProperty(FirePrefabs);
+            GameObject fireEffect = InstateFireProperty(FireEffect);
+            Destroy(fireEffect,.5f);
             fire = false;
         }
 
@@ -27,4 +30,6 @@ public class CursorManager : MonoBehaviour
     }
 
     private Vector3 CursorMovement() => new Vector3(0,0,(-PlayerInputController.Controller.CursorPos.x + PlayerInputController.Controller.CursorPos.y) * Time.deltaTime * CursorSpeed);
+
+    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj,FirePos.position, FirePos.rotation);
 }
