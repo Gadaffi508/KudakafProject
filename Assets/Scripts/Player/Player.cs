@@ -17,6 +17,8 @@ public class Player: MonoBehaviour
     private PlayerInputController _playerInputController;
     private bool jump;
     private bool isDashing = false;
+
+    internal bool İsFly;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +27,8 @@ public class Player: MonoBehaviour
 
     private void Update()
     {
-        if(!isDashing) rb.velocity = RigidBodyVelocityMove();
+        if(!isDashing && !İsFly) rb.velocity = RigidBodyVelocityMove();
+        if(!isDashing && İsFly) rb.velocity = RigidBodyVelocityFly();
 
         if (_playerInputController.JumpPressed && jump)
         {
@@ -44,6 +47,7 @@ public class Player: MonoBehaviour
     }
 
     private Vector2 RigidBodyVelocityMove() => new Vector2(_playerInputController.currentMovement.x * speed,rb.velocity.y);
+    private Vector2 RigidBodyVelocityFly() => new Vector2(_playerInputController.currentMovement.x * speed,_playerInputController.currentMovement.y * speed);
 
     public void Run()
     {
