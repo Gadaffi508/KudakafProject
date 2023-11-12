@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - GunObject
   - BosObject
+  - FireBullet
   layers:
   - Default
   - TransparentFX
