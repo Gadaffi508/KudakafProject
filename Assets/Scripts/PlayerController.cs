@@ -150,6 +150,74 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SecondPlayer"",
+            ""id"": ""58061a92-4726-4fdb-8612-5924887d3e2c"",
+            ""actions"": [
+                {
+                    ""name"": ""SMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a8e0dab0-6bcf-4373-af1f-8b448c82b7a4"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SCursor"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""612f250f-13f6-42d3-b0a3-37cee5e3653d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e6ef431-32f1-46af-9c43-bac9e3c182c5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""25ed17aa-35ef-481a-b861-378c9b18da09"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""SMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab37a6ef-ce71-4536-a477-3290d4319c3b"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SCursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b752e89b-6368-42bb-8ce1-eb0c7fe8d6b8"",
+                    ""path"": ""<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -162,6 +230,11 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_RunPressed = m_GamePlay.FindAction("RunPressed", throwIfNotFound: true);
         m_GamePlay_DashPressed = m_GamePlay.FindAction("DashPressed", throwIfNotFound: true);
         m_GamePlay_FirePressed = m_GamePlay.FindAction("FirePressed", throwIfNotFound: true);
+        // SecondPlayer
+        m_SecondPlayer = asset.FindActionMap("SecondPlayer", throwIfNotFound: true);
+        m_SecondPlayer_SMove = m_SecondPlayer.FindAction("SMove", throwIfNotFound: true);
+        m_SecondPlayer_SCursor = m_SecondPlayer.FindAction("SCursor", throwIfNotFound: true);
+        m_SecondPlayer_jump = m_SecondPlayer.FindAction("jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -290,6 +363,55 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
+
+    // SecondPlayer
+    private readonly InputActionMap m_SecondPlayer;
+    private ISecondPlayerActions m_SecondPlayerActionsCallbackInterface;
+    private readonly InputAction m_SecondPlayer_SMove;
+    private readonly InputAction m_SecondPlayer_SCursor;
+    private readonly InputAction m_SecondPlayer_jump;
+    public struct SecondPlayerActions
+    {
+        private @PlayerController m_Wrapper;
+        public SecondPlayerActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SMove => m_Wrapper.m_SecondPlayer_SMove;
+        public InputAction @SCursor => m_Wrapper.m_SecondPlayer_SCursor;
+        public InputAction @jump => m_Wrapper.m_SecondPlayer_jump;
+        public InputActionMap Get() { return m_Wrapper.m_SecondPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SecondPlayerActions set) { return set.Get(); }
+        public void SetCallbacks(ISecondPlayerActions instance)
+        {
+            if (m_Wrapper.m_SecondPlayerActionsCallbackInterface != null)
+            {
+                @SMove.started -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSMove;
+                @SMove.performed -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSMove;
+                @SMove.canceled -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSMove;
+                @SCursor.started -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSCursor;
+                @SCursor.performed -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSCursor;
+                @SCursor.canceled -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnSCursor;
+                @jump.started -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnJump;
+                @jump.performed -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnJump;
+                @jump.canceled -= m_Wrapper.m_SecondPlayerActionsCallbackInterface.OnJump;
+            }
+            m_Wrapper.m_SecondPlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SMove.started += instance.OnSMove;
+                @SMove.performed += instance.OnSMove;
+                @SMove.canceled += instance.OnSMove;
+                @SCursor.started += instance.OnSCursor;
+                @SCursor.performed += instance.OnSCursor;
+                @SCursor.canceled += instance.OnSCursor;
+                @jump.started += instance.OnJump;
+                @jump.performed += instance.OnJump;
+                @jump.canceled += instance.OnJump;
+            }
+        }
+    }
+    public SecondPlayerActions @SecondPlayer => new SecondPlayerActions(this);
     public interface IGamePlayActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -298,5 +420,11 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnRunPressed(InputAction.CallbackContext context);
         void OnDashPressed(InputAction.CallbackContext context);
         void OnFirePressed(InputAction.CallbackContext context);
+    }
+    public interface ISecondPlayerActions
+    {
+        void OnSMove(InputAction.CallbackContext context);
+        void OnSCursor(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
