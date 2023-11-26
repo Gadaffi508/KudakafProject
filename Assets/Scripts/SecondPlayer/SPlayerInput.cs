@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SPlayerInput : MonoBehaviour
 {
-    private PlayerController playerInput;
+    private SPlayerController playerInput;
     internal Vector2 scurrentMovement;
     internal Vector2 sCursorPos;
     internal bool SJumpPressed;
@@ -25,21 +25,21 @@ public class SPlayerInput : MonoBehaviour
     {
         _SController = this;
         
-        playerInput = new PlayerController();
+        playerInput = new SPlayerController();
 
-        playerInput.SecondPlayer.SMove.performed += ctx =>scurrentMovement = ctx.ReadValue<Vector2>();
-        playerInput.SecondPlayer.SCursor.performed += ctx =>sCursorPos = ctx.ReadValue<Vector2>();
+        playerInput.SGamePlay.Move.performed += ctx =>scurrentMovement = ctx.ReadValue<Vector2>();
+        playerInput.SGamePlay.Cursor.performed += ctx =>sCursorPos = ctx.ReadValue<Vector2>();
         
-        playerInput.SecondPlayer.jump.performed += ctx => SJumpPressed = ctx.ReadValueAsButton();
+        playerInput.SGamePlay.jump.performed += ctx => SJumpPressed = ctx.ReadValueAsButton();
     }
 
     private void OnEnable()
     {
-        playerInput.GamePlay.Enable();
+        playerInput.SGamePlay.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.GamePlay.Disable();
+        playerInput.SGamePlay.Disable();
     }
 }
