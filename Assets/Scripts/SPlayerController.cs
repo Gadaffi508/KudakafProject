@@ -59,7 +59,7 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c6c29f2e-5a3d-4b26-8c1b-523fe01a4c49"",
-                    ""path"": ""<Joystick>/stick"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/hat"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -70,7 +70,7 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e034d292-7c94-4392-92ef-15e794143ace"",
-                    ""path"": ""<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/hat"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
