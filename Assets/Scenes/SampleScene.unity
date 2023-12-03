@@ -322,7 +322,6 @@ GameObject:
   - component: {fileID: 224418669}
   - component: {fileID: 224418668}
   - component: {fileID: 224418667}
-  - component: {fileID: 224418666}
   - component: {fileID: 224418672}
   m_Layer: 0
   m_Name: Player
@@ -331,23 +330,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &224418666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224418665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b18393771d9bf45aee9d6046638356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CursorSpeed: 200
-  CursorObj: {fileID: 1975794172}
-  FirePrefabs: {fileID: 4538975244053011511, guid: b0409e5e6e95cca40a25ae840c141178, type: 3}
-  FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
-  FirePos: {fileID: 985574113}
 --- !u!114 &224418667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224418665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.55, y: 0.041, z: 0}
+  m_LocalPosition: {x: 1.07, y: -3.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -453,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: {fileID: 1975794172}
+  _CursorManager: {fileID: 1986263452}
 --- !u!1 &270358047
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007100534}
   - component: {fileID: 1007100535}
+  - component: {fileID: 1007100536}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -978,6 +962,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1007100536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007100533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b18393771d9bf45aee9d6046638356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorSpeed: 0
+  CursorObj: {fileID: 0}
+  IsPlayerFirst: 0
+  FirePrefabs: {fileID: 0}
+  FireEffect: {fileID: 0}
+  FirePos: {fileID: 0}
 --- !u!1 &1059053422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1065,7 @@ GameObject:
   - component: {fileID: 1086295391}
   - component: {fileID: 1086295395}
   - component: {fileID: 1086295394}
+  - component: {fileID: 1086295396}
   m_Layer: 0
   m_Name: SecondPlayer
   m_TagString: Player
@@ -1162,6 +1165,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808fbfe270bf6784886d5204dbeed3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1086295396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086295390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632374fa5443bf34f92090517468c8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gun: {fileID: 7245270}
+  _CursorManager: {fileID: 1007100536}
 --- !u!1 &1162094680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986263450}
   - component: {fileID: 1986263451}
+  - component: {fileID: 1986263452}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1961,6 +1979,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1986263452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986263449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b18393771d9bf45aee9d6046638356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorSpeed: 5
+  CursorObj: {fileID: 1975794172}
+  IsPlayerFirst: 1
+  FirePrefabs: {fileID: 4538975244053011511, guid: b0409e5e6e95cca40a25ae840c141178, type: 3}
+  FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
+  FirePos: {fileID: 985574113}
 --- !u!1 &2045110118
 GameObject:
   m_ObjectHideFlags: 0

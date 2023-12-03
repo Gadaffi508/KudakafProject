@@ -7,14 +7,14 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject Gun;
     
-    private CursorManager _CursorManager;
+    public CursorManager _CursorManager;
     private Player _Player;
+    private SPlayer _SPlayer;
 
     private void Start()
     {
-        _CursorManager = GetComponent<CursorManager>();
-        _Player = GetComponent<Player>();
-        _CursorManager.enabled = false;
+        if(_Player != null) _Player = GetComponent<Player>();
+        if(_SPlayer != null) _SPlayer = GetComponent<SPlayer>();
         Gun.SetActive(false);
     }
 
@@ -28,7 +28,8 @@ public class WeaponController : MonoBehaviour
         
         if (other.gameObject.CompareTag("BosObject"))
         {
-            _Player.İsFly = true;
+            if(_Player != null) _Player.İsFly = true;
+            if(_SPlayer != null) _SPlayer.İsFly = true;
         }
     }
 }
