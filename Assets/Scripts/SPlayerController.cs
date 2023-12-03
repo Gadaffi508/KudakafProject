@@ -70,7 +70,7 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e034d292-7c94-4392-92ef-15e794143ace"",
-                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/hat"",
+                    ""path"": ""<Joystick>/stick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

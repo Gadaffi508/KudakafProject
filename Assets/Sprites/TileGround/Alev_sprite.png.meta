@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0378a883c8dee6a4c8fa69436238ad18
+guid: fa74697c42de73148b9f8c94e52762cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_0"
+      name: Alev_sprite_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 22
-        width: 10
-        height: 12
+        x: 0
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 321884f613b8b1f4baf52cbc79fe95bc
-      internalID: 1415216966
+      spriteID: 59e1943fc2eb4604f8d761de8ff1d084
+      internalID: 2064250342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_1"
+      name: Alev_sprite_1
       rect:
         serializedVersion: 2
-        x: 91
-        y: 22
-        width: 10
-        height: 13
+        x: 32
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20255ef4234fdac4589f834646c14f05
-      internalID: -858533683
+      spriteID: 77b05b5b4d55a2c4e972d3ddcd71e8f5
+      internalID: -1863296971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_2"
+      name: Alev_sprite_2
       rect:
         serializedVersion: 2
-        x: 155
-        y: 22
-        width: 10
-        height: 12
+        x: 64
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d49a0a1c4255e644bc2f20d998e4a07
-      internalID: -264360806
+      spriteID: e9eca2f0193862d45adbee4958a3ddeb
+      internalID: 629089715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_3"
+      name: Alev_sprite_3
       rect:
         serializedVersion: 2
-        x: 219
-        y: 22
-        width: 10
-        height: 13
+        x: 96
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b118656bc5272f24b82bac4b09b0a516
-      internalID: 1211480108
+      spriteID: a8d64a371dd43894a95a8b32bc2c90bf
+      internalID: 399823490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_4"
+      name: Alev_sprite_4
       rect:
         serializedVersion: 2
-        x: 283
-        y: 22
-        width: 10
-        height: 12
+        x: 0
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9901e757bb0cc0a4ca0fa8abe5d08d44
-      internalID: -471150180
+      spriteID: 8d721a925c69ab04382bb467b9debb60
+      internalID: 494346953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_5"
+      name: Alev_sprite_5
       rect:
         serializedVersion: 2
-        x: 347
-        y: 22
-        width: 10
-        height: 12
+        x: 32
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f80fa9bebbc13a642be4037817a5d53a
-      internalID: 121853651
+      spriteID: 5f3c0cd09a032454db55c9365217e0e2
+      internalID: -400974428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_6"
+      name: Alev_sprite_6
       rect:
         serializedVersion: 2
-        x: 411
-        y: 22
-        width: 10
-        height: 13
+        x: 64
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70443a397c0c04b43bfca96d800b6488
-      internalID: 1229811675
+      spriteID: 82c0bb3cc1c64cb44997d5546c650b16
+      internalID: 1380378006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_7"
+      name: Alev_sprite_7
       rect:
         serializedVersion: 2
-        x: 475
-        y: 22
-        width: 10
-        height: 12
+        x: 96
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dcadfcf416c9a54b9f522995d2501a0
-      internalID: -1994883065
+      spriteID: d6ff0ed90da7bd842be380cfca393900
+      internalID: -397539609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_8"
+      name: Alev_sprite_8
       rect:
         serializedVersion: 2
-        x: 539
-        y: 22
-        width: 10
-        height: 13
+        x: 0
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c43f3808eb765184ca47b2e644464370
-      internalID: 320170778
+      spriteID: 7d1f991b5b6d7e94c9731b80038f2a64
+      internalID: 933761314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_9"
+      name: Alev_sprite_9
       rect:
         serializedVersion: 2
-        x: 603
-        y: 22
-        width: 10
-        height: 12
+        x: 32
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e175dd58feb193d4f9f2067e97fd45ed
-      internalID: 2019079867
+      spriteID: e799a8e67b1d27a4393427c9a6a08ef0
+      internalID: -839658404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_10"
+      name: Alev_sprite_10
       rect:
         serializedVersion: 2
-        x: 669
-        y: 22
-        width: 10
-        height: 13
+        x: 64
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77605ebc0e49e8b4dbf56a9c929e8587
-      internalID: 1814980099
+      spriteID: 9d5177c78923e3a448920af7325a051c
+      internalID: 1233135354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_11"
+      name: Alev_sprite_11
       rect:
         serializedVersion: 2
-        x: 730
-        y: 22
-        width: 10
-        height: 12
+        x: 96
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e15b107736aa4f46918957c3d6dfbba
-      internalID: 1597683790
+      spriteID: 2d1eacb831c7f5449961156e5f01200b
+      internalID: 2106444473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_12"
+      name: Alev_sprite_12
       rect:
         serializedVersion: 2
-        x: 797
-        y: 22
-        width: 10
-        height: 13
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5c9d3bd27b12614db449dd57bfe6e19
-      internalID: 250461587
+      spriteID: bbdb31821febb07408834c5c00660641
+      internalID: 304903870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_13"
+      name: Alev_sprite_13
       rect:
         serializedVersion: 2
-        x: 858
-        y: 22
-        width: 10
-        height: 12
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56224d060c0301c49a05f21c79f07feb
-      internalID: 1558559843
+      spriteID: bf60bfb8d733eed4fa5ae0fd4b80b610
+      internalID: 1719142981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_14"
+      name: Alev_sprite_14
       rect:
         serializedVersion: 2
-        x: 923
-        y: 22
-        width: 10
-        height: 14
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,19 +437,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b2b908772764d479e08a59e92e04b8
-      internalID: -10274321
+      spriteID: f1b74576774813e46a907b059b11ecb7
+      internalID: 142617267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u0130lk oyun karakter_15"
+      name: Alev_sprite_15
       rect:
         serializedVersion: 2
-        x: 987
-        y: 22
-        width: 10
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71d4724536e9b5499a55f8601ec6452
+      internalID: 575598415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310989ab5aea94e48bbeb4837319c6ab
+      internalID: 133736413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac5c36add50c454c86c81149f5ca5f0
+      internalID: 764382502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556f16e364fce5c4e81a7739eda4e798
+      internalID: 1485047359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2836c89f5c1f3641bcd95019823206f
+      internalID: 227280656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 16
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -458,8 +563,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0445d044f1055c45acaf357f74f53fb
-      internalID: 1744407542
+      spriteID: d1eeb5052db234248af06fb2ffe89552
+      internalID: -1724330972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b8e00a4c733ae4eb83130cc37c6808
+      internalID: -1528455855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alev_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 5
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f64e6b70f7406148b31f037518edf2b
+      internalID: -70336704
       vertices: []
       indices: 
       edges: []
@@ -475,22 +622,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u0130lk oyun karakter_13": 1558559843
-      "\u0130lk oyun karakter_5": 121853651
-      "\u0130lk oyun karakter_6": 1229811675
-      "\u0130lk oyun karakter_7": -1994883065
-      "\u0130lk oyun karakter_12": 250461587
-      "\u0130lk oyun karakter_8": 320170778
-      "\u0130lk oyun karakter_9": 2019079867
-      "\u0130lk oyun karakter_4": -471150180
-      "\u0130lk oyun karakter_2": -264360806
-      "\u0130lk oyun karakter_15": 1744407542
-      "\u0130lk oyun karakter_10": 1814980099
-      "\u0130lk oyun karakter_3": 1211480108
-      "\u0130lk oyun karakter_14": -10274321
-      "\u0130lk oyun karakter_0": 1415216966
-      "\u0130lk oyun karakter_1": -858533683
-      "\u0130lk oyun karakter_11": 1597683790
+      Alev_sprite_21: -1528455855
+      Alev_sprite_6: 1380378006
+      Alev_sprite_4: 494346953
+      Alev_sprite_14: 142617267
+      Alev_sprite_19: 227280656
+      Alev_sprite_16: 133736413
+      Alev_sprite_13: 1719142981
+      Alev_sprite_9: -839658404
+      Alev_sprite_22: -70336704
+      Alev_sprite_5: -400974428
+      Alev_sprite_12: 304903870
+      Alev_sprite_18: 1485047359
+      Alev_sprite_17: 764382502
+      Alev_sprite_0: 2064250342
+      Alev_sprite_7: -397539609
+      Alev_sprite_20: -1724330972
+      Alev_sprite_2: 629089715
+      Alev_sprite_8: 933761314
+      Alev_sprite_1: -1863296971
+      Alev_sprite_11: 2106444473
+      Alev_sprite_10: 1233135354
+      Alev_sprite_3: 399823490
+      Alev_sprite_15: 575598415
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
