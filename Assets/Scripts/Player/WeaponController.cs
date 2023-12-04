@@ -6,15 +6,18 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject Gun;
-    
+    public GameObject BosPlayer;
+    public GameObject ThısPlayer;
     public CursorManager _CursorManager;
+    public bool FirePlayer = false;
+
     private Player _Player;
     private SPlayer _SPlayer;
 
     private void Start()
     {
-        if(_Player != null) _Player = GetComponent<Player>();
-        if(_SPlayer != null) _SPlayer = GetComponent<SPlayer>();
+        _Player = GetComponent<Player>();
+        _SPlayer = GetComponent<SPlayer>();
         Gun.SetActive(false);
     }
 
@@ -24,12 +27,19 @@ public class WeaponController : MonoBehaviour
         {
             _CursorManager.enabled = true;
             Gun.SetActive(true);
+
+            Destroy(other.gameObject);
         }
         
         if (other.gameObject.CompareTag("BosObject"))
         {
-            if(_Player != null) _Player.İsFly = true;
-            if(_SPlayer != null) _SPlayer.İsFly = true;
+            if(_Player != null && FirePlayer) _Player.İsFly = true;
+            if(_SPlayer != null && FirePlayer) _SPlayer.İsFly = true;
+
+            BosPlayer.SetActive(true);
+            ThısPlayer.SetActive(false);
+
+            Destroy(other.gameObject);
         }
     }
 }

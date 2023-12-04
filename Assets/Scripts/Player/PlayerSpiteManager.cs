@@ -9,10 +9,17 @@ public class PlayerSpiteManager : MonoBehaviour
     
     private Animator anim;
     private Rigidbody2D rb;
+
+    private BoxCollider2D collider;
+    private SpriteRenderer m_spt;
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponentInParent<Rigidbody2D>();
+        collider = GetComponentInParent<BoxCollider2D>();
+        m_spt = GetComponent<SpriteRenderer>();
+
+        collider.size = m_spt.size/2;
     }
 
     // Update is called once per frame
