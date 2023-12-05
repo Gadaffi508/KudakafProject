@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03ef5325de027324cb3645eab475dfe1
+guid: 5b6488596934a904d9bb2b3d210b632e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_0"
+      name: Tac2v.2-Sheet_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 20
-        width: 18
-        height: 33
+        x: 0
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64c6260be0da2c94eb9934213e670731
-      internalID: 1686065349
+      spriteID: 2cd952f0272318048b417517af879872
+      internalID: 1350218122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_1"
+      name: Tac2v.2-Sheet_1
       rect:
         serializedVersion: 2
-        x: 133
-        y: 20
-        width: 18
-        height: 33
+        x: 96
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9bb6f299e0baad46a7292688742e6a2
-      internalID: -839138307
+      spriteID: d8f035ae251069447ae8a117d4391a5b
+      internalID: -1915400715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_2"
+      name: Tac2v.2-Sheet_2
       rect:
         serializedVersion: 2
-        x: 229
-        y: 20
-        width: 18
-        height: 33
+        x: 192
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f83c613affcbddb4fa550ece92bcc70c
-      internalID: 2014697454
+      spriteID: d7c2475e86e7ccf499943f321582212e
+      internalID: 1840527813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_3"
+      name: Tac2v.2-Sheet_3
       rect:
         serializedVersion: 2
-        x: 325
-        y: 20
-        width: 18
-        height: 33
+        x: 288
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90d47ad279df2604ea53a31cc229385a
-      internalID: -486249624
+      spriteID: 7a6f35f776cbc28459e3628a5ad41e98
+      internalID: -964530432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_4"
+      name: Tac2v.2-Sheet_4
       rect:
         serializedVersion: 2
-        x: 421
-        y: 20
-        width: 18
-        height: 32
+        x: 384
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5686bad61e4694749b39bab5aaee5967
-      internalID: -94708593
+      spriteID: 42b1c5518f392444da470481b8d24be0
+      internalID: 416591958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_5"
+      name: Tac2v.2-Sheet_5
       rect:
         serializedVersion: 2
-        x: 517
-        y: 20
-        width: 18
-        height: 32
+        x: 480
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f06319cdf1bbba24bbf884dc3688e4bd
-      internalID: -1758602552
+      spriteID: c94f7a0e72be6ea43a7da4cdddaabc16
+      internalID: 556095649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_6"
+      name: Tac2v.2-Sheet_6
       rect:
         serializedVersion: 2
-        x: 613
-        y: 20
-        width: 18
-        height: 32
+        x: 576
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4298fcdfd04dc794d87126dea86baeff
-      internalID: -481932830
+      spriteID: 212cfb266f319d1499102e37c8c13ada
+      internalID: 910389117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_7"
+      name: Tac2v.2-Sheet_7
       rect:
         serializedVersion: 2
-        x: 709
-        y: 20
-        width: 18
-        height: 32
+        x: 672
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 650b14df099886148bcc8581accd2910
-      internalID: -1784084804
+      spriteID: 5e6603d5b650c294d93e4eb2f7687a7b
+      internalID: -219241940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_8"
+      name: Tac2v.2-Sheet_8
       rect:
         serializedVersion: 2
-        x: 805
-        y: 20
-        width: 18
-        height: 31
+        x: 768
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13536b10c705cfa4abb96dfc82fc74cb
-      internalID: 736453091
+      spriteID: 5fc810ba19348a14eade750580cfaaca
+      internalID: -934095362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_9"
+      name: Tac2v.2-Sheet_9
       rect:
         serializedVersion: 2
-        x: 901
-        y: 20
-        width: 18
-        height: 32
+        x: 864
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd902a7030b3ff247939033972f3d4ba
-      internalID: -707234554
+      spriteID: 6822826b5fbb66940aa1ffd25a7a8a7a
+      internalID: 2066443126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_10"
+      name: Tac2v.2-Sheet_10
       rect:
         serializedVersion: 2
-        x: 997
-        y: 20
-        width: 18
-        height: 31
+        x: 960
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44689274152591141a91547e21c6b10f
-      internalID: 241433810
+      spriteID: b61c5779567d21846a85a216926721fb
+      internalID: 1663915901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_11"
+      name: Tac2v.2-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1093
-        y: 20
-        width: 18
-        height: 32
+        x: 1056
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c6bac5a46e8a714681b1bab84b2f350
-      internalID: 381033829
+      spriteID: e5051161c2dfd854cb1130f116d9755b
+      internalID: 1948381607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_12"
+      name: Tac2v.2-Sheet_12
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 20
-        width: 18
-        height: 33
+        x: 1152
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 500c710b0fb14664c8fc9db77aa3dbfd
-      internalID: -776520294
+      spriteID: 404bb79bf2105534d9ba790bf4e13454
+      internalID: -1388675664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_13"
+      name: Tac2v.2-Sheet_13
       rect:
         serializedVersion: 2
-        x: 1285
-        y: 20
-        width: 18
-        height: 32
+        x: 1248
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d6ef4957824c14f8311b8b1d776cc1
-      internalID: -1137422676
+      spriteID: 1ec69aa3644aa01408484d2b6e944c28
+      internalID: 479605752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_14"
+      name: Tac2v.2-Sheet_14
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 20
-        width: 18
-        height: 33
+        x: 1344
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53d9758a597aa074b9bc4613085812df
-      internalID: 811219843
+      spriteID: 5c12afd003550ae418888f228c87e38a
+      internalID: 1980622720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_15"
+      name: Tac2v.2-Sheet_15
       rect:
         serializedVersion: 2
-        x: 1477
-        y: 20
-        width: 18
-        height: 33
+        x: 1440
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d926e1c50694eb44ea4a7c01098e2881
-      internalID: 626983807
+      spriteID: 2210b5ea22271da4394bd85e90ca77a5
+      internalID: 333711893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_16"
+      name: Tac2v.2-Sheet_16
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 20
-        width: 18
-        height: 34
+        x: 1536
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07a525c6a0bf3fc4ea09a00c7d63ce5d
-      internalID: -1219870725
+      spriteID: 57f67f7e7f766124ab6eff27e51a7b9e
+      internalID: 1523898867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_17"
+      name: Tac2v.2-Sheet_17
       rect:
         serializedVersion: 2
-        x: 1669
-        y: 20
-        width: 18
-        height: 35
+        x: 1632
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,20 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 679f0889172085c4aa927439b90d8cc9
-      internalID: 553656654
+      spriteID: 114b5d89d894cd04584962ca524b1581
+      internalID: 292623861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_18"
+      name: Tac2v.2-Sheet_18
       rect:
         serializedVersion: 2
-        x: 1765
-        y: 20
-        width: 18
-        height: 31
+        x: 1728
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +521,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acb670d113c098c4ebacf8467fcbad00
-      internalID: -280626782
+      spriteID: 80e4e4f4a82e84e4eaf4a5f73649fbd6
+      internalID: -1909170915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ta\xE72-Sheet_19"
+      name: Tac2v.2-Sheet_19
       rect:
         serializedVersion: 2
-        x: 1861
-        y: 20
-        width: 18
-        height: 32
+        x: 1824
+        y: 0
+        width: 96
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,8 +542,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3d14ec5b8a0e194296bbcfd60a6849e
-      internalID: -1364067251
+      spriteID: da5d3e3d1b5fb3349b0088e8ffe74e23
+      internalID: -406854593
       vertices: []
       indices: 
       edges: []
@@ -559,26 +559,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Ta\xE72-Sheet_17": 553656654
-      "Ta\xE72-Sheet_1": -839138307
-      "Ta\xE72-Sheet_8": 736453091
-      "Ta\xE72-Sheet_13": -1137422676
-      "Ta\xE72-Sheet_0": 1686065349
-      "Ta\xE72-Sheet_7": -1784084804
-      "Ta\xE72-Sheet_2": 2014697454
-      "Ta\xE72-Sheet_16": -1219870725
-      "Ta\xE72-Sheet_10": 241433810
-      "Ta\xE72-Sheet_6": -481932830
-      "Ta\xE72-Sheet_5": -1758602552
-      "Ta\xE72-Sheet_3": -486249624
-      "Ta\xE72-Sheet_11": 381033829
-      "Ta\xE72-Sheet_19": -1364067251
-      "Ta\xE72-Sheet_14": 811219843
-      "Ta\xE72-Sheet_9": -707234554
-      "Ta\xE72-Sheet_15": 626983807
-      "Ta\xE72-Sheet_4": -94708593
-      "Ta\xE72-Sheet_18": -280626782
-      "Ta\xE72-Sheet_12": -776520294
+      Tac2v.2-Sheet_10: 1663915901
+      Tac2v.2-Sheet_11: 1948381607
+      Tac2v.2-Sheet_5: 556095649
+      Tac2v.2-Sheet_9: 2066443126
+      Tac2v.2-Sheet_1: -1915400715
+      Tac2v.2-Sheet_12: -1388675664
+      Tac2v.2-Sheet_13: 479605752
+      Tac2v.2-Sheet_19: -406854593
+      Tac2v.2-Sheet_15: 333711893
+      Tac2v.2-Sheet_3: -964530432
+      Tac2v.2-Sheet_8: -934095362
+      Tac2v.2-Sheet_6: 910389117
+      Tac2v.2-Sheet_4: 416591958
+      Tac2v.2-Sheet_2: 1840527813
+      Tac2v.2-Sheet_7: -219241940
+      Tac2v.2-Sheet_18: -1909170915
+      Tac2v.2-Sheet_0: 1350218122
+      Tac2v.2-Sheet_17: 292623861
+      Tac2v.2-Sheet_14: 1980622720
+      Tac2v.2-Sheet_16: 1523898867
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

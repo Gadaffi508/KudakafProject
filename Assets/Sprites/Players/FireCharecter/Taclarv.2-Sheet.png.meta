@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8cb0337761ca3142b81edf8cab7a418
+guid: c3ff3170dc946194aa1448ff5b7da93f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Taclar-Sheet_2
+      name: Taclarv.2-Sheet_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 5
-        width: 28
-        height: 40
+        x: 0
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14313e6a7e4e8db4496c1fcb672bb1de
-      internalID: -731834808
+      spriteID: 1acff547fe3886d4b91066a9aa39fd7d
+      internalID: -68434427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_5
+      name: Taclarv.2-Sheet_1
       rect:
         serializedVersion: 2
-        x: 309
-        y: 5
-        width: 28
-        height: 40
+        x: 34
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e10831c4c8a943b40bc52a966a89c623
-      internalID: -742299604
+      spriteID: 2e308ce82995fe44d9ff7b870fcc11be
+      internalID: -753577672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_8
+      name: Taclarv.2-Sheet_2
       rect:
         serializedVersion: 2
-        x: 547
-        y: 4
-        width: 28
-        height: 41
+        x: 68
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f864f5fde013c4f419e858ef5f1cf190
-      internalID: -1624160531
+      spriteID: 243cd7acde98c6f4488fea6e8092d406
+      internalID: -1339582198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_11
+      name: Taclarv.2-Sheet_3
       rect:
         serializedVersion: 2
-        x: 785
-        y: 4
-        width: 28
-        height: 41
+        x: 102
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63fd03192951ac149bf1b2ee5bb8cd66
-      internalID: 2091043316
+      spriteID: 6ac3aba16af1e2940b2dc6a75aafe43d
+      internalID: -513415265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_14
+      name: Taclarv.2-Sheet_4
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 5
-        width: 28
-        height: 40
+        x: 136
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6933df888fd927a438dffbdacd22105f
-      internalID: -2094035051
+      spriteID: 6cbf646962cf0344ba3c3e550f1b7195
+      internalID: -1628907576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_15
+      name: Taclarv.2-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1057
-        y: 5
-        width: 28
-        height: 40
+        x: 170
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2398f258a53fdd4abbaf5d0a89112c1
-      internalID: -736724782
+      spriteID: 0b91b24b08a4c65498179ac7d2ea965c
+      internalID: -1853038130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_16
+      name: Taclarv.2-Sheet_6
       rect:
         serializedVersion: 2
-        x: 37
-        y: 5
-        width: 28
-        height: 41
+        x: 204
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daef796e8cce53a4cad004aeddb8927d
-      internalID: -920491152
+      spriteID: 38c740404426e104fbec6d0bc657fa21
+      internalID: -1306856941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_17
+      name: Taclarv.2-Sheet_7
       rect:
         serializedVersion: 2
-        x: 105
-        y: 5
-        width: 29
-        height: 36
+        x: 238
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 721a75c44186c3e47aca9f6f8314c533
-      internalID: 1574575244
+      spriteID: 7c67d96be25886846b8ecf076eaf2249
+      internalID: 1296700103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_19
+      name: Taclarv.2-Sheet_8
       rect:
         serializedVersion: 2
-        x: 171
-        y: 5
-        width: 31
-        height: 33
+        x: 272
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb85a456f0771474a8a570485b07a252
-      internalID: 1985737510
+      spriteID: 655be47dc884c514db354c5734af974f
+      internalID: -688998205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_20
+      name: Taclarv.2-Sheet_9
       rect:
         serializedVersion: 2
-        x: 208
-        y: 5
-        width: 28
-        height: 36
+        x: 306
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 906ba7ffea113b74783d17e5b5f7d37f
-      internalID: -1085392669
+      spriteID: 1aabe298aef25614a82e31415077989e
+      internalID: 345605755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_21
+      name: Taclarv.2-Sheet_10
       rect:
         serializedVersion: 2
-        x: 275
-        y: 5
-        width: 28
-        height: 41
+        x: 340
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 544e274fa84661e45bddc299db4a4a98
-      internalID: 1904110671
+      spriteID: ef30988a6dd1a544284c4cf08085b6ff
+      internalID: -23335853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_22
+      name: Taclarv.2-Sheet_11
       rect:
         serializedVersion: 2
-        x: 343
-        y: 5
-        width: 28
-        height: 36
+        x: 374
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8189a147e75be0d41b26953131335513
-      internalID: 2070678688
+      spriteID: 7dd06f5040adb3642b192712688b9437
+      internalID: -292186647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_24
+      name: Taclarv.2-Sheet_12
       rect:
         serializedVersion: 2
-        x: 411
-        y: 5
-        width: 28
-        height: 33
+        x: 408
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2226228020248c94ea48f4b094850a18
-      internalID: 738143799
+      spriteID: 002b626e2da085c48abe174f0f0e3483
+      internalID: -1678814209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_25
+      name: Taclarv.2-Sheet_13
       rect:
         serializedVersion: 2
-        x: 445
-        y: 5
-        width: 28
-        height: 36
+        x: 442
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad615cb19be57645b757ad6016bc44f
-      internalID: 1793362421
+      spriteID: 92cf047891f19544dbb5da2d3db1a27a
+      internalID: -709888337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_26
+      name: Taclarv.2-Sheet_14
       rect:
         serializedVersion: 2
-        x: 513
-        y: 5
-        width: 28
-        height: 41
+        x: 476
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bfd711676d71904ea7aabbf60b36771
-      internalID: 1462884649
+      spriteID: c372365e36e438e4883b3869324b210f
+      internalID: -537691537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_27
+      name: Taclarv.2-Sheet_15
       rect:
         serializedVersion: 2
-        x: 581
-        y: 4
-        width: 28
-        height: 37
+        x: 510
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca8c6870333ca5546a6094a3e093c3e1
-      internalID: -531713617
+      spriteID: 9e29c824f1e18e34a967ce8e6a5c9ec4
+      internalID: -192452468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_29
+      name: Taclarv.2-Sheet_16
       rect:
         serializedVersion: 2
-        x: 649
-        y: 5
-        width: 28
-        height: 33
+        x: 544
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae66d0191de9ccd4a9a4068fb4816f06
-      internalID: -1821286942
+      spriteID: 9109f5c0ca5ba804cba4171b25402970
+      internalID: 803246544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_30
+      name: Taclarv.2-Sheet_17
       rect:
         serializedVersion: 2
-        x: 683
-        y: 4
-        width: 28
-        height: 37
+        x: 578
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,20 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b712a98d3e86cbc4fa0508e7cc6ebf43
-      internalID: -1893153941
+      spriteID: 09df171bbe430ea41bca9221394ac61e
+      internalID: 1134095953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_31
+      name: Taclarv.2-Sheet_18
       rect:
         serializedVersion: 2
-        x: 751
-        y: 4
-        width: 28
-        height: 42
+        x: 612
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +521,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79ab91aa2c968a34ea2bc5bb29c4bab3
-      internalID: -612646483
+      spriteID: bfaa83100f2b4a94a9e51c8f2a85947b
+      internalID: -1455501783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_32
+      name: Taclarv.2-Sheet_19
       rect:
         serializedVersion: 2
-        x: 819
-        y: 5
-        width: 28
-        height: 36
+        x: 646
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,20 +542,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7629cb97fc3846d4b9245b5e910a356e
-      internalID: -69439510
+      spriteID: 4133e07867782d747a542cfae5201c98
+      internalID: 279924422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_34
+      name: Taclarv.2-Sheet_20
       rect:
         serializedVersion: 2
-        x: 887
-        y: 5
-        width: 28
-        height: 33
+        x: 680
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -563,20 +563,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ed9d8024d0a574abb0136cf5b35ed0
-      internalID: -417832567
+      spriteID: c99fdad858807bc488c484f049b50df1
+      internalID: -2134806284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_35
+      name: Taclarv.2-Sheet_21
       rect:
         serializedVersion: 2
-        x: 921
-        y: 5
-        width: 28
-        height: 36
+        x: 714
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,20 +584,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b9409f96e67f194f80dde53696f0e99
-      internalID: 298157336
+      spriteID: 11c7173680823fd428068a7a27f6bb7a
+      internalID: 1037747112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_36
+      name: Taclarv.2-Sheet_22
       rect:
         serializedVersion: 2
-        x: 989
-        y: 5
-        width: 28
-        height: 41
+        x: 748
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,20 +605,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5bbd153d5913b24aafc518b81964cd0
-      internalID: -210406167
+      spriteID: 79c37643b45923041bea538be20e4222
+      internalID: 94260113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_37
+      name: Taclarv.2-Sheet_23
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 28
-        height: 39
+        x: 782
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -626,20 +626,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81a01e8d767ae445a8a856a0255011d
-      internalID: -2006006905
+      spriteID: e822ca11eca863f468bfbc677e5ea3ae
+      internalID: 1165822566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_38
+      name: Taclarv.2-Sheet_24
       rect:
         serializedVersion: 2
-        x: 138
-        y: 5
-        width: 30
-        height: 37
+        x: 816
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -647,20 +647,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b914dfee558f1c4ebb227bea971c41d
-      internalID: 526013224
+      spriteID: d2e023b1548f61e4db3f39ef40e66c0b
+      internalID: -1339320790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_39
+      name: Taclarv.2-Sheet_25
       rect:
         serializedVersion: 2
-        x: 241
-        y: 5
-        width: 28
-        height: 39
+        x: 850
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,20 +668,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cc93e18db0d35b45869b14030663677
-      internalID: 1210802728
+      spriteID: 92f72765ba8dd6745b3aaee439264614
+      internalID: -1235345205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_40
+      name: Taclarv.2-Sheet_26
       rect:
         serializedVersion: 2
-        x: 377
-        y: 5
-        width: 28
-        height: 37
+        x: 884
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -689,20 +689,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e585b51b66deea54d9c6adc889ab53ac
-      internalID: -125091967
+      spriteID: 89c4af88b3a551540b4ad6bc443b7960
+      internalID: 1180306712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_41
+      name: Taclarv.2-Sheet_27
       rect:
         serializedVersion: 2
-        x: 479
-        y: 5
-        width: 28
-        height: 39
+        x: 918
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,20 +710,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd398fcf8ea55f24a8a89fa09de207f7
-      internalID: 1447970856
+      spriteID: fc179962e729c9b499b51e0631ea0f2f
+      internalID: 1159990302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_42
+      name: Taclarv.2-Sheet_28
       rect:
         serializedVersion: 2
-        x: 615
-        y: 5
-        width: 28
-        height: 37
+        x: 952
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -731,20 +731,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3aa99c42a321f834b8a7d64c98c975cc
-      internalID: -2048973021
+      spriteID: 25c80073de8d5944890f2f382d7a274f
+      internalID: -347035340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_43
+      name: Taclarv.2-Sheet_29
       rect:
         serializedVersion: 2
-        x: 717
-        y: 4
-        width: 28
-        height: 40
+        x: 986
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -752,20 +752,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6b795c4dcd6f734083833d96de0cba6
-      internalID: -1332126139
+      spriteID: 5b4aa7de9e65de14696ae6bca8995d35
+      internalID: -650944824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_44
+      name: Taclarv.2-Sheet_30
       rect:
         serializedVersion: 2
-        x: 853
-        y: 5
-        width: 28
-        height: 37
+        x: 1020
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -773,20 +773,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0520a58447d4a5439fb41911a9b08ed
-      internalID: -1022189559
+      spriteID: 47bf9f7ecfa0bbd42841b401fd9876d0
+      internalID: -703008290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taclar-Sheet_45
+      name: Taclarv.2-Sheet_31
       rect:
         serializedVersion: 2
-        x: 955
-        y: 5
-        width: 28
-        height: 39
+        x: 1054
+        y: 0
+        width: 34
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -794,8 +794,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9750554129421247bb34a08bb4c315d
-      internalID: 763686328
+      spriteID: 1cb097f272326874dbe665b15ddd7f21
+      internalID: 422883977
       vertices: []
       indices: 
       edges: []
@@ -811,52 +811,38 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Taclar-Sheet_38: 526013224
-      Taclar-Sheet_6: -2040444401
-      Taclar-Sheet_43: -1332126139
-      Taclar-Sheet_4: -555877011
-      Taclar-Sheet_2: -731834808
-      Taclar-Sheet_3: 1869243640
-      Taclar-Sheet_23: 565632338
-      Taclar-Sheet_10: -312985222
-      Taclar-Sheet_29: -1821286942
-      Taclar-Sheet_44: -1022189559
-      Taclar-Sheet_20: -1085392669
-      Taclar-Sheet_39: 1210802728
-      Taclar-Sheet_7: -1040421527
-      Taclar-Sheet_0: -1719309344
-      Taclar-Sheet_18: 1555454851
-      Taclar-Sheet_27: -531713617
-      Taclar-Sheet_24: 738143799
-      Taclar-Sheet_8: -1624160531
-      Taclar-Sheet_1: 554608334
-      Taclar-Sheet_9: 198810466
-      Taclar-Sheet_12: 1365293582
-      Taclar-Sheet_13: 1793402352
-      Taclar-Sheet_17: 1574575244
-      Taclar-Sheet_45: 763686328
-      Taclar-Sheet_33: -880851010
-      Taclar-Sheet_37: -2006006905
-      Taclar-Sheet_11: 2091043316
-      Taclar-Sheet_5: -742299604
-      Taclar-Sheet_14: -2094035051
-      Taclar-Sheet_26: 1462884649
-      Taclar-Sheet_32: -69439510
-      Taclar-Sheet_19: 1985737510
-      Taclar-Sheet_30: -1893153941
-      Taclar-Sheet_28: -1597538329
-      Taclar-Sheet_34: -417832567
-      Taclar-Sheet_36: -210406167
-      Taclar-Sheet_42: -2048973021
-      Taclar-Sheet_16: -920491152
-      Taclar-Sheet_40: -125091967
-      Taclar-Sheet_41: 1447970856
-      Taclar-Sheet_25: 1793362421
-      Taclar-Sheet_35: 298157336
-      Taclar-Sheet_22: 2070678688
-      Taclar-Sheet_21: 1904110671
-      Taclar-Sheet_31: -612646483
-      Taclar-Sheet_15: -736724782
+      Taclarv.2-Sheet_19: 279924422
+      Taclarv.2-Sheet_17: 1134095953
+      Taclarv.2-Sheet_25: -1235345205
+      Taclarv.2-Sheet_30: -703008290
+      Taclarv.2-Sheet_27: 1159990302
+      Taclarv.2-Sheet_29: -650944824
+      Taclarv.2-Sheet_1: -753577672
+      Taclarv.2-Sheet_12: -1678814209
+      Taclarv.2-Sheet_24: -1339320790
+      Taclarv.2-Sheet_0: -68434427
+      Taclarv.2-Sheet_3: -513415265
+      Taclarv.2-Sheet_7: 1296700103
+      Taclarv.2-Sheet_13: -709888337
+      Taclarv.2-Sheet_18: -1455501783
+      Taclarv.2-Sheet_16: 803246544
+      Taclarv.2-Sheet_31: 422883977
+      Taclarv.2-Sheet_2: -1339582198
+      Taclarv.2-Sheet_11: -292186647
+      Taclarv.2-Sheet_26: 1180306712
+      Taclarv.2-Sheet_21: 1037747112
+      Taclarv.2-Sheet_22: 94260113
+      Taclarv.2-Sheet_4: -1628907576
+      Taclarv.2-Sheet_9: 345605755
+      Taclarv.2-Sheet_8: -688998205
+      Taclarv.2-Sheet_10: -23335853
+      Taclarv.2-Sheet_14: -537691537
+      Taclarv.2-Sheet_23: 1165822566
+      Taclarv.2-Sheet_20: -2134806284
+      Taclarv.2-Sheet_6: -1306856941
+      Taclarv.2-Sheet_5: -1853038130
+      Taclarv.2-Sheet_28: -347035340
+      Taclarv.2-Sheet_15: -192452468
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
