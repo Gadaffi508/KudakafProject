@@ -13,6 +13,10 @@ public class PlayerInputController : MonoBehaviour
     internal bool DashPress;
 
     internal bool RunPrees;
+    internal bool LeftTalent;
+    internal bool RightTalent;
+    internal bool UpTalent;
+    internal bool DownTalent;
 
     public static PlayerInputController _Controller;
     public static PlayerInputController Controller
@@ -39,6 +43,11 @@ public class PlayerInputController : MonoBehaviour
         playerInput.GamePlay.RunPressed.performed += ctx => RunPrees = ctx.ReadValueAsButton();
         
         playerInput.GamePlay.FirePressed.performed += ctx => FirePressed = ctx.ReadValueAsButton();
+
+        playerInput.GamePlay.TalentOne.performed += ctx => LeftTalent = ctx.ReadValueAsButton();
+        playerInput.GamePlay.TalentSecond.performed += ctx => RightTalent = ctx.ReadValueAsButton();
+        playerInput.GamePlay.TalentThird.performed += ctx => UpTalent = ctx.ReadValueAsButton();
+        playerInput.GamePlay.TalentFourth.performed += ctx => DownTalent = ctx.ReadValueAsButton();
     }
 
     private void OnEnable()

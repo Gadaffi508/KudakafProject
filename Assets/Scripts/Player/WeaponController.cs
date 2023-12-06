@@ -9,7 +9,6 @@ public class WeaponController : MonoBehaviour
     public GameObject Gun;
     public GameObject BosPlayer;
     public GameObject ThısPlayer;
-    public CursorManager _CursorManager;
     public bool FirePlayer = false;
 
     private Player _Player;
@@ -26,7 +25,6 @@ public class WeaponController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GunObject"))
         {
-            _CursorManager.enabled = true;
             Gun.SetActive(true);
 
             Destroy(other.gameObject);
@@ -34,7 +32,9 @@ public class WeaponController : MonoBehaviour
         
         if (other.gameObject.CompareTag("BosObject"))
         {
-            if(_Player != null && FirePlayer) _Player.İsFly = true;
+            Gun.SetActive(true);
+
+            if (_Player != null && FirePlayer) _Player.İsFly = true;
             if(_SPlayer != null && FirePlayer) _SPlayer.İsFly = true;
 
             BosPlayer.SetActive(true);

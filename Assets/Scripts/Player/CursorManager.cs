@@ -16,11 +16,13 @@ public class CursorManager : MonoBehaviour
 
     private bool fire = true;
 
+    private bool firePressE = false;
+
     private void Update()
     {
         if (İnputDirection() != Vector2.zero) CursorObj.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(Angle(), Vector3.forward), CursorSpeed * Time.deltaTime);
 
-        if (PlayerInputController.Controller.FirePressed && fire)
+        if (PlayerInputController.Controller.FirePressed && fire && firePressE)
         {
             GameObject bullet = InstateFireProperty(FirePrefabs);
             GameObject fireEffect = InstateFireProperty(FireEffect);

@@ -80,6 +80,42 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentOne"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6462a3a-bb27-4a98-b0c4-cb4c3fdcc085"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentSecond"",
+                    ""type"": ""Button"",
+                    ""id"": ""33b5c36b-8fd5-4427-b88e-7cfb466674d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentThird"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f90e993-b8ee-42b8-8d52-b8d9608d679f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentFourth"",
+                    ""type"": ""Button"",
+                    ""id"": ""16c1c3e6-24a3-4c16-b22a-0384f61aebad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +184,50 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""FirePressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5dc69c2c-1050-40f5-a25b-2b897902cfc2"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentOne"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8832fa70-6fb7-45e8-8f26-1edcfcf3aac3"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentSecond"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff7fbf39-3af1-49f2-b655-84118ed7d96b"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentThird"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8184a455-a743-45ae-805c-bc75ae81b786"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentFourth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,6 +242,10 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_RunPressed = m_GamePlay.FindAction("RunPressed", throwIfNotFound: true);
         m_GamePlay_DashPressed = m_GamePlay.FindAction("DashPressed", throwIfNotFound: true);
         m_GamePlay_FirePressed = m_GamePlay.FindAction("FirePressed", throwIfNotFound: true);
+        m_GamePlay_TalentOne = m_GamePlay.FindAction("TalentOne", throwIfNotFound: true);
+        m_GamePlay_TalentSecond = m_GamePlay.FindAction("TalentSecond", throwIfNotFound: true);
+        m_GamePlay_TalentThird = m_GamePlay.FindAction("TalentThird", throwIfNotFound: true);
+        m_GamePlay_TalentFourth = m_GamePlay.FindAction("TalentFourth", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +311,10 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_RunPressed;
     private readonly InputAction m_GamePlay_DashPressed;
     private readonly InputAction m_GamePlay_FirePressed;
+    private readonly InputAction m_GamePlay_TalentOne;
+    private readonly InputAction m_GamePlay_TalentSecond;
+    private readonly InputAction m_GamePlay_TalentThird;
+    private readonly InputAction m_GamePlay_TalentFourth;
     public struct GamePlayActions
     {
         private @PlayerController m_Wrapper;
@@ -237,6 +325,10 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @RunPressed => m_Wrapper.m_GamePlay_RunPressed;
         public InputAction @DashPressed => m_Wrapper.m_GamePlay_DashPressed;
         public InputAction @FirePressed => m_Wrapper.m_GamePlay_FirePressed;
+        public InputAction @TalentOne => m_Wrapper.m_GamePlay_TalentOne;
+        public InputAction @TalentSecond => m_Wrapper.m_GamePlay_TalentSecond;
+        public InputAction @TalentThird => m_Wrapper.m_GamePlay_TalentThird;
+        public InputAction @TalentFourth => m_Wrapper.m_GamePlay_TalentFourth;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +356,18 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @FirePressed.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnFirePressed;
                 @FirePressed.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnFirePressed;
                 @FirePressed.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnFirePressed;
+                @TalentOne.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentOne;
+                @TalentOne.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentOne;
+                @TalentOne.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentOne;
+                @TalentSecond.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentSecond;
+                @TalentSecond.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentSecond;
+                @TalentSecond.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentSecond;
+                @TalentThird.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentThird;
+                @TalentThird.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentThird;
+                @TalentThird.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentThird;
+                @TalentFourth.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
+                @TalentFourth.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
+                @TalentFourth.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -286,6 +390,18 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @FirePressed.started += instance.OnFirePressed;
                 @FirePressed.performed += instance.OnFirePressed;
                 @FirePressed.canceled += instance.OnFirePressed;
+                @TalentOne.started += instance.OnTalentOne;
+                @TalentOne.performed += instance.OnTalentOne;
+                @TalentOne.canceled += instance.OnTalentOne;
+                @TalentSecond.started += instance.OnTalentSecond;
+                @TalentSecond.performed += instance.OnTalentSecond;
+                @TalentSecond.canceled += instance.OnTalentSecond;
+                @TalentThird.started += instance.OnTalentThird;
+                @TalentThird.performed += instance.OnTalentThird;
+                @TalentThird.canceled += instance.OnTalentThird;
+                @TalentFourth.started += instance.OnTalentFourth;
+                @TalentFourth.performed += instance.OnTalentFourth;
+                @TalentFourth.canceled += instance.OnTalentFourth;
             }
         }
     }
@@ -298,5 +414,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnRunPressed(InputAction.CallbackContext context);
         void OnDashPressed(InputAction.CallbackContext context);
         void OnFirePressed(InputAction.CallbackContext context);
+        void OnTalentOne(InputAction.CallbackContext context);
+        void OnTalentSecond(InputAction.CallbackContext context);
+        void OnTalentThird(InputAction.CallbackContext context);
+        void OnTalentFourth(InputAction.CallbackContext context);
     }
 }

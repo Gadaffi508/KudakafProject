@@ -28,8 +28,6 @@ public class SPlayer : MonoBehaviour
     {
         if(!isDashing && !İsFly) rb.velocity = RigidBodyVelocityMove();
         if(!isDashing && İsFly) rb.velocity = RigidBodyVelocityFly();
-        
-        Debug.Log(_splayerInputController.scurrentMovement.x);
 
         if (_splayerInputController.SJumpPressed && jump)
         {

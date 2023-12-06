@@ -413,7 +413,6 @@ MonoBehaviour:
   Gun: {fileID: 1975794172}
   BosPlayer: {fileID: 1678275059}
   "Th\u0131sPlayer": {fileID: 637084167}
-  _CursorManager: {fileID: 1986263452}
   FirePlayer: 1
 --- !u!1 &270358047
 GameObject:
@@ -1333,7 +1332,6 @@ MonoBehaviour:
   Gun: {fileID: 7245270}
   BosPlayer: {fileID: 0}
   "Th\u0131sPlayer": {fileID: 0}
-  _CursorManager: {fileID: 1007100536}
   FirePlayer: 0
 --- !u!1 &1162094680
 GameObject:
@@ -1544,6 +1542,7 @@ GameObject:
   - component: {fileID: 1678275062}
   - component: {fileID: 1678275061}
   - component: {fileID: 1678275064}
+  - component: {fileID: 1678275065}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -1677,6 +1676,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3087153, y: 1.7348455}
   m_EdgeRadius: 0
+--- !u!114 &1678275065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678275059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c65640bc38a5446a2602994cc8a230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireWall: {fileID: 3112425483457694575, guid: 9bc7357754c392c488c2225f4b4ba924, type: 3}
+  FireCircle: {fileID: 1792339259025415425, guid: 701def89f5d373d4dbf279c5046d2d1f, type: 3}
 --- !u!1 &1699197865
 GameObject:
   m_ObjectHideFlags: 0

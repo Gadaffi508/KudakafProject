@@ -58,6 +58,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TalentOne",
+                    "type": "Button",
+                    "id": "f6462a3a-bb27-4a98-b0c4-cb4c3fdcc085",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TalentSecond",
+                    "type": "Button",
+                    "id": "33b5c36b-8fd5-4427-b88e-7cfb466674d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TalentThird",
+                    "type": "Button",
+                    "id": "7f90e993-b8ee-42b8-8d52-b8d9608d679f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TalentFourth",
+                    "type": "Button",
+                    "id": "16c1c3e6-24a3-4c16-b22a-0384f61aebad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -124,6 +160,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "FirePressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5dc69c2c-1050-40f5-a25b-2b897902cfc2",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentOne",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8832fa70-6fb7-45e8-8f26-1edcfcf3aac3",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentSecond",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff7fbf39-3af1-49f2-b655-84118ed7d96b",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentThird",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8184a455-a743-45ae-805c-bc75ae81b786",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentFourth",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
