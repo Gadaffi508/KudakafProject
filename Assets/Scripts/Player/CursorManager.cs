@@ -14,15 +14,13 @@ public class CursorManager : MonoBehaviour
     public GameObject FireEffect;
     public Transform FirePos;
 
-    private bool fire = true;
-
-    private bool firePressE = false;
+    private bool fire = false;
 
     private void Update()
     {
         if (İnputDirection() != Vector2.zero) CursorObj.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(Angle(), Vector3.forward), CursorSpeed * Time.deltaTime);
 
-        if (PlayerInputController.Controller.FirePressed && fire && firePressE)
+        if (PlayerInputController.Controller.FirePressed && fire)
         {
             GameObject bullet = InstateFireProperty(FirePrefabs);
             GameObject fireEffect = InstateFireProperty(FireEffect);
@@ -30,7 +28,11 @@ public class CursorManager : MonoBehaviour
             fire = false;
         }
 
-        if (!PlayerInputController.Controller.FirePressed && IsPlayerFirst) fire = true;
+        if (PlayerInputController.Controller.UpTalent)
+        {
+            fire = true;
+        }
+
         //if (!SPlayerInput.Controller.FirePressed && IsPlayerFirst) fire = true;
     }
 
