@@ -37,7 +37,7 @@ public class SPlayer : MonoBehaviour
         
         Run();
         
-        //if (_splayerInputController.DashPress && !isDashing) StartCoroutine(Dash());
+        if (_splayerInputController.SDashPress && !isDashing) StartCoroutine(Dash());
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -50,8 +50,8 @@ public class SPlayer : MonoBehaviour
 
     public void Run()
     {
-        /*if (_splayerInputController.RunPrees) speed = 10;
-        else speed = 5;*/
+        if (_splayerInputController.SRunPrees) speed = 10;
+        else speed = 5;
     }
     
     private IEnumerator Dash()

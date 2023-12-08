@@ -53,13 +53,76 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RunPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""dee10b97-d1c7-4025-a415-c9b07688325e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DashPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""e79900ee-d478-4719-9928-95f4c8576c82"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FirePressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9251945-ae55-4828-a7f7-671c49dabfd0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentOne"",
+                    ""type"": ""Button"",
+                    ""id"": ""870d7650-830f-4952-b061-aa66f629bf16"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Talentsecond"",
+                    ""type"": ""Button"",
+                    ""id"": ""378124b5-27ee-4f62-99ab-e09bca90d956"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Talentthird"",
+                    ""type"": ""Button"",
+                    ""id"": ""9393a125-a1e1-4791-b827-1cf78b1786a5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TalentFourth"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6b656dd-e774-4c35-9661-3eb24071e434"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""c6c29f2e-5a3d-4b26-8c1b-523fe01a4c49"",
-                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/hat"",
+                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/stick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -70,7 +133,7 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e034d292-7c94-4392-92ef-15e794143ace"",
-                    ""path"": ""<Joystick>/stick"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -88,6 +151,83 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de0e1fc7-dda4-47f9-9bc7-43ca37b2ef06"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3726cbaf-d275-4f68-8f1c-927eace888ac"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""344ad884-6773-4585-84ed-abbcbd9522ea"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirePressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5470f33f-7142-4960-a3be-07817cc91070"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentOne"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a1c1edc-444b-4496-9ead-4a7206220185"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talentsecond"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c7d3927-cabc-4ed5-9856-feec0db87fca"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talentthird"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fa4d1bf-0ebe-4e8e-be1b-b8d465a7e85e"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TalentFourth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +239,13 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
         m_SGamePlay_Move = m_SGamePlay.FindAction("Move", throwIfNotFound: true);
         m_SGamePlay_Cursor = m_SGamePlay.FindAction("Cursor", throwIfNotFound: true);
         m_SGamePlay_jump = m_SGamePlay.FindAction("jump", throwIfNotFound: true);
+        m_SGamePlay_RunPressed = m_SGamePlay.FindAction("RunPressed", throwIfNotFound: true);
+        m_SGamePlay_DashPressed = m_SGamePlay.FindAction("DashPressed", throwIfNotFound: true);
+        m_SGamePlay_FirePressed = m_SGamePlay.FindAction("FirePressed", throwIfNotFound: true);
+        m_SGamePlay_TalentOne = m_SGamePlay.FindAction("TalentOne", throwIfNotFound: true);
+        m_SGamePlay_Talentsecond = m_SGamePlay.FindAction("Talentsecond", throwIfNotFound: true);
+        m_SGamePlay_Talentthird = m_SGamePlay.FindAction("Talentthird", throwIfNotFound: true);
+        m_SGamePlay_TalentFourth = m_SGamePlay.FindAction("TalentFourth", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +308,13 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_SGamePlay_Move;
     private readonly InputAction m_SGamePlay_Cursor;
     private readonly InputAction m_SGamePlay_jump;
+    private readonly InputAction m_SGamePlay_RunPressed;
+    private readonly InputAction m_SGamePlay_DashPressed;
+    private readonly InputAction m_SGamePlay_FirePressed;
+    private readonly InputAction m_SGamePlay_TalentOne;
+    private readonly InputAction m_SGamePlay_Talentsecond;
+    private readonly InputAction m_SGamePlay_Talentthird;
+    private readonly InputAction m_SGamePlay_TalentFourth;
     public struct SGamePlayActions
     {
         private @SPlayerController m_Wrapper;
@@ -168,6 +322,13 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_SGamePlay_Move;
         public InputAction @Cursor => m_Wrapper.m_SGamePlay_Cursor;
         public InputAction @jump => m_Wrapper.m_SGamePlay_jump;
+        public InputAction @RunPressed => m_Wrapper.m_SGamePlay_RunPressed;
+        public InputAction @DashPressed => m_Wrapper.m_SGamePlay_DashPressed;
+        public InputAction @FirePressed => m_Wrapper.m_SGamePlay_FirePressed;
+        public InputAction @TalentOne => m_Wrapper.m_SGamePlay_TalentOne;
+        public InputAction @Talentsecond => m_Wrapper.m_SGamePlay_Talentsecond;
+        public InputAction @Talentthird => m_Wrapper.m_SGamePlay_Talentthird;
+        public InputAction @TalentFourth => m_Wrapper.m_SGamePlay_TalentFourth;
         public InputActionMap Get() { return m_Wrapper.m_SGamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +347,27 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 @jump.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnJump;
                 @jump.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnJump;
                 @jump.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnJump;
+                @RunPressed.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnRunPressed;
+                @RunPressed.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnRunPressed;
+                @RunPressed.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnRunPressed;
+                @DashPressed.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnDashPressed;
+                @DashPressed.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnDashPressed;
+                @DashPressed.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnDashPressed;
+                @FirePressed.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnFirePressed;
+                @FirePressed.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnFirePressed;
+                @FirePressed.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnFirePressed;
+                @TalentOne.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentOne;
+                @TalentOne.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentOne;
+                @TalentOne.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentOne;
+                @Talentsecond.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentsecond;
+                @Talentsecond.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentsecond;
+                @Talentsecond.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentsecond;
+                @Talentthird.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentthird;
+                @Talentthird.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentthird;
+                @Talentthird.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentthird;
+                @TalentFourth.started -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentFourth;
+                @TalentFourth.performed -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentFourth;
+                @TalentFourth.canceled -= m_Wrapper.m_SGamePlayActionsCallbackInterface.OnTalentFourth;
             }
             m_Wrapper.m_SGamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +381,27 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 @jump.started += instance.OnJump;
                 @jump.performed += instance.OnJump;
                 @jump.canceled += instance.OnJump;
+                @RunPressed.started += instance.OnRunPressed;
+                @RunPressed.performed += instance.OnRunPressed;
+                @RunPressed.canceled += instance.OnRunPressed;
+                @DashPressed.started += instance.OnDashPressed;
+                @DashPressed.performed += instance.OnDashPressed;
+                @DashPressed.canceled += instance.OnDashPressed;
+                @FirePressed.started += instance.OnFirePressed;
+                @FirePressed.performed += instance.OnFirePressed;
+                @FirePressed.canceled += instance.OnFirePressed;
+                @TalentOne.started += instance.OnTalentOne;
+                @TalentOne.performed += instance.OnTalentOne;
+                @TalentOne.canceled += instance.OnTalentOne;
+                @Talentsecond.started += instance.OnTalentsecond;
+                @Talentsecond.performed += instance.OnTalentsecond;
+                @Talentsecond.canceled += instance.OnTalentsecond;
+                @Talentthird.started += instance.OnTalentthird;
+                @Talentthird.performed += instance.OnTalentthird;
+                @Talentthird.canceled += instance.OnTalentthird;
+                @TalentFourth.started += instance.OnTalentFourth;
+                @TalentFourth.performed += instance.OnTalentFourth;
+                @TalentFourth.canceled += instance.OnTalentFourth;
             }
         }
     }
@@ -208,5 +411,12 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnCursor(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnRunPressed(InputAction.CallbackContext context);
+        void OnDashPressed(InputAction.CallbackContext context);
+        void OnFirePressed(InputAction.CallbackContext context);
+        void OnTalentOne(InputAction.CallbackContext context);
+        void OnTalentsecond(InputAction.CallbackContext context);
+        void OnTalentthird(InputAction.CallbackContext context);
+        void OnTalentFourth(InputAction.CallbackContext context);
     }
 }

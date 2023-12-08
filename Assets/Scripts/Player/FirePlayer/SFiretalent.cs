@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireTalent : MonoBehaviour
+public class SFiretalent : MonoBehaviour
 {
-    [Header("Lef Talent"),Tooltip("Hight Wall")]
+    [Header("Lef Talent"), Tooltip("Hight Wall")]
     public GameObject FireWall;
     [Header("Right Talent"), Tooltip("Burning Circle")]
     public GameObject FireCircle;
@@ -19,14 +19,14 @@ public class FireTalent : MonoBehaviour
     public GameObject FirePanel;
     public GameObject[] PressKeys;
 
-    private PlayerInputController _controller;
+    private SPlayerInput _controller;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
 
     private void Awake()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
+        _controller = GetComponentInParent<SPlayerInput>();
         FirePanel.SetActive(true);
 
         foreach (GameObject key in PressKeys)
@@ -39,7 +39,7 @@ public class FireTalent : MonoBehaviour
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_controller.SFirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -48,13 +48,13 @@ public class FireTalent : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent) SelectTalentActive(0);
+        if (_controller.SLeftTalent) SelectTalentActive(0);
 
-        if (_controller.RightTalent) SelectTalentActive(1);
+        if (_controller.SRightTalent) SelectTalentActive(1);
 
-        if (_controller.DownTalent) SelectTalentActive(2);
+        if (_controller.SDownTalent) SelectTalentActive(2);
 
-        if (_controller.UpTalent) SelectTalentActive(3);
+        if (_controller.SUpTalent) SelectTalentActive(3);
     }
 
     private void SelectTalentActive(int index)
@@ -95,7 +95,7 @@ public class FireTalent : MonoBehaviour
     private void InstFireWall()
     {
         GameObject Wall = Instantiate(FireWall, FireArea(), transform.rotation);
-        Destroy(Wall,1f);
+        Destroy(Wall, 1f);
     }
 
     private void InstFireCircle()
@@ -107,8 +107,8 @@ public class FireTalent : MonoBehaviour
     private void InstFireWind()
     {
         GameObject Wind = Instantiate(FireWind, transform.position, transform.rotation);
-        Wind.GetComponent<Transform>().localScale = new Vector2(-transform.localScale.x,transform.localScale.y);
-        Wind.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x,0) * Time.deltaTime * 400000);
+        Wind.GetComponent<Transform>().localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        Wind.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x, 0) * Time.deltaTime * 400000);
         Destroy(Wind, 1f);
     }
 

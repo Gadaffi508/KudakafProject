@@ -31,13 +31,76 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RunPressed",
+                    "type": "Button",
+                    "id": "dee10b97-d1c7-4025-a415-c9b07688325e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DashPressed",
+                    "type": "Button",
+                    "id": "e79900ee-d478-4719-9928-95f4c8576c82",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FirePressed",
+                    "type": "Button",
+                    "id": "d9251945-ae55-4828-a7f7-671c49dabfd0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TalentOne",
+                    "type": "Button",
+                    "id": "870d7650-830f-4952-b061-aa66f629bf16",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Talentsecond",
+                    "type": "Button",
+                    "id": "378124b5-27ee-4f62-99ab-e09bca90d956",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Talentthird",
+                    "type": "Button",
+                    "id": "9393a125-a1e1-4791-b827-1cf78b1786a5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TalentFourth",
+                    "type": "Button",
+                    "id": "c6b656dd-e774-4c35-9661-3eb24071e434",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "c6c29f2e-5a3d-4b26-8c1b-523fe01a4c49",
-                    "path": "<HID::MY-POWER CO.,LTD. Game Controller for PC>/hat",
+                    "path": "<HID::MY-POWER CO.,LTD. Game Controller for PC>/stick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +111,7 @@
                 {
                     "name": "",
                     "id": "e034d292-7c94-4392-92ef-15e794143ace",
-                    "path": "<Joystick>/stick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -64,6 +127,83 @@
                     "processors": "",
                     "groups": "",
                     "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de0e1fc7-dda4-47f9-9bc7-43ca37b2ef06",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3726cbaf-d275-4f68-8f1c-927eace888ac",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "344ad884-6773-4585-84ed-abbcbd9522ea",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirePressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5470f33f-7142-4960-a3be-07817cc91070",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentOne",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a1c1edc-444b-4496-9ead-4a7206220185",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Talentsecond",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c7d3927-cabc-4ed5-9856-feec0db87fca",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Talentthird",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fa4d1bf-0ebe-4e8e-be1b-b8d465a7e85e",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TalentFourth",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

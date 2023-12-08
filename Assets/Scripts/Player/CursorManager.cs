@@ -9,29 +9,10 @@ public class CursorManager : MonoBehaviour
     public GameObject CursorObj;
 
     public bool IsPlayerFirst;
-    
-    public GameObject FirePrefabs;
-    public GameObject FireEffect;
-    public Transform FirePos;
-
-    private bool fire = false;
 
     private void Update()
     {
         if (İnputDirection() != Vector2.zero) CursorObj.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(Angle(), Vector3.forward), CursorSpeed * Time.deltaTime);
-
-        if (PlayerInputController.Controller.FirePressed && fire)
-        {
-            GameObject bullet = InstateFireProperty(FirePrefabs);
-            GameObject fireEffect = InstateFireProperty(FireEffect);
-            Destroy(fireEffect,.5f);
-            fire = false;
-        }
-
-        if (PlayerInputController.Controller.UpTalent)
-        {
-            fire = true;
-        }
 
         //if (!SPlayerInput.Controller.FirePressed && IsPlayerFirst) fire = true;
     }
@@ -45,7 +26,7 @@ public class CursorManager : MonoBehaviour
         else
         {
             //return SPlayerInput.Controller.CursorPos.normalized;
-            return PlayerInputController.Controller.CursorPos.normalized;
+            return SPlayerInput._SController.sCursorPos.normalized;
         }
     }
     
@@ -53,6 +34,4 @@ public class CursorManager : MonoBehaviour
     
     /*float angle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);*/
-
-    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj,FirePos.position, FirePos.rotation);
 }

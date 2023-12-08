@@ -8,7 +8,15 @@ public class SPlayerInput : MonoBehaviour
     internal Vector2 scurrentMovement;
     internal Vector2 sCursorPos;
     internal bool SJumpPressed;
-    
+    internal bool SFirePressed;
+    internal bool SDashPress;
+
+    internal bool SRunPrees;
+    internal bool SLeftTalent;
+    internal bool SRightTalent;
+    internal bool SUpTalent;
+    internal bool SDownTalent;
+
     public static SPlayerInput _SController;
     
     public static SPlayerInput SController
@@ -29,8 +37,19 @@ public class SPlayerInput : MonoBehaviour
 
         playerInput.SGamePlay.Move.performed += ctx =>scurrentMovement = ctx.ReadValue<Vector2>();
         playerInput.SGamePlay.Cursor.performed += ctx =>sCursorPos = ctx.ReadValue<Vector2>();
-        
         playerInput.SGamePlay.jump.performed += ctx => SJumpPressed = ctx.ReadValueAsButton();
+
+        playerInput.SGamePlay.DashPressed.performed += ctx => SDashPress = ctx.ReadValueAsButton();
+
+        playerInput.SGamePlay.RunPressed.performed += ctx => SRunPrees = ctx.ReadValueAsButton();
+
+        playerInput.SGamePlay.FirePressed.performed += ctx => SFirePressed = ctx.ReadValueAsButton();
+
+
+        playerInput.SGamePlay.TalentOne.performed += ctx => SLeftTalent = ctx.ReadValueAsButton();
+        playerInput.SGamePlay.Talentsecond.performed += ctx => SRightTalent = ctx.ReadValueAsButton();
+        playerInput.SGamePlay.Talentthird.performed += ctx => SUpTalent = ctx.ReadValueAsButton();
+        playerInput.SGamePlay.TalentFourth.performed += ctx => SDownTalent = ctx.ReadValueAsButton();
     }
 
     private void OnEnable()
