@@ -7,6 +7,7 @@ public class PlayerSpiteManager : MonoBehaviour
 {
     internal int LocalX = 1;
     public bool FireC;
+    public int Direct = 1;
     
     private Animator anim;
     private Rigidbody2D rb;
@@ -37,5 +38,5 @@ public class PlayerSpiteManager : MonoBehaviour
         
         transform.localScale = FlipVector(LocalX);
     }
-    private Vector3 FlipVector(int x) => new Vector3(x,1,1);
+    private Vector3 FlipVector(int x) => new Vector3(x * Direct, 1,1);
 }

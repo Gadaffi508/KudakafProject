@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletManager : MonoBehaviour
+public abstract class BulletManager : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    internal Rigidbody2D rb;
     public float m_Thrust = 20f;
 
     private void Start()
@@ -19,11 +19,10 @@ public class BulletManager : MonoBehaviour
         rb.AddForce(transform.right* m_Thrust);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.name == "Ground")
-        {
-            Destroy(gameObject);
-        }
+        TriggerFnc(collision);
     }
+
+    public abstract void TriggerFnc(Collision2D collision);
 }

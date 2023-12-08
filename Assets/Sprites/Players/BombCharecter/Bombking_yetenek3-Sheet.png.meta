@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ef0834c4b6ab5e4b9ba9082839d83e3
+guid: d5b8e5834c4055742ac1442aff6c3eab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Buyuk_bomba_0
+      name: Bombking_yetenek3-Sheet_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 35
-        width: 22
-        height: 24
+        x: 2
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fabac518f304a14459ac7830e9fa4269
-      internalID: 383570427
+      spriteID: 1513a6a68e1d62143b9ff63cd919c279
+      internalID: 689484871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_1
+      name: Bombking_yetenek3-Sheet_1
       rect:
         serializedVersion: 2
-        x: 169
-        y: 35
-        width: 24
-        height: 24
+        x: 28
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df011db36f3c9944fb45f4c7003d8ec4
-      internalID: 682333228
+      spriteID: 1e7b00e23e86420468a53927e5ef0e53
+      internalID: -2115380690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_2
+      name: Bombking_yetenek3-Sheet_2
       rect:
         serializedVersion: 2
-        x: 297
-        y: 35
-        width: 22
-        height: 24
+        x: 54
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93d6324e96e41b945afc30bab1371a24
-      internalID: -539412098
+      spriteID: 164feaef7f6081e4e9225b2e21e8d4c5
+      internalID: 99853262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_3
+      name: Bombking_yetenek3-Sheet_3
       rect:
         serializedVersion: 2
-        x: 423
-        y: 35
-        width: 24
-        height: 24
+        x: 80
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50ebff16ec08e543810dc2d2d4ca578
-      internalID: 175082328
+      spriteID: 93128123a3091d44796b8a95c8a31c29
+      internalID: -1465670792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_4
+      name: Bombking_yetenek3-Sheet_4
       rect:
         serializedVersion: 2
-        x: 551
-        y: 35
-        width: 22
-        height: 24
+        x: 106
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6802c0ce80e93ad49b0ec3ac3e62c3ca
-      internalID: 725404968
+      spriteID: ca3f2a857a34d334cb96d81af1e84ce2
+      internalID: -1235708520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_5
+      name: Bombking_yetenek3-Sheet_5
       rect:
         serializedVersion: 2
-        x: 677
-        y: 35
-        width: 24
-        height: 24
+        x: 132
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f19b88eedd07bcc488410c76562c6cc4
-      internalID: 237383555
+      spriteID: a4947900cf62f4f49948c80cfe851069
+      internalID: -306174500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_6
+      name: Bombking_yetenek3-Sheet_6
       rect:
         serializedVersion: 2
-        x: 805
-        y: 35
-        width: 22
-        height: 24
+        x: 158
+        y: 1
+        width: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030a3aac73fefb246b3bc93dc508eeb8
-      internalID: -1967589355
+      spriteID: f7cc212d781c8dc4b8cc9bdc6bace2b0
+      internalID: -1974213995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_7
+      name: Bombking_yetenek3-Sheet_7
       rect:
         serializedVersion: 2
-        x: 933
-        y: 35
-        width: 24
-        height: 24
+        x: 186
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edefd9f78d4ac8e449a0e953ca9c6db9
-      internalID: -844823866
+      spriteID: 0d3647c94c457ef408203b4b14f3ae28
+      internalID: -1191679051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_8
+      name: Bombking_yetenek3-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1061
-        y: 35
-        width: 22
-        height: 24
+        x: 212
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88176fa5564bbac409bf2ce21d676270
-      internalID: -842767180
+      spriteID: b65ba30934b78794bb4b9b6cb3021565
+      internalID: 1277355488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_9
+      name: Bombking_yetenek3-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1187
-        y: 35
-        width: 24
-        height: 24
+        x: 238
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ade56bafa0722b246a0a5b8518230cce
-      internalID: 1463041927
+      spriteID: a90eaaee6d23e9d4fb01a75782b70bb4
+      internalID: -53917017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_10
+      name: Bombking_yetenek3-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1315
-        y: 35
-        width: 22
-        height: 24
+        x: 264
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5230b95153c16f2418807738b98a5eae
-      internalID: 636819226
+      spriteID: 130be175aeb153b4aace3fd15494d383
+      internalID: 356363720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_11
+      name: Bombking_yetenek3-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1441
-        y: 35
-        width: 24
-        height: 24
+        x: 290
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c60b4d33f1399324999db061348039ed
-      internalID: -360236347
+      spriteID: 7946e125881ca8648af0044ccec072c8
+      internalID: -1322073905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_12
+      name: Bombking_yetenek3-Sheet_12
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 35
-        width: 22
-        height: 24
+        x: 316
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 633383b43b558ff44b0b1629e3c43193
-      internalID: 614019655
+      spriteID: 36c2aa814f28d0b459f5b52a3d11c2ed
+      internalID: -1990519031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_13
+      name: Bombking_yetenek3-Sheet_13
       rect:
         serializedVersion: 2
-        x: 1695
-        y: 35
-        width: 24
-        height: 24
+        x: 342
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b880ccf311050949a38454e30e8315e
-      internalID: 58275961
+      spriteID: bcbc08decf333084db37449a792b89ab
+      internalID: 1469784885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_14
+      name: Bombking_yetenek3-Sheet_14
       rect:
         serializedVersion: 2
-        x: 1821
-        y: 35
-        width: 22
-        height: 24
+        x: 366
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e3a7b95cd935b49b7f4edbbe59a85a
-      internalID: 1691125906
+      spriteID: 40bc8b3c3109f04499215b49557b5627
+      internalID: 864220719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_15
+      name: Bombking_yetenek3-Sheet_15
       rect:
         serializedVersion: 2
-        x: 1947
-        y: 35
-        width: 24
-        height: 24
+        x: 392
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0deb667c8ede9f94b94d8b83b77adb38
-      internalID: 1172408668
+      spriteID: 5c385759a0bad6449aee25fec6d3c0aa
+      internalID: 151930754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_16
+      name: Bombking_yetenek3-Sheet_16
       rect:
         serializedVersion: 2
-        x: 2075
-        y: 35
-        width: 22
-        height: 24
+        x: 418
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea38b103ae36c57499796356bf71597a
-      internalID: -1623478806
+      spriteID: a719c27282a2743498b6a2a8f8b1b0d5
+      internalID: 1730392336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_17
+      name: Bombking_yetenek3-Sheet_17
       rect:
         serializedVersion: 2
-        x: 2201
-        y: 35
-        width: 24
-        height: 24
+        x: 444
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,20 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8566c2b367e1c9644b3057456184fb4d
-      internalID: -846249716
+      spriteID: fc222ab3ce3f2014a962e3eef8f519ea
+      internalID: -484541462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_18
+      name: Bombking_yetenek3-Sheet_18
       rect:
         serializedVersion: 2
-        x: 2329
-        y: 35
-        width: 24
-        height: 24
+        x: 470
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +521,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db74d23f698f4494d94759ef05b9e759
-      internalID: 1604765078
+      spriteID: c876d37d6e752864aafb4447fcaf3cb1
+      internalID: -400159497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_19
+      name: Bombking_yetenek3-Sheet_19
       rect:
         serializedVersion: 2
-        x: 2455
-        y: 35
-        width: 24
-        height: 24
+        x: 496
+        y: 1
+        width: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,20 +542,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42038770027c1214ea3bd943ec5ce8e8
-      internalID: 440683404
+      spriteID: bcfa8e9d73507a143a3787bacc44ac79
+      internalID: -1712918861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_20
+      name: Bombking_yetenek3-Sheet_20
       rect:
         serializedVersion: 2
-        x: 2585
-        y: 35
-        width: 22
-        height: 24
+        x: 524
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -563,20 +563,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4958108345f56a4cb00641d75f54b81
-      internalID: 1752379419
+      spriteID: 4db92f57beb21a74dbdc54861b63ccdb
+      internalID: 114331767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_21
+      name: Bombking_yetenek3-Sheet_21
       rect:
         serializedVersion: 2
-        x: 2711
-        y: 35
-        width: 24
-        height: 24
+        x: 550
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,20 +584,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b17d88170849c14abf16216f07ca808
-      internalID: 1170814712
+      spriteID: f80350f3dd99b7c479e62d718977dcb1
+      internalID: 582119877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_22
+      name: Bombking_yetenek3-Sheet_22
       rect:
         serializedVersion: 2
-        x: 2839
-        y: 35
-        width: 22
-        height: 24
+        x: 576
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -605,20 +605,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97e930d718eff00448a0b6d338d7d11c
-      internalID: 2054136211
+      spriteID: 00fe98477c7ba04478814b2062b485e7
+      internalID: 292716618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_23
+      name: Bombking_yetenek3-Sheet_23
       rect:
         serializedVersion: 2
-        x: 2965
-        y: 35
-        width: 24
-        height: 24
+        x: 602
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -626,20 +626,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33924ab376b9b4544ab71ceb03860e5e
-      internalID: -478161356
+      spriteID: 4e824cd73199a074a9a97680a566ef31
+      internalID: 1391782935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_24
+      name: Bombking_yetenek3-Sheet_24
       rect:
         serializedVersion: 2
-        x: 3093
-        y: 35
-        width: 22
-        height: 24
+        x: 628
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -647,20 +647,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ff0543928b90e244b194bc063035ff0
-      internalID: -1366638748
+      spriteID: 59b42d5375a7c194e8244c2c7faba346
+      internalID: -1045546761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_25
+      name: Bombking_yetenek3-Sheet_25
       rect:
         serializedVersion: 2
-        x: 3219
-        y: 35
-        width: 24
-        height: 24
+        x: 654
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,20 +668,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a41a8e9444e6c44bbd4780ad5862072
-      internalID: 244980760
+      spriteID: a6f987b29e22f47409d049812da1bf8e
+      internalID: -931738687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_26
+      name: Bombking_yetenek3-Sheet_26
       rect:
         serializedVersion: 2
-        x: 3347
-        y: 35
-        width: 21
-        height: 24
+        x: 680
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -689,20 +689,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 834313b1b1997344ea5145d2f16ee6e0
-      internalID: -606096982
+      spriteID: 51c6d673143869d47b253cc7b3be5cdf
+      internalID: -51184576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_27
+      name: Bombking_yetenek3-Sheet_27
       rect:
         serializedVersion: 2
-        x: 3473
-        y: 35
-        width: 21
-        height: 24
+        x: 704
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,20 +710,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eb873c75eee8594ba4c3f6f7882a41f
-      internalID: 1266829208
+      spriteID: 0df8f1ff90ed79b4e8fb41e0806482da
+      internalID: -518711353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_28
+      name: Bombking_yetenek3-Sheet_28
       rect:
         serializedVersion: 2
-        x: 3599
-        y: 35
-        width: 23
-        height: 24
+        x: 730
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -731,20 +731,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f916dc0e21e174e913dfe061aa8963
-      internalID: -312642814
+      spriteID: 4ffb670fc64675b44b61642ce4d319b6
+      internalID: -1368720030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_29
+      name: Bombking_yetenek3-Sheet_29
       rect:
         serializedVersion: 2
-        x: 3727
-        y: 35
-        width: 21
-        height: 24
+        x: 756
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -752,20 +752,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cdfbc834cc831f4d8c2ccfa723983ce
-      internalID: 13420328
+      spriteID: b9129f992b9d04b4096d9c9f952c3b10
+      internalID: -713550436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_30
+      name: Bombking_yetenek3-Sheet_30
       rect:
         serializedVersion: 2
-        x: 3852
-        y: 35
-        width: 24
-        height: 24
+        x: 782
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -773,20 +773,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fdc4e33c43b3944b4f69f0502cec06
-      internalID: -1830921589
+      spriteID: 87d76e28aa1d48548a8abed40bed0bda
+      internalID: 1919211402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_31
+      name: Bombking_yetenek3-Sheet_31
       rect:
         serializedVersion: 2
-        x: 3981
-        y: 35
-        width: 21
-        height: 24
+        x: 808
+        y: 2
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -794,20 +794,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba53b1cd515afdb4780bd520416d3ce6
-      internalID: 1250604901
+      spriteID: 9d5371dc677658e468719b6e57b3f55a
+      internalID: 459751912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_32
+      name: Bombking_yetenek3-Sheet_32
       rect:
         serializedVersion: 2
-        x: 4106
-        y: 35
-        width: 24
-        height: 24
+        x: 834
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -815,20 +815,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e82c1f492802f6b4ab215908a7bd2e6d
-      internalID: 1406413692
+      spriteID: 5c41c14bef2b19a44928753af82a78fb
+      internalID: -462964172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_33
+      name: Bombking_yetenek3-Sheet_33
       rect:
         serializedVersion: 2
-        x: 4234
-        y: 35
-        width: 22
-        height: 24
+        x: 860
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -836,20 +836,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53308264ade70c048a34e089ab54557e
-      internalID: -1741116127
+      spriteID: ad971a973474e6d4fb8ca0e4576cfdba
+      internalID: 259118031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buyuk_bomba_34
+      name: Bombking_yetenek3-Sheet_34
       rect:
         serializedVersion: 2
-        x: 4360
-        y: 35
-        width: 24
-        height: 24
+        x: 886
+        y: 1
+        width: 20
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -857,8 +857,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 193ac4406946fd549a2157b9b48c07ed
-      internalID: 324981221
+      spriteID: ffb5f52c878f3c24a984fccba7704ead
+      internalID: 148191595
       vertices: []
       indices: 
       edges: []
@@ -874,41 +874,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Buyuk_bomba_31: 1250604901
-      Buyuk_bomba_2: -539412098
-      Buyuk_bomba_16: -1623478806
-      Buyuk_bomba_27: 1266829208
-      Buyuk_bomba_30: -1830921589
-      Buyuk_bomba_32: 1406413692
-      Buyuk_bomba_12: 614019655
-      Buyuk_bomba_8: -842767180
-      Buyuk_bomba_13: 58275961
-      Buyuk_bomba_24: -1366638748
-      Buyuk_bomba_7: -844823866
-      Buyuk_bomba_9: 1463041927
-      Buyuk_bomba_6: -1967589355
-      Buyuk_bomba_10: 636819226
-      Buyuk_bomba_28: -312642814
-      Buyuk_bomba_14: 1691125906
-      Buyuk_bomba_18: 1604765078
-      Buyuk_bomba_0: 383570427
-      Buyuk_bomba_1: 682333228
-      Buyuk_bomba_3: 175082328
-      Buyuk_bomba_15: 1172408668
-      Buyuk_bomba_23: -478161356
-      Buyuk_bomba_21: 1170814712
-      Buyuk_bomba_4: 725404968
-      Buyuk_bomba_17: -846249716
-      Buyuk_bomba_5: 237383555
-      Buyuk_bomba_26: -606096982
-      Buyuk_bomba_29: 13420328
-      Buyuk_bomba_25: 244980760
-      Buyuk_bomba_34: 324981221
-      Buyuk_bomba_33: -1741116127
-      Buyuk_bomba_20: 1752379419
-      Buyuk_bomba_19: 440683404
-      Buyuk_bomba_11: -360236347
-      Buyuk_bomba_22: 2054136211
+      Bombking_yetenek3-Sheet_32: -462964172
+      Bombking_yetenek3-Sheet_15: 151930754
+      Bombking_yetenek3-Sheet_17: -484541462
+      Bombking_yetenek3-Sheet_34: 148191595
+      Bombking_yetenek3-Sheet_18: -400159497
+      Bombking_yetenek3-Sheet_31: 459751912
+      Bombking_yetenek3-Sheet_19: -1712918861
+      Bombking_yetenek3-Sheet_2: 99853262
+      Bombking_yetenek3-Sheet_16: 1730392336
+      Bombking_yetenek3-Sheet_7: -1191679051
+      Bombking_yetenek3-Sheet_28: -1368720030
+      Bombking_yetenek3-Sheet_33: 259118031
+      Bombking_yetenek3-Sheet_0: 689484871
+      Bombking_yetenek3-Sheet_30: 1919211402
+      Bombking_yetenek3-Sheet_13: 1469784885
+      Bombking_yetenek3-Sheet_26: -51184576
+      Bombking_yetenek3-Sheet_14: 864220719
+      Bombking_yetenek3-Sheet_29: -713550436
+      Bombking_yetenek3-Sheet_25: -931738687
+      Bombking_yetenek3-Sheet_4: -1235708520
+      Bombking_yetenek3-Sheet_24: -1045546761
+      Bombking_yetenek3-Sheet_12: -1990519031
+      Bombking_yetenek3-Sheet_20: 114331767
+      Bombking_yetenek3-Sheet_10: 356363720
+      Bombking_yetenek3-Sheet_11: -1322073905
+      Bombking_yetenek3-Sheet_21: 582119877
+      Bombking_yetenek3-Sheet_5: -306174500
+      Bombking_yetenek3-Sheet_8: 1277355488
+      Bombking_yetenek3-Sheet_3: -1465670792
+      Bombking_yetenek3-Sheet_1: -2115380690
+      Bombking_yetenek3-Sheet_27: -518711353
+      Bombking_yetenek3-Sheet_9: -53917017
+      Bombking_yetenek3-Sheet_22: 292716618
+      Bombking_yetenek3-Sheet_23: 1391782935
+      Bombking_yetenek3-Sheet_6: -1974213995
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
