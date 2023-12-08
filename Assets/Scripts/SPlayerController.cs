@@ -122,7 +122,7 @@ public partial class @SPlayerController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c6c29f2e-5a3d-4b26-8c1b-523fe01a4c49"",
-                    ""path"": ""<HID::MY-POWER CO.,LTD. Game Controller for PC>/stick"",
+                    ""path"": ""<HID::Gasia Co.,Ltd Game Controller for Android >/stick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
