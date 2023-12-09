@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +22,10 @@ public class FireTalent : MonoBehaviour
 
     private PlayerInputController _controller;
     private int f_index;
+    private int s_index;
     private bool FireOne = true;
     private bool press = false;
+    private bool SecondFire = false;
 
     private void Awake()
     {
@@ -44,6 +47,15 @@ public class FireTalent : MonoBehaviour
             Talent();
             FireOne = false;
         }
+
+        if (_controller.FirePressed && SecondFire && s_index <= 4)
+        {
+            InstFireBall();
+            s_index++;
+            SecondFire = false;
+        }
+
+        if (!_controller.FirePressed && !FireOne) SecondFire = true;
     }
 
     private void PressTalent()
@@ -68,6 +80,17 @@ public class FireTalent : MonoBehaviour
         f_index = index;
         press = true;
         FireOne = true;
+
+        if (index == 3)
+        {
+            s_index = 0;
+            SecondFire = true;
+        }
+        else
+        {
+            s_index++;
+            SecondFire = false;
+        }
     }
 
     private void Talent()
