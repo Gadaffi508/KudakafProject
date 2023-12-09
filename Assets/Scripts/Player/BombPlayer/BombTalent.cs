@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class BombTalent : MonoBehaviour
@@ -76,23 +73,23 @@ public class BombTalent : MonoBehaviour
                 InstBomb(H_Bomb);
                 break;
             case 3:
-                ChangeCharecter();
+                SwitchCharecter();
                 break;
         }
     }
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent) SelectTalentActive(0);
+        if (_controller.LeftTalent) ActiveTalent(0);
 
-        if (_controller.RightTalent) SelectTalentActive(1);
+        if (_controller.RightTalent) ActiveTalent(1);
 
-        if (_controller.DownTalent) SelectTalentActive(2);
+        if (_controller.DownTalent) ActiveTalent(2);
 
-        if (_controller.UpTalent) SelectTalentActive(3);
+        if (_controller.UpTalent) ActiveTalent(3);
     }
 
-    private void SelectTalentActive(int index)
+    private void ActiveTalent(int index)
     {
         foreach (GameObject key in PressKeys)
         {
@@ -101,8 +98,8 @@ public class BombTalent : MonoBehaviour
 
         PressKeys[index].SetActive(true);
         f_index = index;
-        press = true;
         FireOne = true;
+        press = true;
 
         if (index == 1)
         {
@@ -118,10 +115,11 @@ public class BombTalent : MonoBehaviour
 
     private void InstBomb(GameObject bomb)
     {
-        Instantiate(bomb, FirePos.position, transform.rotation);
+        Instantiate(bomb, FirePos.position, FirePos.rotation);
+        bomb.GetComponent<Transform>().rotation = Quaternion.Euler(0,0,0);
     }
 
-    private void ChangeCharecter()
+    private void SwitchCharecter()
     {
         this.gameObject.SetActive(false);
         BombCharecter.SetActive(true);
