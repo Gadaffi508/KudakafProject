@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7602592426215004417}
   - component: {fileID: 7602592426215004418}
   - component: {fileID: 2107607435701031200}
+  - component: {fileID: 5526212883417254247}
+  - component: {fileID: 567295858110686890}
   m_Layer: 0
   m_Name: FireWind
   m_TagString: Untagged
@@ -127,3 +129,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5526212883417254247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602592426215004419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd097570a991aa4b8f5a33c84504f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Thrust: 20
+--- !u!61 &567295858110686890
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602592426215004419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18300804, y: -0.45468998}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1.6, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.79627424, y: 0.69061995}
+  m_EdgeRadius: 0

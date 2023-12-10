@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class BombTalent : MonoBehaviour
 {
+    public Transform Cursor;
+
     [Header("Fire AllPos")]
     public Transform FirePos;
 
@@ -18,6 +21,7 @@ public class BombTalent : MonoBehaviour
     [Header("Cool Down Panel")]
     public GameObject BombPanel;
     public GameObject[] PressKeys;
+    public float LCoolDownTime, RCoolDownTime, DCoolDownTime;
 
     private PlayerInputController _controller;
     private int f_index;
@@ -25,6 +29,10 @@ public class BombTalent : MonoBehaviour
     private bool FireOne = true;
     private bool press = false;
     private bool SecondFire = false;
+
+    private bool lefttalent = true,
+    righttalent = true,
+    downtalent = true;
 
     private void Awake()
     {
@@ -65,12 +73,15 @@ public class BombTalent : MonoBehaviour
         {
             case 0:
                 InstBomb(B_Bomb);
+                StartCoroutine(LCoolDown());
                 break;
             case 1:
                 InstBomb(C_Bomb);
+                StartCoroutine(RCoolDown());
                 break;
             case 2:
                 InstBomb(H_Bomb);
+                StartCoroutine(DCoolDown());
                 break;
             case 3:
                 SwitchCharecter();
@@ -80,11 +91,11 @@ public class BombTalent : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent) ActiveTalent(0);
+        if (_controller.LeftTalent && lefttalent) ActiveTalent(0);
 
-        if (_controller.RightTalent) ActiveTalent(1);
+        if (_controller.RightTalent && righttalent) ActiveTalent(1);
 
-        if (_controller.DownTalent) ActiveTalent(2);
+        if (_controller.DownTalent && downtalent) ActiveTalent(2);
 
         if (_controller.UpTalent) ActiveTalent(3);
     }
@@ -115,13 +126,37 @@ public class BombTalent : MonoBehaviour
 
     private void InstBomb(GameObject bomb)
     {
-        Instantiate(bomb, FirePos.position, FirePos.rotation);
-        bomb.GetComponent<Transform>().rotation = Quaternion.Euler(0,0,0);
+        GameObject bombObj = Instantiate(bomb, FirePos.position, FirePos.rotation);
+        if (Cursor.rotation.z > 0 && Cursor.rotation.z < 180)
+        {
+            bombObj.GetComponent<BulletManager>().Scale();
+        }
     }
 
     private void SwitchCharecter()
     {
         this.gameObject.SetActive(false);
         BombCharecter.SetActive(true);
+    }
+
+    IEnumerator LCoolDown()
+    {
+        lefttalent = false;
+        yield return new WaitForSeconds(LCoolDownTime);
+        lefttalent = true;
+    }
+
+    IEnumerator RCoolDown()
+    {
+        righttalent = false;
+        yield return new WaitForSeconds(RCoolDownTime);
+        righttalent = true;
+    }
+
+    IEnumerator DCoolDown()
+    {
+        downtalent = false;
+        yield return new WaitForSeconds(DCoolDownTime);
+        downtalent = true;
     }
 }

@@ -25,4 +25,11 @@ public abstract class BulletManager : MonoBehaviour
     }
 
     public abstract void TriggerFnc(Collision2D collision);
+
+    public void Scale()
+    {
+        Vector2 scale = transform.localScale;
+        scale.y *= -1;
+        transform.localScale = scale;
+    }
 }

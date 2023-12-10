@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FireTalent : MonoBehaviour
 {
-    [Header("Lef Talent"),Tooltip("Hight Wall")]
+    [Header("Lef Talent"), Tooltip("Hight Wall")]
     public GameObject FireWall;
     [Header("Right Talent"), Tooltip("Burning Circle")]
     public GameObject FireCircle;
@@ -19,6 +19,7 @@ public class FireTalent : MonoBehaviour
     [Header("Cool Down Panel")]
     public GameObject FirePanel;
     public GameObject[] PressKeys;
+    public float LCoolDownTime, RCoolDownTime, UCoolDownTime, DCoolDownTime;
 
     private PlayerInputController _controller;
     private int f_index;
@@ -26,6 +27,11 @@ public class FireTalent : MonoBehaviour
     private bool FireOne = true;
     private bool press = false;
     private bool SecondFire = false;
+
+    private bool lefttalent = true,
+    righttalent = true,
+    uptalent = true,
+    downtalent = true;
 
     private void Awake()
     {
@@ -60,13 +66,13 @@ public class FireTalent : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent) SelectTalentActive(0);
+        if (_controller.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_controller.RightTalent) SelectTalentActive(1);
+        if (_controller.RightTalent && righttalent) SelectTalentActive(1);
 
-        if (_controller.DownTalent) SelectTalentActive(2);
+        if (_controller.DownTalent && downtalent) SelectTalentActive(2);
 
-        if (_controller.UpTalent) SelectTalentActive(3);
+        if (_controller.UpTalent && uptalent) SelectTalentActive(3);
     }
 
     private void SelectTalentActive(int index)
@@ -91,6 +97,7 @@ public class FireTalent : MonoBehaviour
             s_index++;
             SecondFire = false;
         }
+
     }
 
     private void Talent()
@@ -99,15 +106,19 @@ public class FireTalent : MonoBehaviour
         {
             case 0:
                 InstFireWall();
+                StartCoroutine(LCoolDown());
                 break;
             case 1:
                 InstFireCircle();
+                StartCoroutine(RCoolDown());
                 break;
             case 2:
                 InstFireWind();
+                StartCoroutine(DCoolDown()); 
                 break;
             case 3:
                 InstFireBall();
+                StartCoroutine(UCoolDown());
                 break;
             default:
                 Debug.Log("Dont Press");
@@ -118,7 +129,7 @@ public class FireTalent : MonoBehaviour
     private void InstFireWall()
     {
         GameObject Wall = Instantiate(FireWall, FireArea(), transform.rotation);
-        Destroy(Wall,1f);
+        Destroy(Wall, 1f);
     }
 
     private void InstFireCircle()
@@ -129,10 +140,8 @@ public class FireTalent : MonoBehaviour
 
     private void InstFireWind()
     {
-        GameObject Wind = Instantiate(FireWind, transform.position, transform.rotation);
-        Wind.GetComponent<Transform>().localScale = new Vector2(-transform.localScale.x,transform.localScale.y);
-        Wind.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x,0) * Time.deltaTime * 400000);
-        Destroy(Wind, 1f);
+        GameObject bullet = InstateFireProperty(FireWind);
+        Destroy(bullet, 1f);
     }
 
     private void InstFireBall()
@@ -151,4 +160,32 @@ public class FireTalent : MonoBehaviour
     }
 
     private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj, FirePos.position, FirePos.rotation);
+
+    IEnumerator LCoolDown()
+    {
+        lefttalent = false;
+        yield return new WaitForSeconds(LCoolDownTime);
+        lefttalent = true;
+    }
+
+    IEnumerator RCoolDown()
+    {
+        righttalent = false;
+        yield return new WaitForSeconds(RCoolDownTime);
+        righttalent = true;
+    }
+
+    IEnumerator DCoolDown()
+    {
+        downtalent = false;
+        yield return new WaitForSeconds(DCoolDownTime);
+        downtalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        uptalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        uptalent = true;
+    }
 }
