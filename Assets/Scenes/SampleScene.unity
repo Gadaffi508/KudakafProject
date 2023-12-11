@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: {fileID: 1975794172}
-  BosPlayer: {fileID: 374008669}
+  BosPlayer: {fileID: 1972354051}
   "Th\u0131sPlayer": {fileID: 637084167}
   FirePlayer: 0
 --- !u!1 &242777428
