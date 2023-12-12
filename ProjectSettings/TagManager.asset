@@ -8,6 +8,7 @@ TagManager:
   - GunObject
   - BosObject
   - FireBullet
+  - Moonkey
   layers:
   - Default
   - TransparentFX

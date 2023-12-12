@@ -18,17 +18,23 @@ public class Bananaman : MonoBehaviour
     public int jumpLenghtTime;
     [Header("Up Talent"), Tooltip("collecting and throwing banana mines")]
     public List<GameObject> CollectBananaMine = new List<GameObject>();
+    public List<GameObject> UpTalentImage = new List<GameObject>();
+    public int MineLenght = 0;
 
     [Header("Cool Down Panel")]
     public GameObject Bananapanel;
     public GameObject[] PressKeys;
-    public float LCoolDownTime, RCoolDownTime, DCoolDownTime,UCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, DCoolDownTime, UCoolDownTime;
 
     private PlayerInputController _controller;
     private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
+
+    private bool UpTalentStart = false;
+    private bool UptalentPress = false;
+    private int MineCLenght = 0;
 
     private bool lefttalent = true,
     righttalent = true,
@@ -41,10 +47,7 @@ public class Bananaman : MonoBehaviour
         _player = GetComponentInParent<Player>();
         Bananapanel.SetActive(true);
 
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
+        ForeachObjsActive(PressKeys);
     }
 
     private void Update()
@@ -56,6 +59,14 @@ public class Bananaman : MonoBehaviour
             Talent();
             FireOne = false;
         }
+
+        if (_controller.FirePressed && UpTalentStart && MineCLenght > 0 && UptalentPress == false)
+        {
+            CollectStart();
+            UptalentPress = true;
+        }
+
+        if (_controller.FirePressed == false) UptalentPress = false;
 
         if (_player.jumplenght > jumpLenghtTime)
         {
@@ -80,6 +91,7 @@ public class Bananaman : MonoBehaviour
                 StartCoroutine(DCoolDown());
                 break;
             case 3:
+                Collection();
                 StartCoroutine(UCoolDown());
                 break;
         }
@@ -104,17 +116,61 @@ public class Bananaman : MonoBehaviour
         }
     }
 
+    private void Collection()
+    {
+        MineLenght = CollectBananaMine.Count;
+        if (MineLenght > 7) MineCLenght = 7;
+        else MineCLenght = MineLenght;
+
+        while (MineCLenght > 0)
+        {
+            MineCLenght--;
+            UpTalentImage[MineCLenght].SetActive(true);
+        }
+
+        foreach (GameObject Mine in CollectBananaMine)
+        {
+            Mine.GetComponent<Mine>().Collection();
+        }
+        CollectBananaMine.Clear();
+
+        StartCoroutine(DelayUpTalentS());
+    }
+
+    IEnumerator DelayUpTalentS()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UpTalentStart = true;
+
+        MineCLenght = MineLenght;
+    }
+
+    private void CollectStart()
+    {
+        InsBananaBullet(Only_Banana, FirePos);
+        MineCLenght--;
+        if (MineCLenght < 8) UpTalentImage[MineCLenght].SetActive(false);
+    }
+
     private void ActiveTalent(int index)
     {
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
+        ForeachObjsActive(PressKeys);
 
         PressKeys[index].SetActive(true);
         f_index = index;
         FireOne = true;
         press = true;
+
+        if (f_index == 3)
+        {
+            MineLenght = 0;
+        }
+        else
+        {
+            UpTalentStart = false;
+            ForeachObjsActive(UpTalentImage);
+
+        }
     }
 
     IEnumerator LCoolDown()
@@ -122,6 +178,7 @@ public class Bananaman : MonoBehaviour
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
         lefttalent = true;
+        FireOne = false;
     }
 
     IEnumerator RCoolDown()
@@ -129,6 +186,7 @@ public class Bananaman : MonoBehaviour
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
         righttalent = true;
+        FireOne = false;
     }
 
     IEnumerator DCoolDown()
@@ -145,6 +203,7 @@ public class Bananaman : MonoBehaviour
         _player.bananaTalent = false;
 
         downtalent = true;
+        FireOne = false;
     }
 
     IEnumerator UCoolDown()
@@ -152,5 +211,22 @@ public class Bananaman : MonoBehaviour
         uptalen = false;
         yield return new WaitForSeconds(UCoolDownTime);
         uptalen = true;
+        FireOne = false;
+    }
+
+    public void ForeachObjsActive(GameObject[] OBjs)
+    {
+        foreach (GameObject key in OBjs)
+        {
+            key.SetActive(false);
+        }
+    }
+
+    public void ForeachObjsActive(List<GameObject> OBjs)
+    {
+        foreach (GameObject key in OBjs)
+        {
+            key.SetActive(false);
+        }
     }
 }

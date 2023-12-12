@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Bananaman _bananaman;
+
     void Start()
     {
-        
+        _bananaman = GameObject.FindGameObjectWithTag("Moonkey").gameObject.GetComponent<Bananaman>();
+        _bananaman.CollectBananaMine.Add(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (BorderX() || BorderY())
+        {
+            _bananaman.CollectBananaMine.Remove(this.gameObject);
+
+            Destroy(gameObject);
+        }
     }
+
+    public void Collection()
+    {
+        Destroy(gameObject);
+    }
+
+    private bool BorderX() => transform.position.x < -10 || transform.position.x > 10;
+
+    private bool BorderY() => transform.position.y < -6 || transform.position.y > 6;
 }
