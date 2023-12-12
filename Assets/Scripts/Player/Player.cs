@@ -6,8 +6,13 @@ public class Player: MonoBehaviour
 {
     [Range (0,20)]
     public float speed;
+    public float R_speed;
+    public float L_speed;
     public float jumpForce;
-    
+
+    public bool bananaTalent = false;
+    public int jumplenght = 0;
+
     [SerializeField] private float dashSpeed;
     [Range(0, 1)]
     [SerializeField] private float dashDuration;
@@ -33,9 +38,16 @@ public class Player: MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
+
+            jumplenght++;
         }
         
         Run();
+
+        if (_playerInputController.JumpPressed == false && bananaTalent == true)
+        {
+            jump = true;
+        }
         
         if (_playerInputController.DashPress && !isDashing) StartCoroutine(Dash());
     }
@@ -50,8 +62,8 @@ public class Player: MonoBehaviour
 
     public void Run()
     {
-        if (_playerInputController.RunPrees) speed = 10;
-        else speed = 5;
+        if (_playerInputController.RunPrees) speed = R_speed;
+        else speed = L_speed;
     }
     
     private IEnumerator Dash()

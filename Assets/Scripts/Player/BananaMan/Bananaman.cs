@@ -1,43 +1,45 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class BombTalent : MonoBehaviour
+public class Bananaman : MonoBehaviour
 {
-    public Transform Cursor;
-
     [Header("Fire AllPos")]
-    public Transform FirePos;
+    public Transform[] FirePos;
 
-    [Header("Lef Talent"), Tooltip("Basic Bomb")]
-    public GameObject B_Bomb;
-    [Header("Right Talent"), Tooltip("Clinging Bomb")]
-    public GameObject C_Bomb;
-    [Header("Down Talent"), Tooltip("High Bomb")]
-    public GameObject H_Bomb;
-
-    [Header("Up Talent"), Tooltip("Change Charecter")]
-    public GameObject BombCharecter;
+    [Header("Lef Talent"), Tooltip("Only Banana Bomb")]
+    public GameObject[] Only_Banana;
+    [Header("Right Talent"), Tooltip("A Lot of Only_Banana")]
+    public GameObject[] Bananas;
+    [Header("Down Talent"), Tooltip("Speed and Jump Enhancer")]
+    public float Power_Enhancer_speed, Power_Enhancer_jump;
+    public int jumpLenghtTime;
+    [Header("Up Talent"), Tooltip("collecting and throwing banana mines")]
+    public List<GameObject> CollectBananaMine = new List<GameObject>();
 
     [Header("Cool Down Panel")]
-    public GameObject BombPanel;
+    public GameObject Bananapanel;
     public GameObject[] PressKeys;
-    public float LCoolDownTime, RCoolDownTime, DCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, DCoolDownTime,UCoolDownTime;
 
     private PlayerInputController _controller;
+    private Player _player;
     private int f_index;
-    private int S_index = 1;
     private bool FireOne = true;
     private bool press = false;
-    private bool SecondFire = false;
 
     private bool lefttalent = true,
     righttalent = true,
-    downtalent = true;
+    downtalent = true,
+    uptalen = true;
 
     private void Awake()
     {
         _controller = GetComponentInParent<PlayerInputController>();
-        BombPanel.SetActive(true);
+        _player = GetComponentInParent<Player>();
+        Bananapanel.SetActive(true);
 
         foreach (GameObject key in PressKeys)
         {
@@ -53,18 +55,13 @@ public class BombTalent : MonoBehaviour
         {
             Talent();
             FireOne = false;
-            S_index++;
-            SecondFire = false;
         }
 
-        if (_controller.FirePressed && SecondFire && S_index == 1)
+        if (_player.jumplenght > jumpLenghtTime)
         {
-            InstBomb(C_Bomb);
-            S_index++;
-            SecondFire = false;
+            _player.jumplenght = 0;
+            _player.bananaTalent = false;
         }
-
-        if (!_controller.FirePressed && !FireOne) SecondFire = true;
     }
 
     private void Talent()
@@ -72,19 +69,18 @@ public class BombTalent : MonoBehaviour
         switch (f_index)
         {
             case 0:
-                InstBomb(B_Bomb);
+                InsBananaBullet(Only_Banana, FirePos);
                 StartCoroutine(LCoolDown());
                 break;
             case 1:
-                InstBomb(C_Bomb);
+                InsBananaBullet(Bananas, FirePos);
                 StartCoroutine(RCoolDown());
                 break;
             case 2:
-                InstBomb(H_Bomb);
                 StartCoroutine(DCoolDown());
                 break;
             case 3:
-                SwitchCharecter();
+                StartCoroutine(UCoolDown());
                 break;
         }
     }
@@ -97,7 +93,15 @@ public class BombTalent : MonoBehaviour
 
         if (_controller.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_controller.UpTalent) ActiveTalent(3);
+        if (_controller.UpTalent && uptalen) ActiveTalent(3);
+    }
+
+    private void InsBananaBullet(GameObject[] B_bullet, Transform[] T_bullet)
+    {
+        for (int i = 0; i < B_bullet.Length; i++)
+        {
+            Instantiate(B_bullet[i], T_bullet[i].position, T_bullet[i].rotation);
+        }
     }
 
     private void ActiveTalent(int index)
@@ -111,35 +115,6 @@ public class BombTalent : MonoBehaviour
         f_index = index;
         FireOne = true;
         press = true;
-
-        if (index == 1)
-        {
-            S_index = 0;
-            SecondFire = true;
-        }
-        else
-        {
-            S_index++;
-            SecondFire = false;
-        }
-    }
-
-    private void InstBomb(GameObject bomb)
-    {
-        GameObject bombObj = Instantiate(bomb, FirePos.position, FirePos.rotation);
-        if (Cursor.rotation.z > 0 && Cursor.rotation.z < 180)
-        {
-            bombObj.GetComponent<BulletManager>().Scale();
-        }
-    }
-
-    private void SwitchCharecter()
-    {
-        lefttalent = true;
-        righttalent = true;
-        downtalent = true;
-        this.gameObject.SetActive(false);
-        BombCharecter.SetActive(true);
     }
 
     IEnumerator LCoolDown()
@@ -158,8 +133,24 @@ public class BombTalent : MonoBehaviour
 
     IEnumerator DCoolDown()
     {
+        _player.jumplenght = 0;
         downtalent = false;
+        _player.L_speed += Power_Enhancer_speed;
+        _player.bananaTalent = true;
+
         yield return new WaitForSeconds(DCoolDownTime);
+        _player.L_speed -= Power_Enhancer_speed;
+
+        _player.jumplenght = 0;
+        _player.bananaTalent = false;
+
         downtalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        uptalen = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        uptalen = true;
     }
 }
