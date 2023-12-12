@@ -9,6 +9,11 @@ public class EyeFollow : MonoBehaviour
 
     void Update()
     {
+        transform.localPosition = LocalPos();
+    }
+
+    private Vector3 LocalPos()
+    {
         Vector3 mousePos = Input.mousePosition;
 
         Vector3 scenePos = Camera.main.WorldToScreenPoint(transform.position);
@@ -17,6 +22,6 @@ public class EyeFollow : MonoBehaviour
 
         Vector3 dir = transform.TransformDirection(offset).normalized;
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition,dir * amount,Time.deltaTime * speed);
+        return Vector3.Lerp(transform.localPosition, dir * amount, Time.deltaTime * speed);
     }
 }
