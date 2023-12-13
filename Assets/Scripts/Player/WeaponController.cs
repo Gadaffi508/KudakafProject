@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class WeaponController : MonoBehaviour
 {
     public GameObject Gun;
+    public GameObject Gunlisher;
     public GameObject BosPlayer;
     public GameObject ThısPlayer;
     public bool FirePlayer = false;
@@ -25,7 +26,7 @@ public class WeaponController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GunObject"))
         {
-            Gun.SetActive(true);
+            Gunlisher.SetActive(true);
 
             Destroy(other.gameObject);
         }
