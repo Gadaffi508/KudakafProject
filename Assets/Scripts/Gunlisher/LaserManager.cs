@@ -1,22 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
-public class KnifeManager : MonoBehaviour
+public class LaserManager : MonoBehaviour
 {
-    public Transform PlayerPos;
-    public Transform TosKnifePos;
-
-    [Header("Lef Talent"), Tooltip("Toss Knife")]
-    public GameObject KnifeObj;
-
-    [Header("Right Talent"), Tooltip("Dash Obj and Damage")]
-    public GameObject KnifeDash;
+    [Header("Line Options")]
+    public LineRenderer lineRenderer;
+    public Transform LineFirePos;
 
     [Header("Cool Down Panel")]
-    public GameObject KnifePanel;
+    public GameObject LaserPanel;
     public GameObject[] PressKeys;
     public float LCoolDownTime, RCoolDownTime;
 
@@ -24,7 +17,6 @@ public class KnifeManager : MonoBehaviour
 
     private PlayerInputController _controller;
     private SPlayerInput _scontroller;
-    private Player player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -36,13 +28,15 @@ public class KnifeManager : MonoBehaviour
     {
         _controller = GetComponentInParent<PlayerInputController>();
         _scontroller = GetComponentInParent<SPlayerInput>();
-        player = GetComponentInParent<Player>();
-        KnifePanel.SetActive(true);
+        lineRenderer = GetComponentInChildren<LineRenderer>();
+        LaserPanel.SetActive(true);
 
         foreach (GameObject key in PressKeys)
         {
             key.SetActive(false);
         }
+
+        lineRenderer.enabled = false;
     }
 
     private void Update()
@@ -81,18 +75,47 @@ public class KnifeManager : MonoBehaviour
         switch (f_index)
         {
             case 0:
-                StartCoroutine(player.Dash());
-                InstateFireProperty(KnifeDash, PlayerPos, true);
+                LaserNearAttack();
                 StartCoroutine(LCoolDown());
                 break;
             case 1:
-                InstateFireProperty(KnifeObj, TosKnifePos);
+                LaserShortAttack();
                 StartCoroutine(RCoolDown());
                 break;
             default:
                 Debug.Log("Dont Press");
                 break;
         }
+    }
+
+    public void LaserNearAttack()
+    {
+        LaserShortAttack();
+
+        StartCoroutine(StartLaserAttack());
+    }
+
+    public void LaserShortAttack()
+    {
+        lineRenderer.enabled = true;
+
+        float angle = LineFirePos.eulerAngles.z;
+
+        // Lazerin çýkýþ yönünü hesapla
+        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 20;
+
+        // LineRenderer'ýn pozisyonlarýný ayarla
+        lineRenderer.SetPosition(0, LineFirePos.position);
+        lineRenderer.SetPosition(1, LineFirePos.position + laserDirection);
+    }
+
+    IEnumerator StartLaserAttack()
+    {
+        yield return new WaitForSeconds(1);
+        lineRenderer.SetWidth(0.5f, 0.5f);
+        yield return new WaitForSeconds(2);
+        lineRenderer.SetWidth(0.1f, 0.1f);
+        lineRenderer.enabled = false;
     }
 
     IEnumerator LCoolDown()
@@ -107,16 +130,6 @@ public class KnifeManager : MonoBehaviour
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
         righttalent = true;
-    }
-
-    private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos) => Instantiate(InsObj, FirePos.position, FirePos.rotation);
-
-    private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos, bool parent)
-    {
-        GameObject dashObj = Instantiate(InsObj, FirePos.position, FirePos.rotation, FirePos.parent);
-        dashObj.GetComponent<Transform>().localScale = -FirePos.localScale;
-        Destroy(dashObj, 1f);
-        return dashObj;
     }
 
     private bool Attack() => isFirstPerson && _controller.FirePressed || !isFirstPerson && _scontroller.SFirePressed;
