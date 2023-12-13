@@ -66,7 +66,7 @@ public class Player: MonoBehaviour
         else speed = L_speed;
     }
     
-    private IEnumerator Dash()
+    public IEnumerator Dash()
     {
         rb.AddForce(Vector2.right *transform.GetComponentInChildren<PlayerSpiteManager>().LocalX* dashSpeed);
         isDashing = true;
