@@ -13,6 +13,8 @@ public class Player: MonoBehaviour
     public bool bananaTalent = false;
     public int jumplenght = 0;
 
+    public bool SpeedZero = false;
+
     [SerializeField] private float dashSpeed;
     [Range(0, 1)]
     [SerializeField] private float dashDuration;
@@ -31,8 +33,8 @@ public class Player: MonoBehaviour
 
     private void Update()
     {
-        if(!isDashing && !İsFly) rb.velocity = RigidBodyVelocityMove();
-        if(!isDashing && İsFly) rb.velocity = RigidBodyVelocityFly();
+        if(!isDashing && !İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityMove();
+        if(!isDashing && İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityFly();
 
         if (_playerInputController.JumpPressed && jump)
         {

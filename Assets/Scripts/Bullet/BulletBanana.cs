@@ -14,8 +14,8 @@ public class BulletBanana : BulletManager
         if (trigger == false)
         {
             Instantiate(Banana_Mine, transform.position, Banana_Mine.transform.rotation);
+            trigger = true;
         }
-        Destroy(this.gameObject);
     }
 
     public void Mine()

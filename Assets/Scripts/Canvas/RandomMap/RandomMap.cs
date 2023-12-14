@@ -20,4 +20,9 @@ public class RandomMap : MonoBehaviour
         Debug.Log("Yeni Rastgele Sayý: " + random);
         SceneManager.LoadScene(random);
     }
+
+    public void QuýtGame()
+    {
+        Application.Quit();
+    }
 }

@@ -8,12 +8,12 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Bananaman : MonoBehaviour
 {
     [Header("Fire AllPos")]
-    public Transform[] FirePos;
+    public Transform FirePos;
 
     [Header("Lef Talent"), Tooltip("Only Banana Bomb")]
-    public GameObject[] Only_Banana;
+    public GameObject Only_Banana;
     [Header("Right Talent"), Tooltip("A Lot of Only_Banana")]
-    public GameObject[] Bananas;
+    public GameObject Bananas;
     [Header("Down Talent"), Tooltip("Speed and Jump Enhancer")]
     public float Power_Enhancer_speed, Power_Enhancer_jump;
     public int jumpLenghtTime;
@@ -109,12 +109,9 @@ public class Bananaman : MonoBehaviour
         if (_controller != null && _controller.UpTalent && uptalen) ActiveTalent(3);
     }
 
-    private void InsBananaBullet(GameObject[] B_bullet, Transform[] T_bullet)
+    private void InsBananaBullet(GameObject B_bullet, Transform T_bullet)
     {
-        for (int i = 0; i < B_bullet.Length; i++)
-        {
-            Instantiate(B_bullet[i], T_bullet[i].position, T_bullet[i].rotation);
-        }
+        Instantiate(B_bullet, T_bullet.position, T_bullet.rotation);
     }
 
     private void Collection()
