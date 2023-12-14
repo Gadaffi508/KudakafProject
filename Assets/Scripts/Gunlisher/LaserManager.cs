@@ -6,7 +6,9 @@ public class LaserManager : MonoBehaviour
 {
     [Header("Line Options")]
     public LineRenderer lineRenderer;
+    public LineRenderer[] LineRs;
     public Transform LineFirePos;
+    public Transform[] LinePosRs;
 
     [Header("Cool Down Panel")]
     public GameObject LaserPanel;
@@ -14,6 +16,7 @@ public class LaserManager : MonoBehaviour
     public float LCoolDownTime, RCoolDownTime;
 
     public bool isFirstPerson = true;
+    Vector2 lineEnd;
 
     private PlayerInputController _controller;
     private SPlayerInput _scontroller;
@@ -47,6 +50,17 @@ public class LaserManager : MonoBehaviour
         {
             Talent();
             FireOne = false;
+        }
+
+        if (!righttalent) LaserShortAttack();
+
+        lineEnd = LineFirePos.position + LinePos();
+
+        RaycastHit2D hit = Physics2D.Linecast(LineFirePos.position, lineEnd);
+
+        if (hit.collider != null)
+        {
+            lineEnd = hit.point;
         }
     }
 
@@ -90,38 +104,35 @@ public class LaserManager : MonoBehaviour
 
     public void LaserNearAttack()
     {
-        LaserShortAttack();
+        foreach (var line in LineRs)
+        {
+            line.enabled = true;
+        }
 
-        StartCoroutine(StartLaserAttack());
+        for (int i = 0; i < LineRs.Length; i++)
+        {
+            LineRs[i].SetPosition(0, LinePosRs[i].position);
+            LineRs[i].SetPosition(1, LinePosRs[i].position + LinePos());
+        }
     }
 
     public void LaserShortAttack()
     {
         lineRenderer.enabled = true;
 
-        float angle = LineFirePos.eulerAngles.z;
-
-        // Lazerin çýkýþ yönünü hesapla
-        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 20;
-
         // LineRenderer'ýn pozisyonlarýný ayarla
         lineRenderer.SetPosition(0, LineFirePos.position);
-        lineRenderer.SetPosition(1, LineFirePos.position + laserDirection);
-    }
-
-    IEnumerator StartLaserAttack()
-    {
-        yield return new WaitForSeconds(1);
-        lineRenderer.SetWidth(0.5f, 0.5f);
-        yield return new WaitForSeconds(2);
-        lineRenderer.SetWidth(0.1f, 0.1f);
-        lineRenderer.enabled = false;
+        lineRenderer.SetPosition(1, lineEnd);
     }
 
     IEnumerator LCoolDown()
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        foreach (var line in LineRs)
+        {
+            line.enabled = false;
+        }
         lefttalent = true;
     }
 
@@ -129,8 +140,18 @@ public class LaserManager : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        lineRenderer.enabled = false;
         righttalent = true;
     }
 
     private bool Attack() => isFirstPerson && _controller.FirePressed || !isFirstPerson && _scontroller.SFirePressed;
+
+    private Vector3 LinePos()
+    {
+        float angle = LineFirePos.eulerAngles.z;
+
+        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 20;
+
+        return laserDirection;
+    }
 }
