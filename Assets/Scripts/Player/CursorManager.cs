@@ -8,8 +8,6 @@ public class CursorManager : MonoBehaviour
     public float CursorSpeed;
     public GameObject CursorObj;
 
-    public bool IsPlayerFirst;
-
     private void Update()
     {
         if (İnputDirection() != Vector2.zero) CursorObj.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(Angle(), Vector3.forward), CursorSpeed * Time.deltaTime);
@@ -19,15 +17,7 @@ public class CursorManager : MonoBehaviour
 
     private Vector2 İnputDirection()
     {
-        if (IsPlayerFirst)
-        {
-            return PlayerInputController.Controller.CursorPos.normalized;
-        }
-        else
-        {
-            //return SPlayerInput.Controller.CursorPos.normalized;
-            return SPlayerInput._SController.sCursorPos.normalized;
-        }
+        return PlayerInputController.Controller.CursorPos.normalized;
     }
     
     private float Angle() => Mathf.Atan2(-İnputDirection().x, İnputDirection().y) * Mathf.Rad2Deg;

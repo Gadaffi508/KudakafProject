@@ -13,12 +13,10 @@ public class WeaponController : MonoBehaviour
     public bool FirePlayer = false;
 
     private Player _Player;
-    private SPlayer _SPlayer;
 
     private void Start()
     {
         _Player = GetComponent<Player>();
-        _SPlayer = GetComponent<SPlayer>();
         Gun.SetActive(false);
     }
 
@@ -36,7 +34,6 @@ public class WeaponController : MonoBehaviour
             Gun.SetActive(true);
 
             if (_Player != null && FirePlayer) _Player.İsFly = true;
-            if(_SPlayer != null && FirePlayer) _SPlayer.İsFly = true;
 
             BosPlayer.SetActive(true);
             ThısPlayer.SetActive(false);

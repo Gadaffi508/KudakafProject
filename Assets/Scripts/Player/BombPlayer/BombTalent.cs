@@ -49,7 +49,7 @@ public class BombTalent : MonoBehaviour
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_controller != null && _controller.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -57,14 +57,14 @@ public class BombTalent : MonoBehaviour
             SecondFire = false;
         }
 
-        if (_controller.FirePressed && SecondFire && S_index == 1)
+        if (_controller != null && _controller.FirePressed && SecondFire && S_index == 1)
         {
             InstBomb(C_Bomb);
             S_index++;
             SecondFire = false;
         }
 
-        if (!_controller.FirePressed && !FireOne) SecondFire = true;
+        if (_controller != null && !_controller.FirePressed && !FireOne) SecondFire = true;
     }
 
     private void Talent()
@@ -91,13 +91,13 @@ public class BombTalent : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent && lefttalent) ActiveTalent(0);
+        if (_controller != null && _controller.LeftTalent && lefttalent) ActiveTalent(0);
 
-        if (_controller.RightTalent && righttalent) ActiveTalent(1);
+        if (_controller != null && _controller.RightTalent && righttalent) ActiveTalent(1);
 
-        if (_controller.DownTalent && downtalent) ActiveTalent(2);
+        if (_controller != null && _controller.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_controller.UpTalent) ActiveTalent(3);
+        if (_controller != null && _controller.UpTalent) ActiveTalent(3);
     }
 
     private void ActiveTalent(int index)

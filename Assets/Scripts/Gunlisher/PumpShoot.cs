@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class LaserManager : MonoBehaviour
+public class PumpShoot : MonoBehaviour
 {
-    [Header("Line Options")]
-    public LineRenderer lineRenderer;
-    public LineRenderer[] LineRs;
-    public Transform LineFirePos;
-    public Transform[] LinePosRs;
+    [Header("Lef Talent"), Tooltip("Shotgun blast spread")]
+    public GameObject Bullet;
+    public Transform[] FirePos;
 
+    [Header("Right Talent"), Tooltip("Heal")]
+    public float HealAmount;
+    public float speedAmount;
     [Header("Cool Down Panel")]
-    public GameObject LaserPanel;
+    public GameObject PumpPanel;
     public GameObject[] PressKeys;
     public float LCoolDownTime, RCoolDownTime;
 
-    Vector2 lineEnd;
-
     private PlayerInputController _controller;
+    private Player player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -28,15 +29,13 @@ public class LaserManager : MonoBehaviour
     private void Start()
     {
         _controller = GetComponentInParent<PlayerInputController>();
-        lineRenderer = GetComponentInChildren<LineRenderer>();
-        LaserPanel.SetActive(true);
+        player = GetComponentInParent<Player>();
+        PumpPanel.SetActive(true);
 
         foreach (GameObject key in PressKeys)
         {
             key.SetActive(false);
         }
-
-        lineRenderer.enabled = false;
     }
 
     private void Update()
@@ -47,17 +46,6 @@ public class LaserManager : MonoBehaviour
         {
             Talent();
             FireOne = false;
-        }
-
-        if (!righttalent) LaserShortAttack();
-
-        lineEnd = LineFirePos.position + LinePos();
-
-        RaycastHit2D hit = Physics2D.Linecast(LineFirePos.position, lineEnd);
-
-        if (hit.collider != null)
-        {
-            lineEnd = hit.point;
         }
     }
 
@@ -86,11 +74,10 @@ public class LaserManager : MonoBehaviour
         switch (f_index)
         {
             case 0:
-                LaserNearAttack();
+                Shotgunspread();
                 StartCoroutine(LCoolDown());
                 break;
             case 1:
-                LaserShortAttack();
                 StartCoroutine(RCoolDown());
                 break;
             default:
@@ -99,54 +86,27 @@ public class LaserManager : MonoBehaviour
         }
     }
 
-    public void LaserNearAttack()
+    private void Shotgunspread()
     {
-        foreach (var line in LineRs)
+        for (int i = 0; i < FirePos.Length; i++)
         {
-            line.enabled = true;
+            Instantiate(Bullet, FirePos[i].position, FirePos[i].rotation);
         }
-
-        for (int i = 0; i < LineRs.Length; i++)
-        {
-            LineRs[i].SetPosition(0, LinePosRs[i].position);
-            LineRs[i].SetPosition(1, LinePosRs[i].position + LinePos());
-        }
-    }
-
-    public void LaserShortAttack()
-    {
-        lineRenderer.enabled = true;
-
-        // LineRenderer'ýn pozisyonlarýný ayarla
-        lineRenderer.SetPosition(0, LineFirePos.position);
-        lineRenderer.SetPosition(1, lineEnd);
     }
 
     IEnumerator LCoolDown()
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
-        foreach (var line in LineRs)
-        {
-            line.enabled = false;
-        }
         lefttalent = true;
     }
 
     IEnumerator RCoolDown()
     {
         righttalent = false;
+        player.L_speed += speedAmount;
         yield return new WaitForSeconds(RCoolDownTime);
-        lineRenderer.enabled = false;
+        player.L_speed -= speedAmount;
         righttalent = true;
-    }
-
-    private Vector3 LinePos()
-    {
-        float angle = LineFirePos.eulerAngles.z;
-
-        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 20;
-
-        return laserDirection;
     }
 }

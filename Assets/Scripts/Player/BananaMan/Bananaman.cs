@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Bananaman : MonoBehaviour
@@ -54,19 +55,19 @@ public class Bananaman : MonoBehaviour
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_controller != null && _controller.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
         }
 
-        if (_controller.FirePressed && UpTalentStart && MineCLenght > 0 && UptalentPress == false)
+        if (_controller != null && _controller.FirePressed && UpTalentStart && MineCLenght > 0 && UptalentPress == false)
         {
             CollectStart();
             UptalentPress = true;
         }
 
-        if (_controller.FirePressed == false) UptalentPress = false;
+        if (_controller != null && _controller.FirePressed == false) UptalentPress = false;
 
         if (_player.jumplenght > jumpLenghtTime)
         {
@@ -99,13 +100,13 @@ public class Bananaman : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent && lefttalent) ActiveTalent(0);
+        if (_controller != null && _controller.LeftTalent && lefttalent) ActiveTalent(0);
 
-        if (_controller.RightTalent && righttalent) ActiveTalent(1);
+        if (_controller != null && _controller.RightTalent && righttalent) ActiveTalent(1);
 
-        if (_controller.DownTalent && downtalent) ActiveTalent(2);
+        if (_controller != null && _controller.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_controller.UpTalent && uptalen) ActiveTalent(3);
+        if (_controller != null && _controller.UpTalent && uptalen) ActiveTalent(3);
     }
 
     private void InsBananaBullet(GameObject[] B_bullet, Transform[] T_bullet)

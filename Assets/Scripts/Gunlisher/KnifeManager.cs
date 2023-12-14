@@ -18,10 +18,7 @@ public class KnifeManager : MonoBehaviour
     public GameObject[] PressKeys;
     public float LCoolDownTime, RCoolDownTime;
 
-    public bool isFirstPerson = true;
-
     private PlayerInputController _controller;
-    private SPlayerInput _scontroller;
     private Player player;
     private int f_index;
     private bool FireOne = true;
@@ -33,7 +30,6 @@ public class KnifeManager : MonoBehaviour
     private void Start()
     {
         _controller = GetComponentInParent<PlayerInputController>();
-        _scontroller = GetComponentInParent<SPlayerInput>();
         player = GetComponentInParent<Player>();
         KnifePanel.SetActive(true);
 
@@ -47,7 +43,7 @@ public class KnifeManager : MonoBehaviour
     {
         PressTalent();
 
-        if (Attack() && FireOne && press)
+        if (_controller.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -56,9 +52,9 @@ public class KnifeManager : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_controller != null && _controller.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_controller.RightTalent && righttalent) SelectTalentActive(1);
+        if (_controller != null && _controller.RightTalent && righttalent) SelectTalentActive(1);
     }
 
     private void SelectTalentActive(int index)
@@ -116,6 +112,4 @@ public class KnifeManager : MonoBehaviour
         Destroy(dashObj, 1f);
         return dashObj;
     }
-
-    private bool Attack() => isFirstPerson && _controller.FirePressed || !isFirstPerson && _scontroller.SFirePressed;
 }
