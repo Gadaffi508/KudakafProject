@@ -6,6 +6,11 @@ public class PumpForce : BulletManager
 {
     public override void TriggerFnc(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject);
+        }
+
         //m_Thrust = 0;
         if (collision.gameObject.CompareTag("Player"))
         {

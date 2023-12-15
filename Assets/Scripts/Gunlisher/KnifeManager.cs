@@ -19,7 +19,7 @@ public class KnifeManager : MonoBehaviour
 
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime,UCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, UCoolDownTime;
 
     private Player _player;
     private int f_index;
@@ -29,7 +29,7 @@ public class KnifeManager : MonoBehaviour
 
     private bool lefttalent = true,
     righttalent = true,
-    upTalent = true;
+    uptalent = true;
 
     private void Start()
     {
@@ -55,12 +55,12 @@ public class KnifeManager : MonoBehaviour
 
         if (_player.RightTalent && righttalent) SelectTalentActive(1);
 
-        if (_player.UpTalent && upTalent) SelectTalentActive(2);
+        if (_player.UpTalent && uptalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
     {
-        wizard.SelectTalentKnife(index);
+        wizard.SelectTalentKnife(index,0,true);
         f_index = index;
         press = true;
         FireOne = true;
@@ -93,21 +93,24 @@ public class KnifeManager : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentKnife(0, 0,false);
         lefttalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        righttalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        wizard.SelectTalentKnife(0, 2, false);
+        righttalent = true;
     }
 
     IEnumerator RCoolDown()
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentKnife(0, 1,false);
         righttalent = true;
-    }
-
-    IEnumerator UCoolDown()
-    {
-        upTalent = false;
-        yield return new WaitForSeconds(UCoolDownTime);
-        upTalent = true;
     }
 
     private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos) => Instantiate(InsObj, FirePos.position, FirePos.rotation);

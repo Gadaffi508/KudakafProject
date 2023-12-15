@@ -9,7 +9,6 @@ public class BulletBasicBomb : BulletManager
         if (collision.gameObject.CompareTag("Ground"))
         {
             m_Thrust = 0;
-            Debug.Log("Touch");
         }
 
         if (collision.gameObject.TryGetComponent(out PlayerHealth health))

@@ -72,7 +72,7 @@ public class FireTalent : MonoBehaviour
 
     private void SelectTalentActive(int index)
     {
-        wizard.SelectTalentWizard(index);
+        wizard.SelectTalentWizard(index,0,true);
         f_index = index;
         press = true;
         FireOne = true;
@@ -155,6 +155,7 @@ public class FireTalent : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentWizard(0, 0,false);
         lefttalent = true;
     }
 
@@ -162,6 +163,7 @@ public class FireTalent : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentWizard(0, 1,false);
         righttalent = true;
     }
 
@@ -169,6 +171,7 @@ public class FireTalent : MonoBehaviour
     {
         downtalent = false;
         yield return new WaitForSeconds(DCoolDownTime);
+        wizard.SelectTalentWizard(0, 3,false);
         downtalent = true;
     }
 
@@ -176,6 +179,7 @@ public class FireTalent : MonoBehaviour
     {
         uptalent = false;
         yield return new WaitForSeconds(UCoolDownTime);
+        wizard.SelectTalentWizard(0, 2,false);
         uptalent = true;
     }
 }

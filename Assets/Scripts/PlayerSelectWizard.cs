@@ -23,52 +23,64 @@ public class PlayerSelectWizard : MonoBehaviour
 
     private float presskey = 0;
 
-    public void SelectTalentWizard(int index)
+    public void SelectTalentWizard(int index,int a_index, bool isAc)
     {
         Panel.SetActive(true);
 
-        foreach (GameObject talent in pressKey)
+        if (isAc)
         {
-            talent.SetActive(false);
+            pressKey[index].SetActive(false);
         }
 
-        pressKey[index].SetActive(true);
+        if (!isAc)
+        {
+            pressKey[a_index].SetActive(true);
+        }
     }
 
-    public void SelectTalentKnife(int index)
+    public void SelectTalentKnife(int index,int a_index, bool isAc)
     {
         KnifePanel.SetActive(true);
 
-        foreach (GameObject talent in K_Press)
+        if (isAc)
         {
-            talent.SetActive(false);
+            K_Press[index].SetActive(false);
         }
 
-        K_Press[index].SetActive(true);
+        if (!isAc)
+        {
+            K_Press[a_index].SetActive(true);
+        }
     }
 
-    public void SelectTalentPump(int index)
+    public void SelectTalentPump(int index, int a_index, bool isAc)
     {
         PumpPanel.SetActive(true);
 
-        foreach (GameObject talent in P_Press)
+        if (isAc)
         {
-            talent.SetActive(false);
+            P_Press[index].SetActive(false);
         }
 
-        P_Press[index].SetActive(true);
+        if (!isAc)
+        {
+            P_Press[a_index].SetActive(true);
+        }
     }
 
-    public void SelectTalentLaser(int index)
+    public void SelectTalentLaser(int index, int a_index,bool isAc)
     {
         LAserPanel.SetActive(true);
 
-        foreach (GameObject talent in L_Press)
+        if (isAc)
         {
-            talent.SetActive(false);
+            L_Press[index].SetActive(false);
         }
 
-        L_Press[index].SetActive(true);
+        if (!isAc)
+        {
+            L_Press[a_index].SetActive(true);
+        }
     }
 
     public void PressKeyPanel(int index)

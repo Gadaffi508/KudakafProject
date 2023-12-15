@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2052069692645977815}
   - component: {fileID: 3749526505324156246}
   - component: {fileID: 3286298437969598382}
-  - component: {fileID: 2052069692645977813}
+  - component: {fileID: 515009740582255927}
   m_Layer: 0
   m_Name: banana
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2052069692645977813
+--- !u!114 &515009740582255927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,13 +133,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052069692645977808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b4c69ce8d0f444be401ec31c2fed1, type: 3}
+  m_Script: {fileID: 11500000, guid: dfd097570a991aa4b8f5a33c84504f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  radius: 0
-  Force: 0
+  radius: 0.3
+  Force: 100
   LayerHit:
     serializedVersion: 2
-    m_Bits: 0
-  m_Thrust: 25
+    m_Bits: 64
+  m_Thrust: 20

@@ -147,7 +147,7 @@ public class Bananaman : MonoBehaviour
 
     private void ActiveTalent(int index)
     {
-        wizard.SelectTalentWizard(index);
+        wizard.SelectTalentWizard(index,0,true);
         f_index = index;
         FireOne = true;
         press = true;
@@ -168,6 +168,7 @@ public class Bananaman : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentWizard(0, 0,false);
         lefttalent = true;
         FireOne = false;
     }
@@ -176,6 +177,7 @@ public class Bananaman : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentWizard(0, 1, false);
         righttalent = true;
         FireOne = false;
     }
@@ -189,7 +191,7 @@ public class Bananaman : MonoBehaviour
 
         yield return new WaitForSeconds(DCoolDownTime);
         _player.L_speed -= Power_Enhancer_speed;
-
+        wizard.SelectTalentWizard(0, 3, false);
         _player.jumplenght = 0;
         _player.bananaTalent = false;
 
@@ -201,6 +203,7 @@ public class Bananaman : MonoBehaviour
     {
         uptalen = false;
         yield return new WaitForSeconds(UCoolDownTime);
+        wizard.SelectTalentWizard(0, 2, false);
         uptalen = true;
         FireOne = false;
     }

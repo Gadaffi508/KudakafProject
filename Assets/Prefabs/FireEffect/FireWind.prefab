@@ -142,11 +142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  radius: 0
-  Force: 0
+  radius: 0.5
+  Force: 100
   LayerHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Thrust: 20
 --- !u!61 &567295858110686890
 BoxCollider2D:

@@ -21,6 +21,16 @@ public class RandomMap : MonoBehaviour
         SceneManager.LoadScene(random);
     }
 
+    public void LoadScene(int SceneÝd)
+    {
+        SceneManager.LoadScene(SceneÝd);
+    }
+
+    public void GameTimeScale(int ScaleHeight)
+    {
+        Time.timeScale = ScaleHeight;
+    }
+
     public void QuýtGame()
     {
         Application.Quit();

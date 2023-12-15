@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -96,7 +97,7 @@ public class BombTalent : MonoBehaviour
 
     private void ActiveTalent(int index)
     {
-        wizard.SelectTalentWizard(index);
+        wizard.SelectTalentWizard(index,0,true);
         f_index = index;
         FireOne = true;
         press = true;
@@ -135,6 +136,7 @@ public class BombTalent : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentWizard(0, 0,false);
         lefttalent = true;
     }
 
@@ -142,6 +144,7 @@ public class BombTalent : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentWizard(0, 1,false);
         righttalent = true;
     }
 
@@ -149,6 +152,7 @@ public class BombTalent : MonoBehaviour
     {
         downtalent = false;
         yield return new WaitForSeconds(DCoolDownTime);
+        wizard.SelectTalentWizard(0, 2,false);
         downtalent = true;
     }
 }

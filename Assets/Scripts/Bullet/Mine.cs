@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
+    public float radius;
+    public float Force;
+    public LayerMask LayerHit;
+
     Bananaman _bananaman;
 
     void Start()
@@ -27,7 +31,39 @@ public class Mine : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(Timer());
+        }
+    }
+
     private bool BorderX() => transform.position.x < -10 || transform.position.x > 10;
 
     private bool BorderY() => transform.position.y < -6 || transform.position.y > 6;
+
+    public void explode()
+    {
+        Collider2D[] rayInfo = Physics2D.OverlapCircleAll(transform.position, radius, LayerHit);
+
+        foreach (Collider2D hitCollider in rayInfo)
+        {
+            Vector2 direction = hitCollider.transform.position - transform.position;
+
+            direction *= Force;
+
+            hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            StartCoroutine(hitCollider.GetComponentInParent<Player>().SpeedZeroDelay());
+            hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
+        }
+    }
+
+    public IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1);
+        explode();
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
 }

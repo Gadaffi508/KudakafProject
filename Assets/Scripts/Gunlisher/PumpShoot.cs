@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -29,7 +30,7 @@ public class PumpShoot : MonoBehaviour
 
     private bool lefttalent = true,
     righttalent = true,
-    upTalent = true;
+    uptalent = true;
 
     private void Start()
     {
@@ -52,16 +53,16 @@ public class PumpShoot : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player.RightTalent && righttalent) SelectTalentActive(1);
 
-        if (_player.UpTalent && upTalent) SelectTalentActive(2);
+        if (_player.UpTalent && uptalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
     {
-        wizard.SelectTalentPump(index);
+        wizard.SelectTalentPump(index, 0, true);
         f_index = index;
         press = true;
         FireOne = true;
@@ -102,14 +103,16 @@ public class PumpShoot : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentPump(0, 0, false);
         lefttalent = true;
     }
 
     IEnumerator UCoolDown()
     {
-        lefttalent = false;
-        yield return new WaitForSeconds(LCoolDownTime);
-        lefttalent = true;
+        uptalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        wizard.SelectTalentPump(0, 2, false);
+        uptalent = true;
     }
 
     IEnumerator RCoolDown()
@@ -117,6 +120,7 @@ public class PumpShoot : MonoBehaviour
         righttalent = false;
         _player.L_speed += speedAmount;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentPump(0, 1, false);
         _player.L_speed -= speedAmount;
         righttalent = true;
     }

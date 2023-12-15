@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 644159669723052930}
   - component: {fileID: 644159669723052931}
   - component: {fileID: 644159669723052940}
-  - component: {fileID: 644159669723052941}
+  - component: {fileID: 1939244630286270391}
   m_Layer: 0
   m_Name: KnifeObj
   m_TagString: Untagged
@@ -82,7 +82,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23831445, y: 0.21212864}
   m_EdgeRadius: 0
---- !u!114 &644159669723052941
+--- !u!114 &1939244630286270391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 644159669723052942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 267b4c69ce8d0f444be401ec31c2fed1, type: 3}
+  m_Script: {fileID: 11500000, guid: dfd097570a991aa4b8f5a33c84504f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
@@ -99,7 +99,7 @@ MonoBehaviour:
   Force: 0
   LayerHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Thrust: 20
 --- !u!1 &1718168256677630845
 GameObject:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,7 +17,7 @@ public class LaserManager : MonoBehaviour
 
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime,UCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, UCoolDownTime;
 
     Vector2 lineEnd;
 
@@ -28,7 +29,7 @@ public class LaserManager : MonoBehaviour
 
     private bool lefttalent = true,
     righttalent = true,
-    upTalent = true;
+    uptalent = true;
 
     private void Start()
     {
@@ -67,12 +68,12 @@ public class LaserManager : MonoBehaviour
 
         if (_player.RightTalent && righttalent) SelectTalentActive(1);
 
-        if (_player.UpTalent && upTalent) SelectTalentActive(2);
+        if (_player.UpTalent && uptalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
     {
-        wizard.SelectTalentLaser(index);
+        wizard.SelectTalentLaser(index,0,true);
         f_index = index;
         press = true;
         FireOne = true;
@@ -129,6 +130,7 @@ public class LaserManager : MonoBehaviour
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);
+        wizard.SelectTalentLaser(0, 0,false);
         foreach (var line in LineRs)
         {
             line.enabled = false;
@@ -140,15 +142,17 @@ public class LaserManager : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
+        wizard.SelectTalentLaser(0, 1,false);
         lineRenderer.enabled = false;
         righttalent = true;
     }
 
     IEnumerator UCoolDown()
     {
-        upTalent = false;
+        uptalent = false;
         yield return new WaitForSeconds(UCoolDownTime);
-        upTalent = true;
+        wizard.SelectTalentLaser(0, 2, false);
+        uptalent = true;
     }
 
     private Vector3 LinePos()

@@ -7,14 +7,11 @@ using System.Linq;
 public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerInput playerInput;
-    private Player player;
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        var Players = FindObjectsOfType<Player>();
-        var ýndex = playerInput.playerIndex;
-        player = Players.FirstOrDefault(m => m.GetPlayerIndex() == ýndex);
-        Debug.Log(ýndex);
+        var playerýndex = playerInput.playerIndex;
+        Debug.Log(playerýndex);
     }
 }

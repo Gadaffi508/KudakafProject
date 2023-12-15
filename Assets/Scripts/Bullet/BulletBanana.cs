@@ -22,7 +22,7 @@ public class BulletBanana : BulletManager
     {
         Instantiate(Banana_Mine,transform.position, Banana_Mine.transform.rotation);
         Instantiate(Banana_Bullet, transform.position, transform.rotation);
-        Destroy(this.gameObject);
         trigger = true;
+        Destroy(this.gameObject);
     }
 }
