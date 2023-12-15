@@ -116,6 +116,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Punch"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b1fa6a8-f8e7-4d56-be82-7c5351da89c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -228,6 +237,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""TalentFourth"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4846caa4-2f5d-43fd-98f8-f9ec54deef83"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Punch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -246,6 +266,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_TalentSecond = m_GamePlay.FindAction("TalentSecond", throwIfNotFound: true);
         m_GamePlay_TalentThird = m_GamePlay.FindAction("TalentThird", throwIfNotFound: true);
         m_GamePlay_TalentFourth = m_GamePlay.FindAction("TalentFourth", throwIfNotFound: true);
+        m_GamePlay_Punch = m_GamePlay.FindAction("Punch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +336,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_TalentSecond;
     private readonly InputAction m_GamePlay_TalentThird;
     private readonly InputAction m_GamePlay_TalentFourth;
+    private readonly InputAction m_GamePlay_Punch;
     public struct GamePlayActions
     {
         private @PlayerController m_Wrapper;
@@ -329,6 +351,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @TalentSecond => m_Wrapper.m_GamePlay_TalentSecond;
         public InputAction @TalentThird => m_Wrapper.m_GamePlay_TalentThird;
         public InputAction @TalentFourth => m_Wrapper.m_GamePlay_TalentFourth;
+        public InputAction @Punch => m_Wrapper.m_GamePlay_Punch;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -368,6 +391,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @TalentFourth.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
                 @TalentFourth.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
                 @TalentFourth.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTalentFourth;
+                @Punch.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
+                @Punch.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
+                @Punch.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -402,6 +428,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @TalentFourth.started += instance.OnTalentFourth;
                 @TalentFourth.performed += instance.OnTalentFourth;
                 @TalentFourth.canceled += instance.OnTalentFourth;
+                @Punch.started += instance.OnPunch;
+                @Punch.performed += instance.OnPunch;
+                @Punch.canceled += instance.OnPunch;
             }
         }
     }
@@ -418,5 +447,6 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnTalentSecond(InputAction.CallbackContext context);
         void OnTalentThird(InputAction.CallbackContext context);
         void OnTalentFourth(InputAction.CallbackContext context);
+        void OnPunch(InputAction.CallbackContext context);
     }
 }

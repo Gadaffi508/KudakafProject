@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     internal bool RightTalent;
     internal bool UpTalent;
     internal bool DownTalent;
+    internal bool PunchPress;
 
     private void Start()
     {
@@ -112,4 +113,5 @@ public class Player : MonoBehaviour
     public void OnRight(InputAction.CallbackContext ctx) => RightTalent = ctx.ReadValueAsButton();
     public void OnUp(InputAction.CallbackContext ctx) => UpTalent = ctx.ReadValueAsButton();
     public void OnDown(InputAction.CallbackContext ctx) => DownTalent = ctx.ReadValueAsButton();
+    public void OnPunch(InputAction.CallbackContext ctx) => PunchPress = ctx.ReadValueAsButton();
 }

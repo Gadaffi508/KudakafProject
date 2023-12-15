@@ -13,22 +13,30 @@ public class PumpShoot : MonoBehaviour
     [Header("Right Talent"), Tooltip("Heal")]
     public float HealAmount;
     public float speedAmount;
+
+    [Header("Up Talent"), Tooltip("Classic Bomb")]
+    public GameObject Bomb;
+
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, UCoolDownTime;
 
     private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
+    public PlayerSpiteManager _playerSpiteManager;
 
     private bool lefttalent = true,
-    righttalent = true;
+    righttalent = true,
+    upTalent = true;
 
     private void Start()
     {
         _player = GetComponentInParent<Player>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
+
+        _playerSpiteManager.isBlackPlayer = false;
     }
 
     private void Update()
@@ -47,6 +55,8 @@ public class PumpShoot : MonoBehaviour
         if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
 
         if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
+
+        if (_player.UpTalent && upTalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
@@ -68,11 +78,17 @@ public class PumpShoot : MonoBehaviour
             case 1:
                 StartCoroutine(RCoolDown());
                 break;
+            case 2:
+                InstateFireProperty(Bomb);
+                StartCoroutine(UCoolDown());
+                break;
             default:
                 Debug.Log("Dont Press");
                 break;
         }
     }
+
+    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj, FirePos[0].position, FirePos[0].rotation);
 
     private void Shotgunspread()
     {
@@ -83,6 +99,13 @@ public class PumpShoot : MonoBehaviour
     }
 
     IEnumerator LCoolDown()
+    {
+        lefttalent = false;
+        yield return new WaitForSeconds(LCoolDownTime);
+        lefttalent = true;
+    }
+
+    IEnumerator UCoolDown()
     {
         lefttalent = false;
         yield return new WaitForSeconds(LCoolDownTime);

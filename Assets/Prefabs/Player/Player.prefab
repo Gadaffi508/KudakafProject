@@ -212,8 +212,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1ae2100f96b844af384b4b6e2d028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPos: {fileID: 0}
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
   FireC: 0
   Direct: 1
+  isBlackPlayer: 0
 --- !u!61 &6142807317196725424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -269,12 +276,7 @@ MonoBehaviour:
   - {fileID: 6142807317399686698}
   - {fileID: 6142807317975974630}
   MineLenght: 0
-  Bananapanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wizard: {fileID: 0}
   LCoolDownTime: 5
   RCoolDownTime: 5
   DCoolDownTime: 5
@@ -680,12 +682,12 @@ MonoBehaviour:
   - {fileID: 6142807317764836415}
   HealAmount: 20
   speedAmount: 5
-  PumpPanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
+  Bomb: {fileID: 5621512034142317800, guid: ad63cda430d175347aca222d75856431, type: 3}
+  wizard: {fileID: 0}
   LCoolDownTime: 2
   RCoolDownTime: 2
+  UCoolDownTime: 2
+  _playerSpiteManager: {fileID: 6142807318541681320}
 --- !u!1 &6142807317397551006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,8 +1055,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1ae2100f96b844af384b4b6e2d028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPos: {fileID: 0}
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
   FireC: 1
   Direct: 1
+  isBlackPlayer: 0
 --- !u!61 &6142807317456458048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1099,12 +1108,7 @@ MonoBehaviour:
   FirePrefabs: {fileID: 4538975244053011511, guid: b0409e5e6e95cca40a25ae840c141178, type: 3}
   FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
   FirePos: {fileID: 6142807318487583321}
-  FirePanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wizard: {fileID: 0}
   LCoolDownTime: 5
   RCoolDownTime: 5
   UCoolDownTime: 5
@@ -1733,8 +1737,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1ae2100f96b844af384b4b6e2d028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPos: {fileID: 0}
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
   FireC: 0
   Direct: -1
+  isBlackPlayer: 0
 --- !u!95 &6142807317951431409
 Animator:
   serializedVersion: 4
@@ -2163,12 +2174,12 @@ MonoBehaviour:
   - {fileID: 6142807319188507236}
   - {fileID: 6142807318952131403}
   - {fileID: 6142807317788909448}
-  LaserPanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
+  Bomb: {fileID: 5621512034142317800, guid: ad63cda430d175347aca222d75856431, type: 3}
+  wizard: {fileID: 0}
   LCoolDownTime: 2
   RCoolDownTime: 2
+  UCoolDownTime: 2
+  _playerSpiteManager: {fileID: 6142807318541681320}
 --- !u!1 &6142807318480655525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2330,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8135276000157685080}
   m_Father: {fileID: 6142807319219649495}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2407,8 +2419,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1ae2100f96b844af384b4b6e2d028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPos: {fileID: 8135276000157685080}
+  radius: 1
+  Force: 100
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 64
   FireC: 0
   Direct: 1
+  isBlackPlayer: 1
 --- !u!61 &6142807318541681321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2555,8 +2574,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d1ae2100f96b844af384b4b6e2d028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPos: {fileID: 0}
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
   FireC: 0
   Direct: 1
+  isBlackPlayer: 0
 --- !u!61 &6142807318836480986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2601,12 +2627,7 @@ MonoBehaviour:
   C_Bomb: {fileID: 5939176057701172818, guid: 9e6f960a4641a5e428f7bf37e9598686, type: 3}
   H_Bomb: {fileID: 8692763777814976719, guid: 7b6e25c4ffde0764da8b2091eae54d49, type: 3}
   BombCharecter: {fileID: 6142807317951431421}
-  BombPanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wizard: {fileID: 0}
   LCoolDownTime: 5
   RCoolDownTime: 5
   DCoolDownTime: 5
@@ -2889,12 +2910,12 @@ MonoBehaviour:
   TosKnifePos: {fileID: 6142807318342833352}
   KnifeObj: {fileID: 644159669723052942, guid: b6139d707c0551340b2d78af16fabe97, type: 3}
   KnifeDash: {fileID: 3612248427647897465, guid: 9fbcf459e1173dd4aa2b2d48a1b63ac7, type: 3}
-  KnifePanel: {fileID: 0}
-  PressKeys:
-  - {fileID: 0}
-  - {fileID: 0}
+  Bomb: {fileID: 5621512034142317800, guid: ad63cda430d175347aca222d75856431, type: 3}
+  wizard: {fileID: 0}
   LCoolDownTime: 2
   RCoolDownTime: 2
+  UCoolDownTime: 2
+  _playerSpiteManager: {fileID: 6142807318541681320}
 --- !u!1 &6142807319188507235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +3076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142807319219649489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83, y: -3.47, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3131,11 +3152,14 @@ MonoBehaviour:
   - {fileID: 6142807317397551006}
   - {fileID: 6142807317483854108}
   - {fileID: 6142807318221517079}
+  Sprites:
+  - {fileID: -1300420645, guid: de008947fdf96384c8f1aa35b2dac3fe, type: 3}
+  - {fileID: 1710104985, guid: c83831e0473a6e744bf221ea75e333c4, type: 3}
+  - {fileID: 865880162, guid: a97d6940a78befc44a6f2d0aa151c73b, type: 3}
   FirePlayer: {fileID: 6142807317456458059}
   BombPlayer: {fileID: 6142807318836480997}
   Monkey: {fileID: 6142807317196725435}
   "Th\u0131sPlayer": {fileID: 6142807318541681343}
-  isFirePlayer: 0
   selectPlayer: {fileID: 0}
   WizardPlayerName: 
 --- !u!114 &6142807319219649481
@@ -3323,6 +3347,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 16c1c3e6-24a3-4c16-b22a-0384f61aebad
     m_ActionName: GamePlay/TalentFourth[/DualSenseGamepadHID/dpad/down,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6142807319219649491}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnPunch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6b1fa6a8-f8e7-4d56-be82-7c5351da89c3
+    m_ActionName: GamePlay/Punch[/DualSenseGamepadHID/rightShoulder,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -3341,3 +3381,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!1 &9133378889353490519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8135276000157685080}
+  m_Layer: 6
+  m_Name: PunchPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8135276000157685080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9133378889353490519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.376, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6142807318541681329}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

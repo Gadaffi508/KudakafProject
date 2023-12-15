@@ -14,21 +14,27 @@ public class KnifeManager : MonoBehaviour
     [Header("Right Talent"), Tooltip("Dash Obj and Damage")]
     public GameObject KnifeDash;
 
+    [Header("Up Talent"), Tooltip("Classic Bomb")]
+    public GameObject Bomb;
+
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime,UCoolDownTime;
 
     private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
+    public PlayerSpiteManager _playerSpiteManager;
 
     private bool lefttalent = true,
-    righttalent = true;
+    righttalent = true,
+    upTalent = true;
 
     private void Start()
     {
         _player = GetComponentInParent<Player>();
+        _playerSpiteManager.isBlackPlayer = false;
         wizard = FindObjectOfType<PlayerSelectWizard>();
     }
 
@@ -45,9 +51,11 @@ public class KnifeManager : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player.RightTalent && righttalent) SelectTalentActive(1);
+
+        if (_player.UpTalent && upTalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
@@ -71,6 +79,10 @@ public class KnifeManager : MonoBehaviour
                 InstateFireProperty(KnifeObj, TosKnifePos);
                 StartCoroutine(RCoolDown());
                 break;
+            case 2:
+                InstateFireProperty(Bomb, TosKnifePos);
+                StartCoroutine(UCoolDown());
+                break;
             default:
                 Debug.Log("Dont Press");
                 break;
@@ -89,6 +101,13 @@ public class KnifeManager : MonoBehaviour
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
         righttalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        upTalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        upTalent = true;
     }
 
     private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos) => Instantiate(InsObj, FirePos.position, FirePos.rotation);

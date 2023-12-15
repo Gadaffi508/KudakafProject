@@ -9,6 +9,9 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject Gun;
     public GameObject[] Gunlisher;
+
+    public Sprite[] Sprites;
+
     public GameObject FirePlayer;
     public GameObject BombPlayer;
     public GameObject Monkey;
@@ -17,6 +20,13 @@ public class WeaponController : MonoBehaviour
     public PlayerSelectWizard selectPlayer;
     public string WizardPlayerName;
     private Player _Player;
+    private GameObject GunObj;
+
+    private bool PlayerSelected = false;
+
+    private bool press = false;
+
+    int random;
 
     private void Start()
     {
@@ -24,19 +34,34 @@ public class WeaponController : MonoBehaviour
         selectPlayer = FindObjectOfType<PlayerSelectWizard>();
         WizardPlayerName = selectPlayer.WizardName;
         Gun.SetActive(false);
+
+        random = Random.RandomRange(0, Gunlisher.Length);
+        GunObj = GameObject.FindGameObjectWithTag("GunObject").gameObject;
+        GunObj.GetComponent<SpriteRenderer>().sprite = Sprites[random];
+
+    }
+
+    private void Update()
+    {
+        if (Input.anyKey && press == false)
+        {
+            selectPlayer.PressKeyPanel(1);
+            press = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("GunObject"))
+        if (other.gameObject.CompareTag("GunObject") && PlayerSelected == false)
         {
-            int random = Random.RandomRange(0,Gunlisher.Length);
             Gunlisher[random].SetActive(true);
 
             Destroy(other.gameObject);
+
+            PlayerSelected = true;
         }
         
-        if (other.gameObject.CompareTag("BosObject"))
+        if (other.gameObject.CompareTag("BosObject") && PlayerSelected == false)
         {
             Gun.SetActive(true);
 
@@ -57,6 +82,8 @@ public class WeaponController : MonoBehaviour
             }
 
             ThısPlayer.SetActive(false);
+
+            PlayerSelected = true;
 
             Destroy(other.gameObject);
         }

@@ -71,7 +71,7 @@ public abstract class BulletManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         explode();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 }

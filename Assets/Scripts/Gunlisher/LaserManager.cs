@@ -11,9 +11,12 @@ public class LaserManager : MonoBehaviour
     public Transform LineFirePos;
     public Transform[] LinePosRs;
 
+    [Header("Up Talent"), Tooltip("Classic Bomb")]
+    public GameObject Bomb;
+
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime,UCoolDownTime;
 
     Vector2 lineEnd;
 
@@ -21,14 +24,17 @@ public class LaserManager : MonoBehaviour
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
+    public PlayerSpiteManager _playerSpiteManager;
 
     private bool lefttalent = true,
-    righttalent = true;
+    righttalent = true,
+    upTalent = true;
 
     private void Start()
     {
         _player = GetComponentInParent<Player>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
+        _playerSpiteManager.isBlackPlayer = false;
         lineRenderer = GetComponentInChildren<LineRenderer>();
         lineRenderer.enabled = false;
     }
@@ -57,9 +63,11 @@ public class LaserManager : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player.RightTalent && righttalent) SelectTalentActive(1);
+
+        if (_player.UpTalent && upTalent) SelectTalentActive(2);
     }
 
     private void SelectTalentActive(int index)
@@ -81,6 +89,10 @@ public class LaserManager : MonoBehaviour
             case 1:
                 LaserShortAttack();
                 StartCoroutine(RCoolDown());
+                break;
+            case 2:
+                InstateFireProperty(Bomb);
+                StartCoroutine(UCoolDown());
                 break;
             default:
                 Debug.Log("Dont Press");
@@ -111,6 +123,8 @@ public class LaserManager : MonoBehaviour
         lineRenderer.SetPosition(1, lineEnd);
     }
 
+    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj, LineFirePos.position, LineFirePos.rotation);
+
     IEnumerator LCoolDown()
     {
         lefttalent = false;
@@ -128,6 +142,13 @@ public class LaserManager : MonoBehaviour
         yield return new WaitForSeconds(RCoolDownTime);
         lineRenderer.enabled = false;
         righttalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        upTalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        upTalent = true;
     }
 
     private Vector3 LinePos()

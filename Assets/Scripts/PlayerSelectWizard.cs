@@ -6,6 +6,9 @@ public class PlayerSelectWizard : MonoBehaviour
 {
     public string WizardName;
 
+    public GameObject PressPanel;
+    public GameObject[] Circles;
+
     [Header("Wizard")]
     public GameObject Panel;
     public GameObject[] pressKey;
@@ -17,6 +20,8 @@ public class PlayerSelectWizard : MonoBehaviour
     public GameObject[] P_Press;
     public GameObject LAserPanel;
     public GameObject[] L_Press;
+
+    private float presskey = 0;
 
     public void SelectTalentWizard(int index)
     {
@@ -64,6 +69,21 @@ public class PlayerSelectWizard : MonoBehaviour
         }
 
         L_Press[index].SetActive(true);
+    }
+
+    public void PressKeyPanel(int index)
+    {
+        presskey += index;
+
+        if (presskey > 0)
+        {
+            Circles[0].SetActive(false);
+        }
+        if (presskey > 1)
+        {
+            Circles[1].SetActive(false);
+            PressPanel.SetActive(false);
+        }
     }
 
 }
