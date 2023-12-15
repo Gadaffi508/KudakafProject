@@ -100,7 +100,7 @@ MonoBehaviour:
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
-  m_Thrust: 20
+  m_Thrust: 30
 --- !u!114 &6436977765292191877
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -157,6 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f433886788c0ba42a0e500182277a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Thrust: 20
+  Damage: 10
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Thrust: 30
   Banana_Mine: {fileID: 6864328104416806454, guid: cc391dd21633f1347b0082f568514a96, type: 3}
   Banana_Bullet: {fileID: 2052069692645977808, guid: bc67d0f94d460d6438da5b991a080f23, type: 3}

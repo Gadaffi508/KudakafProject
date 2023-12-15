@@ -178,4 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddad3582773c88e43bec5444f9020e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Thrust: 13
+  Damage: 20
+  radius: 2
+  Force: 400
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 64
+  m_Thrust: 20

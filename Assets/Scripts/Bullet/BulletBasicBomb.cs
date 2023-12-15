@@ -11,5 +11,10 @@ public class BulletBasicBomb : BulletManager
             m_Thrust = 0;
             Debug.Log("Touch");
         }
+
+        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        {
+            health.TakeDamage(Damage);
+        }
     }
 }

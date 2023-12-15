@@ -8,6 +8,8 @@ public abstract class BulletManager : MonoBehaviour
     internal Rigidbody2D rb;
     internal bool forcePlayer;
 
+    public int Damage;
+
     public float radius;
     public float Force;
     public LayerMask LayerHit;
@@ -60,7 +62,7 @@ public abstract class BulletManager : MonoBehaviour
             direction *= Force;
 
             hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0,0);
-            StartCoroutine(PlayerSpeedZero(hitCollider));
+            StartCoroutine(hitCollider.GetComponentInParent<Player>().SpeedZeroDelay());
             hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
         }
     }
@@ -69,15 +71,7 @@ public abstract class BulletManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         explode();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
-        yield return new WaitForSeconds(0.1f);
-    }
-
-    private IEnumerator PlayerSpeedZero(Collider2D col)
-    {
-        col.GetComponentInParent<Player>().SpeedZero = true;
-        yield return new WaitForSeconds(1);
-        col.GetComponentInParent<Player>().SpeedZero = false;
     }
 }

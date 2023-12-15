@@ -7,5 +7,17 @@ public class BulletTBomb : BulletManager
     public override void TriggerFnc(Collision2D collision)
     {
         m_Thrust = 0;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            forcePlayer = true;
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+
+        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        {
+            health.TakeDamage(Damage);
+        }
     }
+
+
 }

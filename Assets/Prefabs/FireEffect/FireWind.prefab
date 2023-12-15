@@ -141,6 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd097570a991aa4b8f5a33c84504f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 10
+  radius: 0
+  Force: 0
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 0
   m_Thrust: 20
 --- !u!61 &567295858110686890
 BoxCollider2D:

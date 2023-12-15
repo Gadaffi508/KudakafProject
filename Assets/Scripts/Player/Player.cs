@@ -15,6 +15,8 @@ public class Player: MonoBehaviour
 
     public bool SpeedZero = false;
 
+    public int PlayerIndex = 0;
+
     [SerializeField] private float dashSpeed;
     [Range(0, 1)]
     [SerializeField] private float dashDuration;
@@ -67,6 +69,11 @@ public class Player: MonoBehaviour
         if (_playerInputController.RunPrees) speed = R_speed;
         else speed = L_speed;
     }
+
+    public int GetPlayerIndex()
+    {
+        return PlayerIndex;
+    }
     
     public IEnumerator Dash()
     {
@@ -74,5 +81,12 @@ public class Player: MonoBehaviour
         isDashing = true;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+    }
+
+    public IEnumerator SpeedZeroDelay()
+    {
+        SpeedZero = true;
+        yield return new WaitForSeconds(1);
+        SpeedZero = false;
     }
 }

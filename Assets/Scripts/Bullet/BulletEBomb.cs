@@ -12,5 +12,10 @@ public class BulletEBomb : BulletManager
             forcePlayer = true;
             rb.bodyType = RigidbodyType2D.Kinematic;
         }
+
+        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        {
+            health.TakeDamage(Damage);
+        }
     }
 }
