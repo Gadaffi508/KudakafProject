@@ -7,6 +7,12 @@ public class CursorManager : MonoBehaviour
 {
     public float CursorSpeed;
     public GameObject CursorObj;
+    Player player;
+
+    private void Start()
+    {
+        player = GetComponentInParent<Player>();   
+    }
 
     private void Update()
     {
@@ -17,7 +23,7 @@ public class CursorManager : MonoBehaviour
 
     private Vector2 İnputDirection()
     {
-        return PlayerInputController.Controller.CursorPos.normalized;
+        return player.CursorPos.normalized;
     }
     
     private float Angle() => Mathf.Atan2(-İnputDirection().x, İnputDirection().y) * Mathf.Rad2Deg;

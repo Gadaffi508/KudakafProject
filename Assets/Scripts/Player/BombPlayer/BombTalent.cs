@@ -19,11 +19,10 @@ public class BombTalent : MonoBehaviour
     public GameObject BombCharecter;
 
     [Header("Cool Down Panel")]
-    public GameObject BombPanel;
-    public GameObject[] PressKeys;
+    public PlayerSelectWizard wizard;
     public float LCoolDownTime, RCoolDownTime, DCoolDownTime;
 
-    private PlayerInputController _controller;
+    private Player _player;
     private int f_index;
     private int S_index = 1;
     private bool FireOne = true;
@@ -36,20 +35,15 @@ public class BombTalent : MonoBehaviour
 
     private void Awake()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
-        BombPanel.SetActive(true);
-
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
+        _player = GetComponentInParent<Player>();
+        wizard = FindObjectOfType<PlayerSelectWizard>();
     }
 
     private void Update()
     {
         PressTalent();
 
-        if (_controller != null && _controller.FirePressed && FireOne && press)
+        if (_player.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -57,14 +51,14 @@ public class BombTalent : MonoBehaviour
             SecondFire = false;
         }
 
-        if (_controller != null && _controller.FirePressed && SecondFire && S_index == 1)
+        if (_player.FirePressed && SecondFire && S_index == 1)
         {
             InstBomb(C_Bomb);
             S_index++;
             SecondFire = false;
         }
 
-        if (_controller != null && !_controller.FirePressed && !FireOne) SecondFire = true;
+        if (_player.FirePressed && !FireOne) SecondFire = true;
     }
 
     private void Talent()
@@ -91,23 +85,18 @@ public class BombTalent : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller != null && _controller.LeftTalent && lefttalent) ActiveTalent(0);
+        if (_player.LeftTalent && lefttalent) ActiveTalent(0);
 
-        if (_controller != null && _controller.RightTalent && righttalent) ActiveTalent(1);
+        if (_player.RightTalent && righttalent) ActiveTalent(1);
 
-        if (_controller != null && _controller.DownTalent && downtalent) ActiveTalent(2);
+        if (_player.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_controller != null && _controller.UpTalent) ActiveTalent(3);
+        if (_player.UpTalent) ActiveTalent(3);
     }
 
     private void ActiveTalent(int index)
     {
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
-
-        PressKeys[index].SetActive(true);
+        wizard.SelectTalentWizard(index);
         f_index = index;
         FireOne = true;
         press = true;

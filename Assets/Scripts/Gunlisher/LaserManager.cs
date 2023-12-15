@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserManager : MonoBehaviour
@@ -11,13 +12,12 @@ public class LaserManager : MonoBehaviour
     public Transform[] LinePosRs;
 
     [Header("Cool Down Panel")]
-    public GameObject LaserPanel;
-    public GameObject[] PressKeys;
+    public PlayerSelectWizard wizard;
     public float LCoolDownTime, RCoolDownTime;
 
     Vector2 lineEnd;
 
-    private PlayerInputController _controller;
+    private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -27,15 +27,9 @@ public class LaserManager : MonoBehaviour
 
     private void Start()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
+        _player = GetComponentInParent<Player>();
+        wizard = FindObjectOfType<PlayerSelectWizard>();
         lineRenderer = GetComponentInChildren<LineRenderer>();
-        LaserPanel.SetActive(true);
-
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
-
         lineRenderer.enabled = false;
     }
 
@@ -43,7 +37,7 @@ public class LaserManager : MonoBehaviour
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_player.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -63,19 +57,14 @@ public class LaserManager : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller != null && _controller.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_controller != null && _controller.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
     }
 
     private void SelectTalentActive(int index)
     {
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
-
-        PressKeys[index].SetActive(true);
+        wizard.SelectTalentLaser(index);
         f_index = index;
         press = true;
         FireOne = true;

@@ -9,6 +9,8 @@ TagManager:
   - BosObject
   - FireBullet
   - Moonkey
+  - WizardPanel
+  - FighterPanel
   layers:
   - Default
   - TransparentFX

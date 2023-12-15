@@ -19,7 +19,7 @@ public class PlayerInputController : MonoBehaviour
     internal bool DownTalent;
 
     public static PlayerInputController _Controller;
-    public static PlayerInputController Controller
+    /*public static PlayerInputController Controller
     {
         get
         {
@@ -27,7 +27,7 @@ public class PlayerInputController : MonoBehaviour
                 Debug.LogError("Controller is null");
             return _Controller;
         }
-    }
+    }*/
 
     private void Awake()
     {

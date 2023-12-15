@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -13,12 +14,10 @@ public class PumpShoot : MonoBehaviour
     public float HealAmount;
     public float speedAmount;
     [Header("Cool Down Panel")]
-    public GameObject PumpPanel;
-    public GameObject[] PressKeys;
+    public PlayerSelectWizard wizard;
     public float LCoolDownTime, RCoolDownTime;
 
-    private PlayerInputController _controller;
-    private Player player;
+    private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -28,21 +27,15 @@ public class PumpShoot : MonoBehaviour
 
     private void Start()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
-        player = GetComponentInParent<Player>();
-        PumpPanel.SetActive(true);
-
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
+        _player = GetComponentInParent<Player>();
+        wizard = FindObjectOfType<PlayerSelectWizard>();
     }
 
     private void Update()
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_player.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -51,19 +44,14 @@ public class PumpShoot : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller != null && _controller.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_controller != null && _controller.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
     }
 
     private void SelectTalentActive(int index)
     {
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
-
-        PressKeys[index].SetActive(true);
+        wizard.SelectTalentPump(index);
         f_index = index;
         press = true;
         FireOne = true;
@@ -104,9 +92,9 @@ public class PumpShoot : MonoBehaviour
     IEnumerator RCoolDown()
     {
         righttalent = false;
-        player.L_speed += speedAmount;
+        _player.L_speed += speedAmount;
         yield return new WaitForSeconds(RCoolDownTime);
-        player.L_speed -= speedAmount;
+        _player.L_speed -= speedAmount;
         righttalent = true;
     }
 }

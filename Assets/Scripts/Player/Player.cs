@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour
 {
-    [Range (0,20)]
+    [Range(0, 20)]
     public float speed;
     public float R_speed;
     public float L_speed;
@@ -20,40 +21,51 @@ public class Player: MonoBehaviour
     [SerializeField] private float dashSpeed;
     [Range(0, 1)]
     [SerializeField] private float dashDuration;
-    
+
     private Rigidbody2D rb;
-    private PlayerInputController _playerInputController;
     private bool jump;
     private bool isDashing = false;
 
-    internal bool İsFly;
+    internal bool İsFly = false;
+
+    internal Vector2 currentMovement;
+    internal Vector2 CursorPos;
+    internal bool JumpPressed;
+    internal bool FirePressed;
+    internal bool DashPress;
+
+    internal bool RunPrees;
+    internal bool LeftTalent;
+    internal bool RightTalent;
+    internal bool UpTalent;
+    internal bool DownTalent;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _playerInputController = GetComponent<PlayerInputController>();
     }
 
     private void Update()
     {
-        if(!isDashing && !İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityMove();
-        if(!isDashing && İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityFly();
+        if (!isDashing && !İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityMove();
+        if (!isDashing && İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityFly();
 
-        if (_playerInputController.JumpPressed && jump)
+        if (JumpPressed && jump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
 
             jumplenght++;
         }
-        
+
         Run();
 
-        if (_playerInputController.JumpPressed == false && bananaTalent == true)
+        if (JumpPressed == false && bananaTalent == true)
         {
             jump = true;
         }
-        
-        if (_playerInputController.DashPress && !isDashing) StartCoroutine(Dash());
+
+        if (DashPress && !isDashing) StartCoroutine(Dash());
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -61,12 +73,12 @@ public class Player: MonoBehaviour
         if (other.gameObject.CompareTag("Ground")) jump = true;
     }
 
-    private Vector2 RigidBodyVelocityMove() => new Vector2(_playerInputController.currentMovement.x * speed,rb.velocity.y);
-    private Vector2 RigidBodyVelocityFly() => new Vector2(_playerInputController.currentMovement.x * speed,_playerInputController.currentMovement.y * speed);
+    private Vector2 RigidBodyVelocityMove() => new Vector2(currentMovement.x * speed, rb.velocity.y);
+    private Vector2 RigidBodyVelocityFly() => new Vector2(currentMovement.x * speed, currentMovement.y * speed);
 
     public void Run()
     {
-        if (_playerInputController.RunPrees) speed = R_speed;
+        if (RunPrees) speed = R_speed;
         else speed = L_speed;
     }
 
@@ -74,10 +86,10 @@ public class Player: MonoBehaviour
     {
         return PlayerIndex;
     }
-    
+
     public IEnumerator Dash()
     {
-        rb.AddForce(Vector2.right *transform.GetComponentInChildren<PlayerSpiteManager>().LocalX* dashSpeed);
+        rb.AddForce(Vector2.right * transform.GetComponentInChildren<PlayerSpiteManager>().LocalX * dashSpeed);
         isDashing = true;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
@@ -89,4 +101,15 @@ public class Player: MonoBehaviour
         yield return new WaitForSeconds(1);
         SpeedZero = false;
     }
+
+    public void OnMove(InputAction.CallbackContext ctx) => currentMovement = ctx.ReadValue<Vector2>();
+    public void OnCursor(InputAction.CallbackContext ctx) => CursorPos = ctx.ReadValue<Vector2>();
+    public void OnJump(InputAction.CallbackContext ctx) => JumpPressed = ctx.ReadValueAsButton();
+    public void OnDash(InputAction.CallbackContext ctx) => DashPress = ctx.ReadValueAsButton();
+    public void OnRun(InputAction.CallbackContext ctx) => RunPrees = ctx.ReadValueAsButton();
+    public void OnFire(InputAction.CallbackContext ctx) => FirePressed = ctx.ReadValueAsButton();
+    public void OnLeft(InputAction.CallbackContext ctx) => LeftTalent = ctx.ReadValueAsButton();
+    public void OnRight(InputAction.CallbackContext ctx) => RightTalent = ctx.ReadValueAsButton();
+    public void OnUp(InputAction.CallbackContext ctx) => UpTalent = ctx.ReadValueAsButton();
+    public void OnDown(InputAction.CallbackContext ctx) => DownTalent = ctx.ReadValueAsButton();
 }

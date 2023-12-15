@@ -23,11 +23,9 @@ public class Bananaman : MonoBehaviour
     public int MineLenght = 0;
 
     [Header("Cool Down Panel")]
-    public GameObject Bananapanel;
-    public GameObject[] PressKeys;
+    public PlayerSelectWizard wizard;
     public float LCoolDownTime, RCoolDownTime, DCoolDownTime, UCoolDownTime;
 
-    private PlayerInputController _controller;
     private Player _player;
     private int f_index;
     private bool FireOne = true;
@@ -44,30 +42,27 @@ public class Bananaman : MonoBehaviour
 
     private void Awake()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
         _player = GetComponentInParent<Player>();
-        Bananapanel.SetActive(true);
-
-        ForeachObjsActive(PressKeys);
+        wizard = FindObjectOfType<PlayerSelectWizard>();
     }
 
     private void Update()
     {
         PressTalent();
 
-        if (_controller != null && _controller.FirePressed && FireOne && press)
+        if (_player.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
         }
 
-        if (_controller != null && _controller.FirePressed && UpTalentStart && MineCLenght > 0 && UptalentPress == false)
+        if (_player.FirePressed && UpTalentStart && MineCLenght > 0 && UptalentPress == false)
         {
             CollectStart();
             UptalentPress = true;
         }
 
-        if (_controller != null && _controller.FirePressed == false) UptalentPress = false;
+        if (_player.FirePressed == false) UptalentPress = false;
 
         if (_player.jumplenght > jumpLenghtTime)
         {
@@ -100,13 +95,13 @@ public class Bananaman : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller != null && _controller.LeftTalent && lefttalent) ActiveTalent(0);
+        if (_player.LeftTalent && lefttalent) ActiveTalent(0);
 
-        if (_controller != null && _controller.RightTalent && righttalent) ActiveTalent(1);
+        if (_player.RightTalent && righttalent) ActiveTalent(1);
 
-        if (_controller != null && _controller.DownTalent && downtalent) ActiveTalent(2);
+        if (_player.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_controller != null && _controller.UpTalent && uptalen) ActiveTalent(3);
+        if (_player.UpTalent && uptalen) ActiveTalent(3);
     }
 
     private void InsBananaBullet(GameObject B_bullet, Transform T_bullet)
@@ -152,9 +147,7 @@ public class Bananaman : MonoBehaviour
 
     private void ActiveTalent(int index)
     {
-        ForeachObjsActive(PressKeys);
-
-        PressKeys[index].SetActive(true);
+        wizard.SelectTalentWizard(index);
         f_index = index;
         FireOne = true;
         press = true;

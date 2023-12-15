@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KnifeManager : MonoBehaviour
@@ -14,12 +15,10 @@ public class KnifeManager : MonoBehaviour
     public GameObject KnifeDash;
 
     [Header("Cool Down Panel")]
-    public GameObject KnifePanel;
-    public GameObject[] PressKeys;
+    public PlayerSelectWizard wizard;
     public float LCoolDownTime, RCoolDownTime;
 
-    private PlayerInputController _controller;
-    private Player player;
+    private Player _player;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -29,21 +28,15 @@ public class KnifeManager : MonoBehaviour
 
     private void Start()
     {
-        _controller = GetComponentInParent<PlayerInputController>();
-        player = GetComponentInParent<Player>();
-        KnifePanel.SetActive(true);
-
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
+        _player = GetComponentInParent<Player>();
+        wizard = FindObjectOfType<PlayerSelectWizard>();
     }
 
     private void Update()
     {
         PressTalent();
 
-        if (_controller.FirePressed && FireOne && press)
+        if (_player.FirePressed && FireOne && press)
         {
             Talent();
             FireOne = false;
@@ -52,19 +45,14 @@ public class KnifeManager : MonoBehaviour
 
     private void PressTalent()
     {
-        if (_controller != null && _controller.LeftTalent && lefttalent) SelectTalentActive(0);
+        if (_player != null && _player.LeftTalent && lefttalent) SelectTalentActive(0);
 
-        if (_controller != null && _controller.RightTalent && righttalent) SelectTalentActive(1);
+        if (_player != null && _player.RightTalent && righttalent) SelectTalentActive(1);
     }
 
     private void SelectTalentActive(int index)
     {
-        foreach (GameObject key in PressKeys)
-        {
-            key.SetActive(false);
-        }
-
-        PressKeys[index].SetActive(true);
+        wizard.SelectTalentKnife(index);
         f_index = index;
         press = true;
         FireOne = true;
@@ -75,7 +63,7 @@ public class KnifeManager : MonoBehaviour
         switch (f_index)
         {
             case 0:
-                StartCoroutine(player.Dash());
+                StartCoroutine(_player.Dash());
                 InstateFireProperty(KnifeDash, PlayerPos, true);
                 StartCoroutine(LCoolDown());
                 break;

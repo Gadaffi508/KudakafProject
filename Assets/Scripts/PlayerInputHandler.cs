@@ -15,5 +15,6 @@ public class PlayerInputHandler : MonoBehaviour
         var Players = FindObjectsOfType<Player>();
         var ýndex = playerInput.playerIndex;
         player = Players.FirstOrDefault(m => m.GetPlayerIndex() == ýndex);
+        Debug.Log(ýndex);
     }
 }
