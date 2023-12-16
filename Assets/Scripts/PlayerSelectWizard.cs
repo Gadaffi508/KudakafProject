@@ -6,6 +6,8 @@ public class PlayerSelectWizard : MonoBehaviour
 {
     public string WizardName;
 
+    public Transform[] PlayerOneStartPos;
+
     public GameObject PressPanel;
     public GameObject[] Circles;
 

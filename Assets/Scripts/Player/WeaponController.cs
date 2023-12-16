@@ -28,6 +28,8 @@ public class WeaponController : MonoBehaviour
         _Player = GetComponent<Player>();
         selectPlayer = FindObjectOfType<PlayerSelectWizard>();
         WizardPlayerName = selectPlayer.WizardName;
+
+        transform.position = selectPlayer.PlayerOneStartPos[_Player.PlayerIndex].position;
         Gun.SetActive(false);
 
     }
