@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private bool jump;
     private bool isDashing = false;
 
+    private float SpeedZerotime;
+
     internal bool İsFly = false;
 
     internal Vector2 currentMovement;
@@ -94,13 +96,6 @@ public class Player : MonoBehaviour
         isDashing = true;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
-    }
-
-    public IEnumerator SpeedZeroDelay()
-    {
-        SpeedZero = true;
-        yield return new WaitForSeconds(1);
-        SpeedZero = false;
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => currentMovement = ctx.ReadValue<Vector2>();

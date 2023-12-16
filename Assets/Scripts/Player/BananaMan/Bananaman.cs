@@ -191,9 +191,10 @@ public class Bananaman : MonoBehaviour
 
         yield return new WaitForSeconds(DCoolDownTime);
         _player.L_speed -= Power_Enhancer_speed;
-        wizard.SelectTalentWizard(0, 3, false);
         _player.jumplenght = 0;
         _player.bananaTalent = false;
+        yield return new WaitForSeconds(5);
+        wizard.SelectTalentWizard(0, 3, false);
 
         downtalent = true;
         FireOne = false;

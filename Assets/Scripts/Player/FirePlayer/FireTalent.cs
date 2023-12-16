@@ -28,6 +28,8 @@ public class FireTalent : MonoBehaviour
     private bool press = false;
     private bool SecondFire = false;
 
+    private Vector3 fireWallPos;
+
     private bool lefttalent = true,
     righttalent = true,
     uptalent = true,
@@ -77,6 +79,8 @@ public class FireTalent : MonoBehaviour
         press = true;
         FireOne = true;
 
+        fireWallPos = transform.position;
+
         if (index == 3)
         {
             s_index = 0;
@@ -87,7 +91,6 @@ public class FireTalent : MonoBehaviour
             s_index++;
             SecondFire = false;
         }
-
     }
 
     private void Talent()
@@ -125,13 +128,12 @@ public class FireTalent : MonoBehaviour
     private void InstFireCircle()
     {
         GameObject Circle = Instantiate(FireCircle, transform.position, transform.rotation, transform);
-        Destroy(Circle, 1f);
+        Destroy(Circle, 6f);
     }
 
     private void InstFireWind()
     {
         GameObject bullet = InstateFireProperty(FireWind);
-        Destroy(bullet, 1f);
     }
 
     private void InstFireBall()

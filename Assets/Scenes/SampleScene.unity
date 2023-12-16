@@ -1201,7 +1201,7 @@ RectTransform:
   m_Children:
   - {fileID: 1393836359}
   m_Father: {fileID: 853513208}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1263,7 +1263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &446055345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2074,8 +2074,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 444562082}
   - {fileID: 884108402}
+  - {fileID: 444562082}
   - {fileID: 1237966959}
   m_Father: {fileID: 303269132}
   m_RootOrder: 3
@@ -2352,7 +2352,7 @@ RectTransform:
   m_Children:
   - {fileID: 1952606816}
   m_Father: {fileID: 853513208}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4609,7 +4609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971083bf9ab52943973e3760354c10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WizardName: Monkey
+  WizardName: Bomb
   PressPanel: {fileID: 446055344}
   Circles:
   - {fileID: 419573476}
@@ -4632,9 +4632,15 @@ MonoBehaviour:
   - {fileID: 1571129856}
   LAserPanel: {fileID: 853513207}
   L_Press:
-  - {fileID: 1393836358}
   - {fileID: 1952606815}
+  - {fileID: 1393836358}
   - {fileID: 146136006}
+  _Random: 0
+  Sprites:
+  - {fileID: -1300420645, guid: de008947fdf96384c8f1aa35b2dac3fe, type: 3}
+  - {fileID: 1710104985, guid: c83831e0473a6e744bf221ea75e333c4, type: 3}
+  - {fileID: 865880162, guid: a97d6940a78befc44a6f2d0aa151c73b, type: 3}
+  GunObj: {fileID: 207453120}
 --- !u!1 &2107224882
 GameObject:
   m_ObjectHideFlags: 0

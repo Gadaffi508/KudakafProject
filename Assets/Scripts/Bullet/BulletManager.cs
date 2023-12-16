@@ -62,7 +62,6 @@ public abstract class BulletManager : MonoBehaviour
             direction *= Force;
 
             hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0,0);
-            StartCoroutine(hitCollider.GetComponentInParent<Player>().SpeedZeroDelay());
             hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
         }
     }

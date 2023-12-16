@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1792339259025415426}
   - component: {fileID: 1792339259025415428}
   - component: {fileID: 7822595685002989075}
+  - component: {fileID: 9201356306466263873}
   m_Layer: 0
   m_Name: FireCircle
   m_TagString: Untagged
@@ -122,3 +123,16 @@ CircleCollider2D:
   m_Offset: {x: 0.026046956, y: 0}
   serializedVersion: 2
   m_Radius: 1.087738
+--- !u!114 &9201356306466263873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792339259025415425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06512b5417b260449876ca6ddbecec4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.4

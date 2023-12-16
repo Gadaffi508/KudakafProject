@@ -13,7 +13,7 @@ public class FireGround : MonoBehaviour
         if (other.gameObject.CompareTag("FireBullet"))
         {
             FireOfDamageCount++;
-            if (FireOfDamageCount == 5)
+            if (FireOfDamageCount == 3)
             {
                 foreach (GameObject fireObj in FireObj)
                 {

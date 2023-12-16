@@ -21,7 +21,7 @@ public class BombTalent : MonoBehaviour
 
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
-    public float LCoolDownTime, RCoolDownTime, DCoolDownTime;
+    public float LCoolDownTime, RCoolDownTime, DCoolDownTime,UCoolDownTime;
 
     private Player _player;
     private int f_index;
@@ -32,12 +32,15 @@ public class BombTalent : MonoBehaviour
 
     private bool lefttalent = true,
     righttalent = true,
-    downtalent = true;
+    downtalent = true,
+    uptalent = true;
 
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
+        StartCoroutine(UCoolDown());
+        wizard.SelectTalentWizard(3, 0, true);
     }
 
     private void Update()
@@ -48,8 +51,8 @@ public class BombTalent : MonoBehaviour
         {
             Talent();
             FireOne = false;
-            S_index++;
             SecondFire = false;
+            S_index++;
         }
 
         if (_player.FirePressed && SecondFire && S_index == 1)
@@ -59,7 +62,7 @@ public class BombTalent : MonoBehaviour
             SecondFire = false;
         }
 
-        if (_player.FirePressed && !FireOne) SecondFire = true;
+        if (!_player.FirePressed && !FireOne) SecondFire = true;
     }
 
     private void Talent()
@@ -92,7 +95,7 @@ public class BombTalent : MonoBehaviour
 
         if (_player.DownTalent && downtalent) ActiveTalent(2);
 
-        if (_player.UpTalent) ActiveTalent(3);
+        if (_player.UpTalent && uptalent) ActiveTalent(3);
     }
 
     private void ActiveTalent(int index)
@@ -154,5 +157,13 @@ public class BombTalent : MonoBehaviour
         yield return new WaitForSeconds(DCoolDownTime);
         wizard.SelectTalentWizard(0, 2,false);
         downtalent = true;
+    }
+
+    IEnumerator UCoolDown()
+    {
+        uptalent = false;
+        yield return new WaitForSeconds(UCoolDownTime);
+        wizard.SelectTalentWizard(0, 3, false);
+        uptalent = true;
     }
 }

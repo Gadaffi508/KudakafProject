@@ -277,9 +277,9 @@ MonoBehaviour:
   - {fileID: 6142807317975974630}
   MineLenght: 0
   wizard: {fileID: 0}
-  LCoolDownTime: 5
-  RCoolDownTime: 5
-  DCoolDownTime: 5
+  LCoolDownTime: 2.5
+  RCoolDownTime: 7.5
+  DCoolDownTime: 4
   UCoolDownTime: 5
 --- !u!1 &6142807317200175626
 GameObject:
@@ -1109,9 +1109,9 @@ MonoBehaviour:
   FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
   FirePos: {fileID: 6142807318487583321}
   wizard: {fileID: 0}
-  LCoolDownTime: 5
-  RCoolDownTime: 5
-  UCoolDownTime: 5
+  LCoolDownTime: 6
+  RCoolDownTime: 11
+  UCoolDownTime: 4
   DCoolDownTime: 5
 --- !u!1 &6142807317483854108
 GameObject:
@@ -2630,7 +2630,8 @@ MonoBehaviour:
   wizard: {fileID: 0}
   LCoolDownTime: 5
   RCoolDownTime: 5
-  DCoolDownTime: 5
+  DCoolDownTime: 15
+  UCoolDownTime: 7
 --- !u!1 &6142807318887722821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,10 +3154,6 @@ MonoBehaviour:
   - {fileID: 6142807317397551006}
   - {fileID: 6142807317483854108}
   - {fileID: 6142807318221517079}
-  Sprites:
-  - {fileID: -1300420645, guid: de008947fdf96384c8f1aa35b2dac3fe, type: 3}
-  - {fileID: 1710104985, guid: c83831e0473a6e744bf221ea75e333c4, type: 3}
-  - {fileID: 865880162, guid: a97d6940a78befc44a6f2d0aa151c73b, type: 3}
   FirePlayer: {fileID: 6142807317456458059}
   BombPlayer: {fileID: 6142807318836480997}
   Monkey: {fileID: 6142807317196725435}

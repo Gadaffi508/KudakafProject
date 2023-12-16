@@ -10,8 +10,6 @@ public class WeaponController : MonoBehaviour
     public GameObject Gun;
     public GameObject[] Gunlisher;
 
-    public Sprite[] Sprites;
-
     public GameObject FirePlayer;
     public GameObject BombPlayer;
     public GameObject Monkey;
@@ -20,13 +18,10 @@ public class WeaponController : MonoBehaviour
     public PlayerSelectWizard selectPlayer;
     public string WizardPlayerName;
     private Player _Player;
-    private GameObject GunObj;
 
     private bool PlayerSelected = false;
 
     private bool press = false;
-
-    int random;
 
     private void Start()
     {
@@ -34,10 +29,6 @@ public class WeaponController : MonoBehaviour
         selectPlayer = FindObjectOfType<PlayerSelectWizard>();
         WizardPlayerName = selectPlayer.WizardName;
         Gun.SetActive(false);
-
-        random = Random.RandomRange(0, Gunlisher.Length);
-        GunObj = GameObject.FindGameObjectWithTag("GunObject").gameObject;
-        GunObj.GetComponent<SpriteRenderer>().sprite = Sprites[random];
 
     }
 
@@ -54,7 +45,7 @@ public class WeaponController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GunObject") && PlayerSelected == false)
         {
-            Gunlisher[random].SetActive(true);
+            Gunlisher[selectPlayer._Random].SetActive(true);
 
             Destroy(other.gameObject);
 

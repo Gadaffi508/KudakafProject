@@ -13,6 +13,7 @@ public class BulletFire : BulletManager
         if (collision.gameObject.TryGetComponent(out PlayerHealth health))
         {
             health.TakeDamage(Damage);
+            Destroy(gameObject);
         }
     }
 }

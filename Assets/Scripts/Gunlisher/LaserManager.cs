@@ -129,6 +129,13 @@ public class LaserManager : MonoBehaviour
     IEnumerator LCoolDown()
     {
         lefttalent = false;
+        yield return new WaitForSeconds(1.5f);
+
+        foreach (var line in LineRs)
+        {
+            line.SetWidth(0.4f,0.4f);
+        }
+
         yield return new WaitForSeconds(LCoolDownTime);
         wizard.SelectTalentLaser(0, 0,false);
         foreach (var line in LineRs)

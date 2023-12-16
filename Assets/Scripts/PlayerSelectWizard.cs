@@ -21,6 +21,17 @@ public class PlayerSelectWizard : MonoBehaviour
     public GameObject LAserPanel;
     public GameObject[] L_Press;
 
+    [Header("Random Gun")]
+    public int _Random;
+    public Sprite[] Sprites;
+    public GameObject GunObj;
+
+    private void Start()
+    {
+        _Random = Random.RandomRange(0, Sprites.Length);
+        GunObj.GetComponent<SpriteRenderer>().sprite = Sprites[_Random];
+    }
+
     private float presskey = 0;
 
     public void SelectTalentWizard(int index,int a_index, bool isAc)
