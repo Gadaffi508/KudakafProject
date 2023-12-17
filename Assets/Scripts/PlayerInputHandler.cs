@@ -6,22 +6,38 @@ using System.Linq;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public static PlayerInputHandler playerInputHandler;
-
-    private PlayerInput playerInput;
-    private Player _Player;
     string[] joystickNames;
+    public List<Player> player = new List<Player>();
+
+    int index = 0;
+    bool plused = false;
 
     private void Start()
     {
-        joystickNames = Input.GetJoystickNames();
+        joystickNames = Input.GetJoystickNames(); 
+    }
 
-        _Player = GetComponent<Player>(); 
-        _Player.PlayerGamePadName = joystickNames[0];
+    private void Update()
+    {
+        if (player.Count > 0 && plused == false)
+        {
+            GamePadNumber();
+            index++;
+            plused = true;
+        }
 
-        playerInput = GetComponent<PlayerInput>();
-        var playerindex = playerInput.playerIndex;
+        if (player.Count > 1)
+        {
+            GamePadNumber();
+        }
 
-        Debug.Log(playerindex);
+    }
+
+    public void GamePadNumber()
+    {
+        for (int i = index; i < index+1; i++)
+        {
+            player[i].PlayerIndex = i;
+        }
     }
 }

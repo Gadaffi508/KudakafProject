@@ -32,6 +32,11 @@ public class BombCharecter : MonoBehaviour
 
             collision.gameObject.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0, 0);
             collision.gameObject.GetComponentInParent<Rigidbody2D>().AddForce(direction);
+
+            BombPlayer.SetActive(true);
+            this.gameObject.SetActive(false);
         }
+
+
     }
 }

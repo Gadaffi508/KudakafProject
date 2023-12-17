@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
     private float SpeedZerotime;
 
+    private PlayerInputHandler handler;
+
     internal bool İsFly = false;
 
     internal Vector2 currentMovement;
@@ -47,6 +49,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        handler = FindObjectOfType<PlayerInputHandler>();
+        handler.player.Add(this);
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -85,11 +90,6 @@ public class Player : MonoBehaviour
     {
         if (RunPrees) speed = R_speed;
         else speed = L_speed;
-    }
-
-    public int GetPlayerIndex()
-    {
-        return PlayerIndex;
     }
 
     public IEnumerator Dash()

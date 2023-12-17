@@ -40,7 +40,6 @@ public class WeaponController : MonoBehaviour
         if (Input.anyKey && press == false)
         {
             selectPlayer.PressKeyPanel(1);
-            Debug.Log("work");
             press = true;
         }
     }

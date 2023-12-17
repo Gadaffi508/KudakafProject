@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LaserManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class LaserManager : MonoBehaviour
 
     [Header("Up Talent"), Tooltip("Classic Bomb")]
     public GameObject Bomb;
+
+    public LayerMask p_mask;
 
     [Header("Cool Down Panel")]
     public PlayerSelectWizard wizard;
@@ -30,6 +33,14 @@ public class LaserManager : MonoBehaviour
     private bool lefttalent = true,
     righttalent = true,
     uptalent = true;
+
+    public float damageInterval = 1f;
+
+    private float timer = 0f;
+
+    public float PdamageInterval = 1f;
+
+    private float Ptimer = 0f;
 
     private void Start()
     {
@@ -59,6 +70,36 @@ public class LaserManager : MonoBehaviour
         if (hit.collider != null)
         {
             lineEnd = hit.point;
+
+            if (hit.collider.name == "Player")
+            {
+                timer += Time.deltaTime;
+                if (timer >= damageInterval && lineRenderer.enabled == true)
+                {
+                    hit.collider.GetComponentInParent<PlayerHealth>().TakeDamage(10);
+                    timer = 0f;
+                }
+            }
+        }
+
+        for (int i = 0; i < LinePosRs.Length; i++)
+        {
+            RaycastHit2D hits = Physics2D.Linecast(LinePosRs[i].position, LinePos(), p_mask);
+
+            Debug.DrawLine(LinePosRs[i].position,hits.point,Color.red);
+
+            if (hits.collider != null)
+            {
+                if (hit.collider.name == "Player")
+                {
+                    Ptimer += Time.deltaTime;
+                    if (Ptimer >= PdamageInterval && LineRs[i].enabled == true)
+                    {
+                        hits.collider.GetComponentInParent<PlayerHealth>().TakeDamage(10);
+                        Ptimer = 0f;
+                    }
+                }
+            }
         }
     }
 
@@ -73,7 +114,7 @@ public class LaserManager : MonoBehaviour
 
     private void SelectTalentActive(int index)
     {
-        wizard.SelectTalentLaser(index,0,true);
+        wizard.SelectTalentLaser(index, 0, true);
         f_index = index;
         press = true;
         FireOne = true;
@@ -133,11 +174,17 @@ public class LaserManager : MonoBehaviour
 
         foreach (var line in LineRs)
         {
-            line.SetWidth(0.4f,0.4f);
+            line.SetWidth(0.4f, 0.4f);
         }
 
         yield return new WaitForSeconds(LCoolDownTime);
-        wizard.SelectTalentLaser(0, 0,false);
+        wizard.SelectTalentLaser(0, 0, false);
+
+        foreach (var line in LineRs)
+        {
+            line.SetWidth(0.02f, 0.1f);
+        }
+
         foreach (var line in LineRs)
         {
             line.enabled = false;
@@ -149,7 +196,7 @@ public class LaserManager : MonoBehaviour
     {
         righttalent = false;
         yield return new WaitForSeconds(RCoolDownTime);
-        wizard.SelectTalentLaser(0, 1,false);
+        wizard.SelectTalentLaser(0, 1, false);
         lineRenderer.enabled = false;
         righttalent = true;
     }
@@ -166,7 +213,7 @@ public class LaserManager : MonoBehaviour
     {
         float angle = LineFirePos.eulerAngles.z;
 
-        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 20;
+        Vector3 laserDirection = Quaternion.Euler(0, 0, angle - 45) * Vector3.right * 100;
 
         return laserDirection;
     }

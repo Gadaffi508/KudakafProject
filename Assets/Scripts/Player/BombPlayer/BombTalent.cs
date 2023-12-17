@@ -39,8 +39,12 @@ public class BombTalent : MonoBehaviour
     {
         _player = GetComponentInParent<Player>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
-        StartCoroutine(UCoolDown());
         wizard.SelectTalentWizard(3, 0, true);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(UCoolDown());
     }
 
     private void Update()

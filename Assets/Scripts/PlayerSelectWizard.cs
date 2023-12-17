@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSelectWizard : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerSelectWizard : MonoBehaviour
     public GameObject[] L_Press;
 
     private float presskey = 0;
-    
+
     [Header("Random Gun")]
     public int _Random;
     public Sprite[] Sprites;
@@ -34,15 +35,23 @@ public class PlayerSelectWizard : MonoBehaviour
     public GameObject CanvasPanel;
     public List<WeaponController> playerList = new List<WeaponController>();
 
+    [Header("Win player")]
+    public int onePlayerWincount = 0;
+    public int SecondPlayerWincount = 0;
+    public Text winText;
+
+    private bool Plus = false;
 
     private void Start()
     {
         _Random = Random.RandomRange(0, Sprites.Length);
         GunObj.GetComponent<SpriteRenderer>().sprite = Sprites[_Random];
+        onePlayerWincount = PlayerPrefs.GetInt("onePlayerWincount");
+        SecondPlayerWincount = PlayerPrefs.GetInt("SecondPlayerWincount");
     }
-    
 
-    public void SelectTalentWizard(int index,int a_index, bool isAc)
+
+    public void SelectTalentWizard(int index, int a_index, bool isAc)
     {
         Panel.SetActive(true);
 
@@ -57,7 +66,7 @@ public class PlayerSelectWizard : MonoBehaviour
         }
     }
 
-    public void SelectTalentKnife(int index,int a_index, bool isAc)
+    public void SelectTalentKnife(int index, int a_index, bool isAc)
     {
         KnifePanel.SetActive(true);
 
@@ -87,7 +96,7 @@ public class PlayerSelectWizard : MonoBehaviour
         }
     }
 
-    public void SelectTalentLaser(int index, int a_index,bool isAc)
+    public void SelectTalentLaser(int index, int a_index, bool isAc)
     {
         LAserPanel.SetActive(true);
 
@@ -106,8 +115,6 @@ public class PlayerSelectWizard : MonoBehaviour
     {
         presskey += index;
 
-        Debug.Log(presskey);
-
         if (presskey == 1)
         {
             Circles[0].SetActive(false);
@@ -119,13 +126,34 @@ public class PlayerSelectWizard : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public void GameOver(int winplayerýndex)
     {
-        foreach (WeaponController _player in playerList)
+        if (winplayerýndex == 0 && Plus==false)
         {
-            _player.gameObject.SetActive(false);
+            onePlayerWincount++;
+            PlayerPrefs.SetInt("onePlayerWincount", onePlayerWincount);
+            Plus = true;
+        }
+
+        if (winplayerýndex == 1 && Plus == false)
+        {
+            SecondPlayerWincount++;
+            PlayerPrefs.SetInt("SecondPlayerWincount", SecondPlayerWincount);
+            Plus = true;
         }
         CanvasPanel.SetActive(true);
+
+        winText.text = $"{onePlayerWincount} {SecondPlayerWincount}";
+
+        if (onePlayerWincount > 1)
+        {
+            winText.text = "Winner Player 0";
+        }
+
+        if (SecondPlayerWincount>1)
+        {
+            winText.text = "Winner Player 1";
+        }
     }
 
 }

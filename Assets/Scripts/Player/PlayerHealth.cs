@@ -7,8 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     Player player;
     public PlayerSelectWizard selectPlayer;
-
-    public float playerýndexd;
+    private int WinPlayer;
 
     private void Start()
     {
@@ -28,7 +27,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("ölen " + player.PlayerIndex);
-        selectPlayer.GameOver();
+        if (player.PlayerIndex == 1)
+        {
+            WinPlayer = 0;
+        }
+        if (player.PlayerIndex == 0)
+        {
+            WinPlayer = 1;
+        }
+
+        selectPlayer.GameOver(WinPlayer);
     }
 }

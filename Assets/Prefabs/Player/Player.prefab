@@ -1778,6 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c12e0075b8d3e44a76171918cf8466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Force: 5000
   BombTime: 7
   BombPlayer: {fileID: 6142807318836480997}
 --- !u!1 &6142807317952795908
@@ -2175,11 +2176,16 @@ MonoBehaviour:
   - {fileID: 6142807318952131403}
   - {fileID: 6142807317788909448}
   Bomb: {fileID: 5621512034142317800, guid: ad63cda430d175347aca222d75856431, type: 3}
+  p_mask:
+    serializedVersion: 2
+    m_Bits: 64
   wizard: {fileID: 0}
   LCoolDownTime: 2
   RCoolDownTime: 2
   UCoolDownTime: 2
   _playerSpiteManager: {fileID: 6142807318541681320}
+  damageInterval: 1
+  damageAmount: 10
 --- !u!1 &6142807318480655525
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,7 +3068,6 @@ GameObject:
   - component: {fileID: 6142807319219649480}
   - component: {fileID: 6142807319219649481}
   - component: {fileID: 6142807319219649482}
-  - component: {fileID: 7484601524376226581}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3127,6 +3132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c6efcceaad2b84980a6a731c033582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerGamePadName: 
   speed: 5
   R_speed: 10
   L_speed: 5
@@ -3379,18 +3385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
---- !u!114 &7484601524376226581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142807319219649489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d809ee5750f8a2149905b704466add5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  selectPlayer: {fileID: 0}
 --- !u!1 &9133378889353490519
 GameObject:
   m_ObjectHideFlags: 0
