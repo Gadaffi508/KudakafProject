@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 public class WeaponController : MonoBehaviour
 {
@@ -23,11 +20,15 @@ public class WeaponController : MonoBehaviour
 
     private bool press = false;
 
-    private void Start()
+    private IEnumerator Start()
     {
         _Player = GetComponent<Player>();
         selectPlayer = FindObjectOfType<PlayerSelectWizard>();
         WizardPlayerName = selectPlayer.WizardName;
+
+        selectPlayer.playerList.Add(this);
+
+        yield return new WaitForSeconds(0.2f);
 
         transform.position = selectPlayer.PlayerOneStartPos[_Player.PlayerIndex].position;
         Gun.SetActive(false);
@@ -39,6 +40,7 @@ public class WeaponController : MonoBehaviour
         if (Input.anyKey && press == false)
         {
             selectPlayer.PressKeyPanel(1);
+            Debug.Log("work");
             press = true;
         }
     }
@@ -53,7 +55,7 @@ public class WeaponController : MonoBehaviour
 
             PlayerSelected = true;
         }
-        
+
         if (other.gameObject.CompareTag("BosObject") && PlayerSelected == false)
         {
             Gun.SetActive(true);

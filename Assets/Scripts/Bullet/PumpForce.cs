@@ -16,6 +16,7 @@ public class PumpForce : BulletManager
         {
             forcePlayer = true;
             rb.bodyType = RigidbodyType2D.Static;
+            Destroy(this.gameObject);
         }
 
         if (collision.gameObject.TryGetComponent(out PlayerHealth health))

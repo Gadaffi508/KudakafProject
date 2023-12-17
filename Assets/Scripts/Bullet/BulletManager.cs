@@ -16,9 +16,24 @@ public abstract class BulletManager : MonoBehaviour
 
     public float m_Thrust = 20f;
 
+    public int PlayerIndex;
+    internal int DamagePlayer;
+
+    private bool damageded = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (PlayerIndex == 1)
+        {
+            DamagePlayer = 0;
+        }
+
+        if (PlayerIndex == 0)
+        {
+            DamagePlayer = 1;
+        }
     }
 
     private void FixedUpdate()
@@ -63,6 +78,17 @@ public abstract class BulletManager : MonoBehaviour
 
             hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0,0);
             hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
+
+            if (hitCollider.gameObject.GetComponentInParent<Player>().PlayerIndex == DamagePlayer && damageded == false)
+            {
+                hitCollider.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+                damageded = true;
+            }
+
+            if (hitCollider == null)
+            {
+                damageded = false;
+            }
         }
     }
 
@@ -70,7 +96,7 @@ public abstract class BulletManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         explode();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

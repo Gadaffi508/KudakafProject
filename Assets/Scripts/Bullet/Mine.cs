@@ -62,7 +62,7 @@ public class Mine : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         explode();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }

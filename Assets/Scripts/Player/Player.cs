@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public string PlayerGamePadName;
+
     [Range(0, 20)]
     public float speed;
     public float R_speed;

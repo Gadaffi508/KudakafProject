@@ -10,12 +10,12 @@ public class BulletEBomb : BulletManager
         if (collision.gameObject.CompareTag("Player"))
         {
             forcePlayer = true;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.velocity = Vector2.zero;
         }
 
-        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            health.TakeDamage(Damage);
+            rb.velocity = Vector2.zero;
         }
     }
 }

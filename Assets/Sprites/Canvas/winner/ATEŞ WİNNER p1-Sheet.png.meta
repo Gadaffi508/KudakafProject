@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,7 +127,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 21
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b478fb57db99baf499fdc92472514c0d
+      internalID: -1085940720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 21
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f28e44cdf675b45b29313f1c22a102
+      internalID: 433745242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 21
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5835da3a88d4448a20c4182ee0ac5b
+      internalID: 1508793520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 9
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95f8deb4529a494cb46663c9783081b
+      internalID: -2084829176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_17"
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 21
+        width: 9
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4d64e241c5a6c4c8799e1151a3e95d
+      internalID: -618605930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_18"
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 21
+        width: 18
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2bfb391764102b47b12e0d841930bdc
+      internalID: 1494818183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_19"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 21
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdd8afff220dae4c85af8e616108276
+      internalID: -49080599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_20"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 21
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344e4b384bbd7154cb09051d4ccb43e9
+      internalID: 542752203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_21"
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 21
+        width: 98
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c978b96d8f0686b468da8af6673107cd
+      internalID: 656102636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_22"
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf29170b7ff1664bbf37ca18638f844
+      internalID: -1757118088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_23"
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3419fd57f05f7a047994f7b62c9c45c4
+      internalID: -961997423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_24"
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15705b4e774c6bb4e918af00f1af4a4f
+      internalID: -625618605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_25"
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 21
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ab39983a5685342865907e2c706ff5
+      internalID: -43276249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_26"
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 21
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cec2266145cbf4987a283ef72d035a
+      internalID: -1720121104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_27"
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ebf5df7002a5a4595cffc7ef52db7d
+      internalID: 1256345279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_28"
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a067181efdd5f6742b94dccab7c01521
+      internalID: 13181172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_29"
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57567047fa95b88448a2166dfd5c6b5a
+      internalID: 469724165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_30"
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1195c90841d18468bdd59eedec68b6
+      internalID: -1731445119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ATE\u015E W\u0130NNER p1-Sheet_31"
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 21
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d9521350972ac4f98e41f631370e7f
+      internalID: -1585218863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +537,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ATE\u015E W\u0130NNER p1-Sheet_7": 308927805
+      "ATE\u015E W\u0130NNER p1-Sheet_5": -729618352
+      "ATE\u015E W\u0130NNER p1-Sheet_13": -1710457814
+      "ATE\u015E W\u0130NNER p1-Sheet_4": -45884112
+      "ATE\u015E W\u0130NNER p1-Sheet_29": 469724165
+      "ATE\u015E W\u0130NNER p1-Sheet_10": -404976176
+      "ATE\u015E W\u0130NNER p1-Sheet_9": 1511466997
+      "ATE\u015E W\u0130NNER p1-Sheet_16": -2084829176
+      "ATE\u015E W\u0130NNER p1-Sheet_28": 13181172
+      "ATE\u015E W\u0130NNER p1-Sheet_1": 1452089359
+      "ATE\u015E W\u0130NNER p1-Sheet_3": 1385733626
+      "ATE\u015E W\u0130NNER p1-Sheet_20": 542752203
+      "ATE\u015E W\u0130NNER p1-Sheet_30": -1731445119
+      "ATE\u015E W\u0130NNER p1-Sheet_6": -978169079
+      "ATE\u015E W\u0130NNER p1-Sheet_19": -49080599
+      "ATE\u015E W\u0130NNER p1-Sheet_15": -2097408564
+      "ATE\u015E W\u0130NNER p1-Sheet_21": 656102636
+      "ATE\u015E W\u0130NNER p1-Sheet_17": -618605930
+      "ATE\u015E W\u0130NNER p1-Sheet_22": -1757118088
+      "ATE\u015E W\u0130NNER p1-Sheet_26": -1720121104
+      "ATE\u015E W\u0130NNER p1-Sheet_12": 433745242
+      "ATE\u015E W\u0130NNER p1-Sheet_8": -1085940720
+      "ATE\u015E W\u0130NNER p1-Sheet_27": 1256345279
+      "ATE\u015E W\u0130NNER p1-Sheet_24": -625618605
+      "ATE\u015E W\u0130NNER p1-Sheet_11": 1281503042
+      "ATE\u015E W\u0130NNER p1-Sheet_2": -1699695226
+      "ATE\u015E W\u0130NNER p1-Sheet_23": -961997423
+      "ATE\u015E W\u0130NNER p1-Sheet_18": 1494818183
+      "ATE\u015E W\u0130NNER p1-Sheet_31": -1585218863
+      "ATE\u015E W\u0130NNER p1-Sheet_32": -1988692273
+      "ATE\u015E W\u0130NNER p1-Sheet_25": -43276249
+      "ATE\u015E W\u0130NNER p1-Sheet_0": 686590663
+      "ATE\u015E W\u0130NNER p1-Sheet_14": 1508793520
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

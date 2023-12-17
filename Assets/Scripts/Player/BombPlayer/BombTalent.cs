@@ -120,6 +120,9 @@ public class BombTalent : MonoBehaviour
     private void InstBomb(GameObject bomb)
     {
         GameObject bombObj = Instantiate(bomb, FirePos.position, FirePos.rotation);
+
+        bombObj.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
+
         if (Cursor.rotation.z > 0 && Cursor.rotation.z < 180)
         {
             bombObj.GetComponent<BulletManager>().Scale();

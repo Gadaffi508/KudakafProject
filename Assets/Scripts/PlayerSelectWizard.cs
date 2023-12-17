@@ -23,18 +23,24 @@ public class PlayerSelectWizard : MonoBehaviour
     public GameObject LAserPanel;
     public GameObject[] L_Press;
 
+    private float presskey = 0;
+    
     [Header("Random Gun")]
     public int _Random;
     public Sprite[] Sprites;
     public GameObject GunObj;
+
+    [Header("Game Over Options")]
+    public GameObject CanvasPanel;
+    public List<WeaponController> playerList = new List<WeaponController>();
+
 
     private void Start()
     {
         _Random = Random.RandomRange(0, Sprites.Length);
         GunObj.GetComponent<SpriteRenderer>().sprite = Sprites[_Random];
     }
-
-    private float presskey = 0;
+    
 
     public void SelectTalentWizard(int index,int a_index, bool isAc)
     {
@@ -100,15 +106,26 @@ public class PlayerSelectWizard : MonoBehaviour
     {
         presskey += index;
 
-        if (presskey > 0)
+        Debug.Log(presskey);
+
+        if (presskey == 1)
         {
             Circles[0].SetActive(false);
         }
-        if (presskey > 1)
+        if (presskey == 2)
         {
             Circles[1].SetActive(false);
             PressPanel.SetActive(false);
         }
+    }
+
+    public void GameOver()
+    {
+        foreach (WeaponController _player in playerList)
+        {
+            _player.gameObject.SetActive(false);
+        }
+        CanvasPanel.SetActive(true);
     }
 
 }
