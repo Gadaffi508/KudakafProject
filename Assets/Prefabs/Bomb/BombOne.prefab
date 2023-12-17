@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 8778569261582519272}
   - component: {fileID: 8778569261582519275}
   - component: {fileID: 8778569261582519274}
-  - component: {fileID: 4997834481798960450}
+  - component: {fileID: 2230663734304891562}
   m_Layer: 0
   m_Name: BombOne
   m_TagString: Untagged
@@ -187,7 +187,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4997834481798960450
+--- !u!114 &2230663734304891562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,13 +196,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8778569261582519276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e43c40a211d2e4199be094a72d4fb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7917b310253b7ea4489f8a64dc8ce579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  radius: 2
-  Force: 200
+  radius: 0.5
+  Force: 100
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
-  m_Thrust: 20
+  m_Thrust: 40
+  PlayerIndex: 0
+  isFireBullet: 0
+  isSticky: 0
+  BombBoomTime: 0
+  isHighBomb: 0

@@ -40,6 +40,10 @@ public class PlayerSelectWizard : MonoBehaviour
     public int SecondPlayerWincount = 0;
     public Text winText;
 
+    [Header("Health Players")]
+    public Image OnePlayer;
+    public Image SecondPlayer;
+
     private bool Plus = false;
 
     private void Start()
@@ -57,27 +61,38 @@ public class PlayerSelectWizard : MonoBehaviour
 
         if (isAc)
         {
-            pressKey[index].SetActive(false);
+            foreach (GameObject item in pressKey)
+            {
+                item.transform.localScale = new Vector2(1f, 1f);
+            }
+
+            pressKey[index].transform.localScale = new Vector2(1.3f, 1.3f);
         }
 
         if (!isAc)
         {
-            pressKey[a_index].SetActive(true);
+            pressKey[a_index].transform.localScale = new Vector2(1f, 1f);
         }
     }
 
     public void SelectTalentKnife(int index, int a_index, bool isAc)
     {
+
         KnifePanel.SetActive(true);
 
         if (isAc)
         {
-            K_Press[index].SetActive(false);
+            foreach (GameObject item in K_Press)
+            {
+                item.transform.localScale = new Vector2(1f, 1f);
+            }
+
+            K_Press[index].transform.localScale = new Vector2(1.3f, 1.3f);
         }
 
         if (!isAc)
         {
-            K_Press[a_index].SetActive(true);
+            K_Press[a_index].transform.localScale = new Vector2(1f, 1f);
         }
     }
 
@@ -87,12 +102,18 @@ public class PlayerSelectWizard : MonoBehaviour
 
         if (isAc)
         {
-            P_Press[index].SetActive(false);
+            foreach (GameObject item in P_Press)
+            {
+                item.transform.localScale = new Vector2(1f, 1f);
+            }
+
+            P_Press[index].transform.localScale = new Vector2(1.3f, 1.3f);
+
         }
 
         if (!isAc)
         {
-            P_Press[a_index].SetActive(true);
+            P_Press[a_index].transform.localScale = new Vector2(1f, 1f);
         }
     }
 
@@ -102,12 +123,17 @@ public class PlayerSelectWizard : MonoBehaviour
 
         if (isAc)
         {
-            L_Press[index].SetActive(false);
+            foreach (GameObject item in L_Press)
+            {
+                item.transform.localScale = new Vector2(1f, 1f);
+            }
+
+            L_Press[index].transform.localScale = new Vector2(1.3f, 1.3f);
         }
 
         if (!isAc)
         {
-            L_Press[a_index].SetActive(true);
+            L_Press[a_index].transform.localScale = new Vector2(1f, 1f);
         }
     }
 
@@ -128,7 +154,7 @@ public class PlayerSelectWizard : MonoBehaviour
 
     public void GameOver(int winplayerýndex)
     {
-        if (winplayerýndex == 0 && Plus==false)
+        if (winplayerýndex == 0 && Plus == false)
         {
             onePlayerWincount++;
             PlayerPrefs.SetInt("onePlayerWincount", onePlayerWincount);
@@ -143,16 +169,31 @@ public class PlayerSelectWizard : MonoBehaviour
         }
         CanvasPanel.SetActive(true);
 
-        winText.text = $"{onePlayerWincount} {SecondPlayerWincount}";
+        winText.text = $"{SecondPlayerWincount} {onePlayerWincount}";
 
         if (onePlayerWincount > 1)
         {
             winText.text = "Winner Player 0";
         }
 
-        if (SecondPlayerWincount>1)
+        if (SecondPlayerWincount > 1)
         {
             winText.text = "Winner Player 1";
+        }
+    }
+
+    public void HealthBarImage(int playerIndex,int damage,int HealthCount)
+    {
+        float healthPercentage = (float)(HealthCount) / 100;
+
+        if (playerIndex == 0)
+        {
+            OnePlayer.fillAmount = healthPercentage;
+        }
+
+        if (playerIndex == 1)
+        {
+            SecondPlayer.fillAmount = healthPercentage;
         }
     }
 

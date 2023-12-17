@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class LaserManager : MonoBehaviour
 {
+    public Transform TosKnifePos;
+
     [Header("Line Options")]
     public LineRenderer lineRenderer;
     public LineRenderer[] LineRs;
@@ -90,7 +92,7 @@ public class LaserManager : MonoBehaviour
 
             if (hits.collider != null)
             {
-                if (hit.collider.name == "Player")
+                if (hits.collider.name == "Player")
                 {
                     Ptimer += Time.deltaTime;
                     if (Ptimer >= PdamageInterval && LineRs[i].enabled == true)
@@ -164,8 +166,7 @@ public class LaserManager : MonoBehaviour
         lineRenderer.SetPosition(0, LineFirePos.position);
         lineRenderer.SetPosition(1, lineEnd);
     }
-
-    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj, LineFirePos.position, LineFirePos.rotation);
+    private GameObject InstateFireProperty(GameObject bomb) => Instantiate(bomb, TosKnifePos.position, TosKnifePos.rotation);
 
     IEnumerator LCoolDown()
     {

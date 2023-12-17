@@ -8,9 +8,9 @@ public class FireGround : MonoBehaviour
     public int FireOfDamageCount;
     public GameObject[] FireObj;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("FireBullet"))
+        if (collision.gameObject.CompareTag("FireBullet"))
         {
             FireOfDamageCount++;
             if (FireOfDamageCount == 3)
@@ -19,7 +19,18 @@ public class FireGround : MonoBehaviour
                 {
                     fireObj.SetActive(true);
                 }
+
+                Invoke("OffFire",5);
             }
+        }
+    }
+
+    private void OffFire()
+    {
+        foreach (GameObject fireObj in FireObj)
+        {
+            fireObj.SetActive(false);
+            FireOfDamageCount = 0;
         }
     }
 }

@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= Damage;
 
+        selectPlayer.HealthBarImage(player.PlayerIndex, Damage, health);
+
         if (health <= 0)
         {
             Die();

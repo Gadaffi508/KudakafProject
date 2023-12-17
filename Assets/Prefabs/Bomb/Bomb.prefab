@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5621512034142317802}
   - component: {fileID: 5621512034142317803}
   - component: {fileID: 5621512034142317807}
-  - component: {fileID: 5621512034142317804}
+  - component: {fileID: 3379368912922351182}
+  - component: {fileID: -7361293984862933673}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -124,7 +125,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5621512034142317804
+--- !u!95 &3379368912922351182
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621512034142317800}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08996654e1d3cb543b36ddf1586ec91c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7361293984862933673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,13 +154,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5621512034142317800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e43c40a211d2e4199be094a72d4fb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7917b310253b7ea4489f8a64dc8ce579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 15
-  radius: 1
-  Force: 300
+  Damage: 10
+  radius: 0.5
+  Force: 100
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
   m_Thrust: 20
+  PlayerIndex: 0
+  isFireBullet: 0

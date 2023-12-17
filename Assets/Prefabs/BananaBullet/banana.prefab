@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3749526505324156246}
   - component: {fileID: 3286298437969598382}
   - component: {fileID: 515009740582255927}
+  - component: {fileID: 7972862809447719511}
   m_Layer: 0
   m_Name: banana
   m_TagString: Untagged
@@ -143,3 +144,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_Thrust: 20
+  PlayerIndex: 0
+  isFireBullet: 1
+--- !u!95 &7972862809447719511
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052069692645977808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b405b97d1e6ae2245b6cc2ede50ce77c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

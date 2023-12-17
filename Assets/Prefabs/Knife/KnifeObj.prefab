@@ -101,6 +101,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_Thrust: 20
+  PlayerIndex: 0
+  isFireBullet: 1
 --- !u!1 &1718168256677630845
 GameObject:
   m_ObjectHideFlags: 0

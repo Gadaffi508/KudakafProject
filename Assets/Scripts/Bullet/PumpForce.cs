@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PumpForce : BulletManager
 {
+    public override void StartFnc()
+    {
+        Destroy(gameObject,5f);
+    }
+
     public override void TriggerFnc(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -16,12 +21,25 @@ public class PumpForce : BulletManager
         {
             forcePlayer = true;
             rb.bodyType = RigidbodyType2D.Static;
+            collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+            Destroy(this.gameObject);
+        }
+    }
+
+    public override void TriggerFnc(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             Destroy(this.gameObject);
         }
 
-        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        //m_Thrust = 0;
+        if (collision.gameObject.CompareTag("Player"))
         {
-            health.TakeDamage(Damage);
+            forcePlayer = true;
+            rb.bodyType = RigidbodyType2D.Static;
+            collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+            Destroy(this.gameObject);
         }
     }
 }

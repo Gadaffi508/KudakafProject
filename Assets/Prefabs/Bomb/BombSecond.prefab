@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5939176057701172822}
   - component: {fileID: 5939176057701172821}
   - component: {fileID: 5939176057701172820}
-  - component: {fileID: 5939176057701172819}
+  - component: {fileID: 1701785796933695123}
   m_Layer: 0
   m_Name: BombSecond
   m_TagString: Untagged
@@ -187,7 +187,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5939176057701172819
+--- !u!114 &1701785796933695123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,13 +196,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5939176057701172818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 933d07784fc299f4280ee6039417115d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7917b310253b7ea4489f8a64dc8ce579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  radius: 2
+  radius: 0.5
   Force: 100
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
-  m_Thrust: 10
+  m_Thrust: 40
+  PlayerIndex: 0
+  isFireBullet: 0
+  isSticky: 1
+  BombBoomTime: 1
+  isHighBomb: 0

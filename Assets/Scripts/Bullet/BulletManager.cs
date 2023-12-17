@@ -17,14 +17,25 @@ public abstract class BulletManager : MonoBehaviour
     public float m_Thrust = 20f;
 
     public int PlayerIndex;
+
+    public bool isFireBullet = false;
+
+    public bool isSticky = false;
+
+    public int BombBoomTime = 1;
     internal int DamagePlayer;
 
     private bool damageded = false;
+
+    Animator anim;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
+        StartFnc();
+
+        anim = GetComponentInChildren<Animator>();
         if (PlayerIndex == 1)
         {
             DamagePlayer = 0;
@@ -34,11 +45,16 @@ public abstract class BulletManager : MonoBehaviour
         {
             DamagePlayer = 1;
         }
+        if (isFireBullet == false)
+        {
+            rb.AddForce(transform.right * m_Thrust);
+            rb.AddForce(transform.up * m_Thrust/2);
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(transform.right* m_Thrust);
+        if(isFireBullet) rb.AddForce(transform.right* m_Thrust);
 
         if (forcePlayer)
         {
@@ -51,7 +67,14 @@ public abstract class BulletManager : MonoBehaviour
         TriggerFnc(collision);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        TriggerFnc(collision);
+    }
+
     public abstract void TriggerFnc(Collision2D collision);
+    public abstract void TriggerFnc(Collider2D collision);
+    public abstract void StartFnc();
 
     public void Scale()
     {
@@ -94,8 +117,9 @@ public abstract class BulletManager : MonoBehaviour
 
     public IEnumerator Timer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(BombBoomTime);
         explode();
+        anim.SetTrigger("BombEffect");
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

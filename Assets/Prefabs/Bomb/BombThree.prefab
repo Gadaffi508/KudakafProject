@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2257845438743199244}
   - component: {fileID: 2257845438743199245}
+  - component: {fileID: 7303682623314612262}
   m_Layer: 0
   m_Name: BombThree
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7303682623314612262
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257845438743199240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f73b52e44da842e4abd00bc8d961eb4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8692763777814976719
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +116,7 @@ GameObject:
   - component: {fileID: 8692763777814976707}
   - component: {fileID: 8692763777814976706}
   - component: {fileID: 8692763777814976705}
-  - component: {fileID: 8692763777814976704}
+  - component: {fileID: 6804474704973062562}
   m_Layer: 0
   m_Name: BombThree
   m_TagString: Untagged
@@ -166,7 +187,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8692763777814976704
+--- !u!114 &6804474704973062562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,13 +196,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8692763777814976719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddad3582773c88e43bec5444f9020e34, type: 3}
+  m_Script: {fileID: 11500000, guid: 7917b310253b7ea4489f8a64dc8ce579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
-  radius: 2
+  Damage: 10
+  radius: 3
   Force: 400
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
-  m_Thrust: 20
+  m_Thrust: 35
+  PlayerIndex: 0
+  isFireBullet: 0
+  isSticky: 0
+  BombBoomTime: 4
+  isHighBomb: 1

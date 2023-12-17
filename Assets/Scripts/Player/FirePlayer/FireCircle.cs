@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class FireCircle : MonoBehaviour
 {
-    public float Radius;
+    public int Damage;
+    private float DamageTime;
 
-    private void Update()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position,Radius);
-        foreach (Collider2D plCol in col)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (plCol.TryGetComponent(out PlayerHealth health))
+            DamageTime += Time.deltaTime;
+
+            if (DamageTime > 1)
             {
-                health.TakeDamage(10);
+                collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+                DamageTime = 0;
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,Radius);
     }
 }

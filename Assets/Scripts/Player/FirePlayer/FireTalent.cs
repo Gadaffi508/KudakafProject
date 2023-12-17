@@ -122,23 +122,27 @@ public class FireTalent : MonoBehaviour
     private void InstFireWall()
     {
         GameObject Wall = Instantiate(FireWall, FireArea(), transform.rotation);
+        //Wall.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
         Destroy(Wall, 1f);
     }
 
     private void InstFireCircle()
     {
         GameObject Circle = Instantiate(FireCircle, transform.position, transform.rotation, transform);
+        //Circle.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
         Destroy(Circle, 6f);
     }
 
     private void InstFireWind()
     {
         GameObject bullet = InstateFireProperty(FireWind);
+        bullet.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
     }
 
     private void InstFireBall()
     {
         GameObject bullet = InstateFireProperty(FirePrefabs);
+        bullet.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
         GameObject fireEffect = InstateFireProperty(FireEffect);
         Destroy(fireEffect, .5f);
     }

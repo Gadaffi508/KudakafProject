@@ -125,6 +125,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Explode"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea73758d-c501-46e9-a304-8e32003a897e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -248,6 +257,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37c8b35a-fb1f-4047-be0c-2b52f47d8d6b"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Explode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -267,6 +287,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamePlay_TalentThird = m_GamePlay.FindAction("TalentThird", throwIfNotFound: true);
         m_GamePlay_TalentFourth = m_GamePlay.FindAction("TalentFourth", throwIfNotFound: true);
         m_GamePlay_Punch = m_GamePlay.FindAction("Punch", throwIfNotFound: true);
+        m_GamePlay_Explode = m_GamePlay.FindAction("Explode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -337,6 +358,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_TalentThird;
     private readonly InputAction m_GamePlay_TalentFourth;
     private readonly InputAction m_GamePlay_Punch;
+    private readonly InputAction m_GamePlay_Explode;
     public struct GamePlayActions
     {
         private @PlayerController m_Wrapper;
@@ -352,6 +374,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @TalentThird => m_Wrapper.m_GamePlay_TalentThird;
         public InputAction @TalentFourth => m_Wrapper.m_GamePlay_TalentFourth;
         public InputAction @Punch => m_Wrapper.m_GamePlay_Punch;
+        public InputAction @Explode => m_Wrapper.m_GamePlay_Explode;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -394,6 +417,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Punch.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
                 @Punch.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
                 @Punch.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPunch;
+                @Explode.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnExplode;
+                @Explode.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnExplode;
+                @Explode.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnExplode;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -431,6 +457,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Punch.started += instance.OnPunch;
                 @Punch.performed += instance.OnPunch;
                 @Punch.canceled += instance.OnPunch;
+                @Explode.started += instance.OnExplode;
+                @Explode.performed += instance.OnExplode;
+                @Explode.canceled += instance.OnExplode;
             }
         }
     }
@@ -448,5 +477,6 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnTalentThird(InputAction.CallbackContext context);
         void OnTalentFourth(InputAction.CallbackContext context);
         void OnPunch(InputAction.CallbackContext context);
+        void OnExplode(InputAction.CallbackContext context);
     }
 }

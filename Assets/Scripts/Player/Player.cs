@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     internal bool UpTalent;
     internal bool DownTalent;
     internal bool PunchPress;
+    internal bool ExplodePress;
 
     private void Start()
     {
@@ -111,4 +112,5 @@ public class Player : MonoBehaviour
     public void OnUp(InputAction.CallbackContext ctx) => UpTalent = ctx.ReadValueAsButton();
     public void OnDown(InputAction.CallbackContext ctx) => DownTalent = ctx.ReadValueAsButton();
     public void OnPunch(InputAction.CallbackContext ctx) => PunchPress = ctx.ReadValueAsButton();
+    public void OnExplode(InputAction.CallbackContext ctx) => ExplodePress = ctx.ReadValueAsButton();
 }

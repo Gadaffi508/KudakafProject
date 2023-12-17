@@ -25,4 +25,18 @@ public class BulletBanana : BulletManager
         trigger = true;
         Destroy(this.gameObject);
     }
+
+    public override void StartFnc()
+    {
+        
+    }
+
+    public override void TriggerFnc(Collider2D collision)
+    {
+        if (trigger == false)
+        {
+            Instantiate(Banana_Mine, transform.position, Banana_Mine.transform.rotation);
+            trigger = true;
+        }
+    }
 }

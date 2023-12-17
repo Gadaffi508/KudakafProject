@@ -5,12 +5,31 @@ using UnityEngine;
 public class FireDamageGround : MonoBehaviour
 {
     public int Damage;
+    private float DamageTime = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            health.TakeDamage(Damage);
+            DamageTime += Time.deltaTime;
+
+            if (DamageTime > 1)
+            {
+                collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+                DamageTime = 0;
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        DamageTime += Time.deltaTime;
+
+        if (DamageTime > 1 && collision.gameObject.name == "Player")
+        {
+            collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+            DamageTime = 0;
         }
     }
 }

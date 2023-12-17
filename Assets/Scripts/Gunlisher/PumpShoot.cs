@@ -7,6 +7,9 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PumpShoot : MonoBehaviour
 {
+    public Transform _playerSprite;
+    public Transform PumpPos;
+
     [Header("Lef Talent"), Tooltip("Shotgun blast spread")]
     public GameObject Bullet;
     public Transform[] FirePos;
@@ -28,15 +31,22 @@ public class PumpShoot : MonoBehaviour
     private bool press = false;
     public PlayerSpiteManager _playerSpiteManager;
 
+    private int s_index;
+    private bool SecondFire = false;
+
     private bool lefttalent = true,
     righttalent = true,
     uptalent = true;
+
+    private float pumptime = 0;
+
+    Rigidbody2D rb;
 
     private void Start()
     {
         _player = GetComponentInParent<Player>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
-
+        rb = GetComponentInParent<Rigidbody2D>();
         _playerSpiteManager.isBlackPlayer = false;
     }
 
@@ -48,6 +58,20 @@ public class PumpShoot : MonoBehaviour
         {
             Talent();
             FireOne = false;
+        }
+
+        if (_player.FirePressed && SecondFire && s_index <= 99)
+        {
+            Shotgunspread();
+            s_index++;
+            SecondFire = false;
+        }
+
+        pumptime += Time.deltaTime;
+        if (!_player.FirePressed && !FireOne && pumptime > 1.85f)
+        {
+            SecondFire = true;
+            pumptime = 0;
         }
     }
 
@@ -66,6 +90,17 @@ public class PumpShoot : MonoBehaviour
         f_index = index;
         press = true;
         FireOne = true;
+
+        if (index == 0)
+        {
+            s_index = 0;
+            SecondFire = true;
+        }
+        else
+        {
+            s_index++;
+            SecondFire = false;
+        }
     }
 
     private void Talent()
@@ -95,8 +130,13 @@ public class PumpShoot : MonoBehaviour
     {
         for (int i = 0; i < FirePos.Length; i++)
         {
-            Instantiate(Bullet, FirePos[i].position, FirePos[i].rotation);
+            GameObject bullet = Instantiate(Bullet, FirePos[i].position, FirePos[i].rotation);
         }
+
+        float rotationZ = PumpPos.rotation.eulerAngles.z;
+
+        if (rotationZ > 0 && rotationZ < 180) rb.AddForce(Vector2.right * 1 * 1000);
+        else  rb.AddForce(Vector2.right * -1 * 1000);
     }
 
     IEnumerator LCoolDown()

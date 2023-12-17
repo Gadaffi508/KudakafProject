@@ -106,7 +106,8 @@ public class Bananaman : MonoBehaviour
 
     private void InsBananaBullet(GameObject B_bullet, Transform T_bullet)
     {
-        Instantiate(B_bullet, T_bullet.position, T_bullet.rotation);
+       GameObject bullet = Instantiate(B_bullet, T_bullet.position, T_bullet.rotation);
+        bullet.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
     }
 
     private void Collection()

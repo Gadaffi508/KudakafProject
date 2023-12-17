@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BombTalent : MonoBehaviour
@@ -13,6 +14,7 @@ public class BombTalent : MonoBehaviour
     public GameObject B_Bomb;
     [Header("Right Talent"), Tooltip("Clinging Bomb")]
     public GameObject C_Bomb;
+    public List<BulletManager> bombList = new List<BulletManager>();
     [Header("Down Talent"), Tooltip("High Bomb")]
     public GameObject H_Bomb;
 
@@ -67,6 +69,19 @@ public class BombTalent : MonoBehaviour
         }
 
         if (!_player.FirePressed && !FireOne) SecondFire = true;
+
+        if (bombList.Count > 0 && _player.ExplodePress == true)
+        {
+            for (int i = 0; i < bombList.Count; i++)
+            {
+                if (bombList[i] != null)
+                {
+                    bombList[i].GetComponent<BulletManager>().BombBoomTime = 0;
+                    StartCoroutine(bombList[i].Timer());
+                    bombList.Remove(bombList[i]);
+                }
+            }
+        }
     }
 
     private void Talent()
@@ -130,6 +145,11 @@ public class BombTalent : MonoBehaviour
         if (Cursor.rotation.z > 0 && Cursor.rotation.z < 180)
         {
             bombObj.GetComponent<BulletManager>().Scale();
+        }
+
+        if (bombObj.GetComponent<BulletManager>().isSticky == true)
+        {
+            bombList.Add(bombObj.GetComponent<BulletManager>());
         }
     }
 
