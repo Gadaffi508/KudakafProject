@@ -7,6 +7,7 @@ public class KnifeManager : MonoBehaviour
 {
     public Transform PlayerPos;
     public Transform TosKnifePos;
+    public float Radius;
 
     [Header("Lef Talent"), Tooltip("Toss Knife")]
     public GameObject KnifeObj;
@@ -31,6 +32,9 @@ public class KnifeManager : MonoBehaviour
     righttalent = true,
     uptalent = true;
 
+    float nextFire;
+    [SerializeField] float firetime = 1;
+
     private void Start()
     {
         _player = GetComponentInParent<Player>();
@@ -46,6 +50,25 @@ public class KnifeManager : MonoBehaviour
         {
             Talent();
             FireOne = false;
+        }
+
+        Collider2D[] playerCol = Physics2D.OverlapCircleAll(TosKnifePos.position, Radius);
+
+        foreach (Collider2D item in playerCol)
+        {
+            if (item != null)
+            {
+                if (item.gameObject.CompareTag("Player"))
+                {
+                    nextFire += Time.deltaTime;
+
+                    if (nextFire > 1)
+                    {
+                        item.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(5);
+                        nextFire = 0;
+                    }
+                }
+            }
         }
     }
 
@@ -63,7 +86,7 @@ public class KnifeManager : MonoBehaviour
         wizard.SelectTalentKnife(index,0,true);
         f_index = index;
         press = true;
-        FireOne = true;
+        if(!_player.FirePressed) FireOne = true;
     }
 
     private void Talent()
@@ -99,10 +122,10 @@ public class KnifeManager : MonoBehaviour
 
     IEnumerator UCoolDown()
     {
-        righttalent = false;
+        uptalent = false;
         yield return new WaitForSeconds(UCoolDownTime);
         wizard.SelectTalentKnife(0, 2, false);
-        righttalent = true;
+        uptalent = true;
     }
 
     IEnumerator RCoolDown()
@@ -131,5 +154,11 @@ public class KnifeManager : MonoBehaviour
         dashObj.GetComponent<Transform>().localScale = -FirePos.localScale;
         Destroy(dashObj, 1f);
         return dashObj;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(TosKnifePos.position, Radius);
     }
 }

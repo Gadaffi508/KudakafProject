@@ -265,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.024623334}
+  m_Offset: {x: 0, y: -0.15033197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -276,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 1.1507534}
+  m_Size: {x: 0.65, y: 0.80084276}
   m_EdgeRadius: 0
 --- !u!114 &6142807317196725425
 MonoBehaviour:
@@ -1110,7 +1110,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007071376, y: -0.18703967}
+  m_Offset: {x: -0.0002849698, y: -0.5597578}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1121,7 +1121,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3087153, y: 1.7348455}
+  m_Size: {x: 0.91147625, y: 0.9894092}
   m_EdgeRadius: 0
 --- !u!114 &6142807317456458049
 MonoBehaviour:
@@ -1142,10 +1142,10 @@ MonoBehaviour:
   FireEffect: {fileID: 4482593371639308642, guid: 05f30c8c125532e45a74236007eaca41, type: 3}
   FirePos: {fileID: 6142807318487583321}
   wizard: {fileID: 0}
-  LCoolDownTime: 6
+  LCoolDownTime: 12
   RCoolDownTime: 11
-  UCoolDownTime: 4
-  DCoolDownTime: 5
+  UCoolDownTime: 8
+  DCoolDownTime: 8
 --- !u!1 &6142807317483854108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142807317788909463}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c12e0075b8d3e44a76171918cf8466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 5000
+  Force: 500
   BombTime: 7
   BombPlayer: {fileID: 6142807318836480997}
 --- !u!1 &6142807317952795908
@@ -2637,7 +2637,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11161953, y: -0.17016792}
+  m_Offset: {x: -0.11161953, y: -0.4846208}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2648,7 +2648,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.91852546, y: 1.5112181}
+  m_Size: {x: 0.91852546, y: 0.8823123}
   m_EdgeRadius: 0
 --- !u!114 &6142807318836480987
 MonoBehaviour:
@@ -2673,7 +2673,7 @@ MonoBehaviour:
   LCoolDownTime: 5
   RCoolDownTime: 5
   DCoolDownTime: 15
-  UCoolDownTime: 7
+  UCoolDownTime: 12
 --- !u!1 &6142807318887722821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +2951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPos: {fileID: 6142807318541681329}
   TosKnifePos: {fileID: 6142807318342833352}
+  Radius: 0.3
   KnifeObj: {fileID: 644159669723052942, guid: b6139d707c0551340b2d78af16fabe97, type: 3}
   KnifeDash: {fileID: 3612248427647897465, guid: 9fbcf459e1173dd4aa2b2d48a1b63ac7, type: 3}
   Bomb: {fileID: 5621512034142317800, guid: ad63cda430d175347aca222d75856431, type: 3}
@@ -2959,6 +2960,7 @@ MonoBehaviour:
   RCoolDownTime: 2
   UCoolDownTime: 2
   _playerSpiteManager: {fileID: 6142807318541681320}
+  firetime: 0
 --- !u!1 &6142807319188507235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +2986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142807319188507235}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3151,7 +3153,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c02d52d552101a747bbe384d10957f8f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3172,7 +3174,7 @@ MonoBehaviour:
   speed: 5
   R_speed: 10
   L_speed: 5
-  jumpForce: 5
+  jumpForce: 6.5
   bananaTalent: 0
   jumplenght: 0
   SpeedZero: 0

@@ -163,6 +163,9 @@ MonoBehaviour:
   LayerHit:
     serializedVersion: 2
     m_Bits: 64
-  m_Thrust: 20
+  m_Thrust: 300
   PlayerIndex: 0
   isFireBullet: 0
+  isSticky: 0
+  BombBoomTime: 1
+  isHighBomb: 0

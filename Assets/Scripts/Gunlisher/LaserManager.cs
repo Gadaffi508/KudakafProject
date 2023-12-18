@@ -14,6 +14,8 @@ public class LaserManager : MonoBehaviour
     public LineRenderer[] LineRs;
     public Transform LineFirePos;
     public Transform[] LinePosRs;
+    //private Transform[] CurrentLinePosRs = new Transform[LinePosRs.Length];
+    private Transform[] CurrentLinePosRs;
 
     [Header("Up Talent"), Tooltip("Classic Bomb")]
     public GameObject Bomb;
@@ -84,21 +86,24 @@ public class LaserManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < LinePosRs.Length; i++)
+        if (lefttalent == false)
         {
-            RaycastHit2D hits = Physics2D.Linecast(LinePosRs[i].position, LinePos(), p_mask);
-
-            Debug.DrawLine(LinePosRs[i].position,hits.point,Color.red);
-
-            if (hits.collider != null)
+            for (int i = 0; i < LinePosRs.Length; i++)
             {
-                if (hits.collider.gameObject.CompareTag("Player"))
+                RaycastHit2D hits = Physics2D.Linecast(CurrentLinePosRs[i].position, LinePos(), p_mask);
+
+                Debug.DrawLine(CurrentLinePosRs[i].position, hits.point, Color.red);
+
+                if (hits.collider != null)
                 {
-                    Ptimer += Time.deltaTime;
-                    if (Ptimer >= PdamageInterval && LineRs[i].enabled == true)
+                    if (hits.collider.gameObject.CompareTag("Player"))
                     {
-                        hits.collider.GetComponentInParent<PlayerHealth>().TakeDamage(10);
-                        Ptimer = 0f;
+                        Ptimer += Time.deltaTime;
+                        if (Ptimer >= PdamageInterval && LineRs[i].enabled == true)
+                        {
+                            hits.collider.GetComponentInParent<PlayerHealth>().TakeDamage(10);
+                            Ptimer = 0f;
+                        }
                     }
                 }
             }
@@ -119,7 +124,7 @@ public class LaserManager : MonoBehaviour
         wizard.SelectTalentLaser(index, 0, true);
         f_index = index;
         press = true;
-        FireOne = true;
+        if (!_player.FirePressed) FireOne = true;
     }
 
     private void Talent()
@@ -155,6 +160,8 @@ public class LaserManager : MonoBehaviour
         {
             LineRs[i].SetPosition(0, LinePosRs[i].position);
             LineRs[i].SetPosition(1, LinePosRs[i].position + LinePos());
+
+            CurrentLinePosRs[i] = LinePosRs[i];
         }
     }
 

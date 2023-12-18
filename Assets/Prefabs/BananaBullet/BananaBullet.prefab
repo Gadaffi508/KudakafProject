@@ -163,8 +163,10 @@ MonoBehaviour:
   LayerHit:
     serializedVersion: 2
     m_Bits: 0
-  m_Thrust: 30
+  m_Thrust: 100
   PlayerIndex: 0
   isFireBullet: 1
+  isSticky: 0
+  BombBoomTime: 1
   Banana_Mine: {fileID: 6864328104416806454, guid: cc391dd21633f1347b0082f568514a96, type: 3}
   Banana_Bullet: {fileID: 2052069692645977808, guid: bc67d0f94d460d6438da5b991a080f23, type: 3}

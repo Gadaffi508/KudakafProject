@@ -100,7 +100,7 @@ MonoBehaviour:
   - {fileID: 7206000249377857536}
   Banana: {fileID: 3322715675117509939, guid: 95621eba5289f764c9fc9bc60c15a3d9, type: 3}
   BunchTime: 1
-  m_Thrust: 50
+  m_Thrust: 200
 --- !u!1 &7206000248576702940
 GameObject:
   m_ObjectHideFlags: 0

@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50b5459e1bcee545bd6eda451e9b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneLenght: 7
+  SceneLenght: 3
   ThisScene: 0
 --- !u!1 &442335691
 GameObject:

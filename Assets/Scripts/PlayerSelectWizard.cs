@@ -171,16 +171,18 @@ public class PlayerSelectWizard : MonoBehaviour
         }
         CanvasPanel.SetActive(true);
 
-        winText.text = $"{SecondPlayerWincount} {onePlayerWincount}";
+        winText.text = $"PlayerOne : {onePlayerWincount} PlayerSecond :  {SecondPlayerWincount}";
 
         if (onePlayerWincount > 1)
         {
-            winText.text = "Winner Player 0";
+            winText.text = "Winner Player 1";
+            PlayerPrefs.DeleteAll();
         }
 
         if (SecondPlayerWincount > 1)
         {
-            winText.text = "Winner Player 1";
+            winText.text = "Winner Player 2";
+            PlayerPrefs.DeleteAll();
         }
 
         StartCoroutine(NewGame());

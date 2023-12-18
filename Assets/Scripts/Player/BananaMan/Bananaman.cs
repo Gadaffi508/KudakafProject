@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Bananaman : MonoBehaviour
 {
@@ -43,7 +41,8 @@ public class Bananaman : MonoBehaviour
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
-        wizard = FindObjectOfType<PlayerSelectWizard>();
+        wizard = FindObjectOfType<PlayerSelectWizard>();;
+
     }
 
     private void Update()
@@ -76,11 +75,11 @@ public class Bananaman : MonoBehaviour
         switch (f_index)
         {
             case 0:
-                InsBananaBullet(Only_Banana, FirePos);
+                InsBananaBullet(Only_Banana, FirePos,true);
                 StartCoroutine(LCoolDown());
                 break;
             case 1:
-                InsBananaBullet(Bananas, FirePos);
+                InsBananaBullet(Bananas, FirePos,false);
                 StartCoroutine(RCoolDown());
                 break;
             case 2:
@@ -104,9 +103,10 @@ public class Bananaman : MonoBehaviour
         if (_player.UpTalent && uptalen) ActiveTalent(3);
     }
 
-    private void InsBananaBullet(GameObject B_bullet, Transform T_bullet)
+    private void InsBananaBullet(GameObject B_bullet, Transform T_bullet,bool isOnly)
     {
        GameObject bullet = Instantiate(B_bullet, T_bullet.position, T_bullet.rotation);
+       if(isOnly == true) bullet.GetComponent<BulletBanana>().playerIndex = _player.PlayerIndex;
     }
 
     private void Collection()
@@ -142,7 +142,7 @@ public class Bananaman : MonoBehaviour
 
     private void CollectStart()
     {
-        InsBananaBullet(Only_Banana, FirePos);
+        InsBananaBullet(Only_Banana, FirePos,true);
         MineCLenght--;
         if (MineCLenght < 8) UpTalentImage[MineCLenght].SetActive(false);
     }
@@ -151,7 +151,7 @@ public class Bananaman : MonoBehaviour
     {
         wizard.SelectTalentWizard(index,0,true);
         f_index = index;
-        FireOne = true;
+        if (!_player.FirePressed) FireOne = true;
         press = true;
 
         if (f_index == 3)

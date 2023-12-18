@@ -6,6 +6,7 @@ public class BulletBanana : BulletManager
 {
     public GameObject Banana_Mine;
     public GameObject Banana_Bullet;
+    public int playerIndex;
 
     private bool trigger = false;
 
@@ -20,7 +21,8 @@ public class BulletBanana : BulletManager
 
     public void Mine()
     {
-        Instantiate(Banana_Mine,transform.position, Banana_Mine.transform.rotation);
+        GameObject mine = Instantiate(Banana_Mine,transform.position, Banana_Mine.transform.rotation);
+        mine.GetComponent<Mine>().playerIndex = playerIndex;
         Instantiate(Banana_Bullet, transform.position, transform.rotation);
         trigger = true;
         Destroy(this.gameObject);

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PumpShoot : MonoBehaviour
 {
@@ -91,7 +90,7 @@ public class PumpShoot : MonoBehaviour
         wizard.SelectTalentPump(index, 0, true);
         f_index = index;
         press = true;
-        FireOne = true;
+        if (!_player.FirePressed) FireOne = true;
 
         if (index == 0)
         {

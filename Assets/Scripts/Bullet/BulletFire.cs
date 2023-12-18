@@ -15,7 +15,7 @@ public class BulletFire : BulletManager
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.name == "Player(Clone)")
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
             Destroy(gameObject);
@@ -28,7 +28,7 @@ public class BulletFire : BulletManager
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (PlayerIndex != collision.gameObject.GetComponentInParent<Player>().PlayerIndex)
             {

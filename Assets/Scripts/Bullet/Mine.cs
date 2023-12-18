@@ -6,6 +6,8 @@ public class Mine : MonoBehaviour
 {
     public int Damage = 10;
 
+    public int playerIndex;
+
     public float radius;
     public float Force;
     public LayerMask LayerHit;
@@ -15,7 +17,7 @@ public class Mine : MonoBehaviour
     void Start()
     {
         _bananaman = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponentInChildren<Bananaman>();
-        _bananaman.CollectBananaMine.Add(this.gameObject);
+        if(_bananaman != null) _bananaman.CollectBananaMine.Add(this.gameObject);
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class Mine : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponentInParent<Player>().PlayerIndex != playerIndex)
         {
             StartCoroutine(Timer());
         }
@@ -58,7 +60,10 @@ public class Mine : MonoBehaviour
             direction *= Force;
 
             hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            hitCollider.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+            if (hitCollider.GetComponentInParent<Player>().PlayerIndex != playerIndex)
+            {
+                hitCollider.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
+            }
             hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
         }
     }
@@ -69,7 +74,7 @@ public class Mine : MonoBehaviour
         explode();
         yield return new WaitForSeconds(1);
 
-        _bananaman.CollectBananaMine.Remove(this.gameObject);
+        if (_bananaman != null) _bananaman.CollectBananaMine.Remove(this.gameObject);
 
         Destroy(gameObject);
     }

@@ -10,12 +10,7 @@ public class RandomMap : MonoBehaviour
 
     public void RandomGameMapFnc()
     {
-        int random;
-        do
-        {
-            random = Random.Range(1, SceneLenght);
-        } 
-        while (random == ThisScene);
+        int random = Random.Range(1, SceneLenght+1);
 
         Debug.Log("Yeni Rastgele Sayý: " + random);
         SceneManager.LoadScene(random);

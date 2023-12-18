@@ -121,7 +121,7 @@ public class BombTalent : MonoBehaviour
     {
         wizard.SelectTalentWizard(index,0,true);
         f_index = index;
-        FireOne = true;
+        if (!_player.FirePressed) FireOne = true; FireOne = true;
         press = true;
 
         if (index == 1)

@@ -22,9 +22,9 @@ public class BombCharecter : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            health.TakeDamage(10);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(10);
 
             Vector2 direction = collision.gameObject.transform.position - transform.position;
 

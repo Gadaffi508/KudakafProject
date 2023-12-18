@@ -77,7 +77,7 @@ public class FireTalent : MonoBehaviour
         wizard.SelectTalentWizard(index,0,true);
         f_index = index;
         press = true;
-        FireOne = true;
+        if (!_player.FirePressed) FireOne = true; FireOne = true;
 
         fireWallPos = transform.position;
 
@@ -122,7 +122,7 @@ public class FireTalent : MonoBehaviour
     private void InstFireWall()
     {
         GameObject Wall = Instantiate(FireWall, FireArea(), transform.rotation);
-        //Wall.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
+        Wall.GetComponent<FireDamageGround>().playerIndex = _player.PlayerIndex;
         Destroy(Wall, 1f);
     }
 

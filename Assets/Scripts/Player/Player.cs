@@ -103,9 +103,9 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx) => currentMovement = ctx.ReadValue<Vector2>();
     public void OnCursor(InputAction.CallbackContext ctx) => CursorPos = ctx.ReadValue<Vector2>();
-    public void OnJump(InputAction.CallbackContext ctx) => JumpPressed = ctx.ReadValueAsButton();
+    public void OnJump(InputAction.CallbackContext ctx) => RunPrees = ctx.ReadValueAsButton();
     public void OnDash(InputAction.CallbackContext ctx) => DashPress = ctx.ReadValueAsButton();
-    public void OnRun(InputAction.CallbackContext ctx) => RunPrees = ctx.ReadValueAsButton();
+    public void OnRun(InputAction.CallbackContext ctx) => JumpPressed = ctx.ReadValueAsButton();
     public void OnFire(InputAction.CallbackContext ctx) => FirePressed = ctx.ReadValueAsButton();
     public void OnLeft(InputAction.CallbackContext ctx) => LeftTalent = ctx.ReadValueAsButton();
     public void OnRight(InputAction.CallbackContext ctx) => RightTalent = ctx.ReadValueAsButton();

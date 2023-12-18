@@ -6,6 +6,7 @@ public class FireDamageGround : MonoBehaviour
 {
     public int Damage;
     private float DamageTime = 0;
+    public int playerIndex;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -26,7 +27,7 @@ public class FireDamageGround : MonoBehaviour
 
         DamageTime += Time.deltaTime;
 
-        if (DamageTime > 1 && collision.gameObject.name == "Player")
+        if (DamageTime > 1 && collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
             DamageTime = 0;
