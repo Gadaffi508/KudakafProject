@@ -20,8 +20,6 @@ public class BulletFire : BulletManager
             collision.gameObject.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
             Destroy(gameObject);
         }
-
-        Debug.Log(collision.gameObject.name);
     }
 
     public override void TriggerFnc(Collider2D collision)
@@ -38,7 +36,5 @@ public class BulletFire : BulletManager
             }
             Destroy(gameObject);
         }
-
-        Debug.Log(collision.gameObject.name);
     }
 }

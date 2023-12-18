@@ -107,7 +107,6 @@ public class Bananaman : MonoBehaviour
     private void InsBananaBullet(GameObject B_bullet, Transform T_bullet)
     {
        GameObject bullet = Instantiate(B_bullet, T_bullet.position, T_bullet.rotation);
-        bullet.GetComponent<BulletManager>().PlayerIndex = _player.PlayerIndex;
     }
 
     private void Collection()
@@ -122,12 +121,14 @@ public class Bananaman : MonoBehaviour
             UpTalentImage[MineCLenght].SetActive(true);
         }
 
-        foreach (GameObject Mine in CollectBananaMine)
+        if (CollectBananaMine.Count>0)
         {
-            Mine.GetComponent<Mine>().Collection();
+            for (int i = 0; i < CollectBananaMine.Count;)
+            {
+                CollectBananaMine[i].GetComponent<Mine>().Collection();
+                CollectBananaMine.RemoveAt(i);
+            }
         }
-        CollectBananaMine.Clear();
-
         StartCoroutine(DelayUpTalentS());
     }
 

@@ -17,13 +17,13 @@ public class BombTalena : BulletManager
     public override void TriggerFnc(Collision2D collision)
     {
         m_Thrust = 0;
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.collider.gameObject.CompareTag("Player"))
         {
             forcePlayer = true;
             rb.velocity = Vector2.zero;
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.collider.gameObject.CompareTag("Ground"))
         {
             rb.velocity = Vector2.zero;
         }
@@ -32,6 +32,7 @@ public class BombTalena : BulletManager
     public override void TriggerFnc(Collider2D collision)
     {
         m_Thrust = 0;
+
         if (collision.gameObject.CompareTag("Player"))
         {
             forcePlayer = true;

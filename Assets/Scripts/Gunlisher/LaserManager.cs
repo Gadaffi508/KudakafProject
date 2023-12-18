@@ -73,7 +73,7 @@ public class LaserManager : MonoBehaviour
         {
             lineEnd = hit.point;
 
-            if (hit.collider.name == "Player")
+            if (hit.collider.gameObject.CompareTag("Player"))
             {
                 timer += Time.deltaTime;
                 if (timer >= damageInterval && lineRenderer.enabled == true)
@@ -92,7 +92,7 @@ public class LaserManager : MonoBehaviour
 
             if (hits.collider != null)
             {
-                if (hits.collider.name == "Player")
+                if (hits.collider.gameObject.CompareTag("Player"))
                 {
                     Ptimer += Time.deltaTime;
                     if (Ptimer >= PdamageInterval && LineRs[i].enabled == true)
@@ -166,7 +166,14 @@ public class LaserManager : MonoBehaviour
         lineRenderer.SetPosition(0, LineFirePos.position);
         lineRenderer.SetPosition(1, lineEnd);
     }
-    private GameObject InstateFireProperty(GameObject bomb) => Instantiate(bomb, TosKnifePos.position, TosKnifePos.rotation);
+    private GameObject InstateFireProperty(GameObject bomb)
+    {
+        GameObject C_bomb = Instantiate(bomb, TosKnifePos.position, TosKnifePos.rotation);
+
+        C_bomb.GetComponent<BombTalena>().PlayerIndex = _player.PlayerIndex;
+
+        return C_bomb;
+    }
 
     IEnumerator LCoolDown()
     {

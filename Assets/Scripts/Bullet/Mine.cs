@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
+    public int Damage = 10;
+
     public float radius;
     public float Force;
     public LayerMask LayerHit;
@@ -12,7 +14,7 @@ public class Mine : MonoBehaviour
 
     void Start()
     {
-        _bananaman = GameObject.FindGameObjectWithTag("Moonkey").gameObject.GetComponent<Bananaman>();
+        _bananaman = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponentInChildren<Bananaman>();
         _bananaman.CollectBananaMine.Add(this.gameObject);
     }
 
@@ -28,7 +30,9 @@ public class Mine : MonoBehaviour
 
     public void Collection()
     {
-        Destroy(gameObject);
+        //_bananaman.CollectBananaMine.Remove(this.gameObject);
+
+        Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,6 +58,7 @@ public class Mine : MonoBehaviour
             direction *= Force;
 
             hitCollider.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            hitCollider.GetComponentInParent<PlayerHealth>().TakeDamage(Damage);
             hitCollider.GetComponentInParent<Rigidbody2D>().AddForce(direction);
         }
     }
@@ -63,6 +68,9 @@ public class Mine : MonoBehaviour
         yield return new WaitForSeconds(1);
         explode();
         yield return new WaitForSeconds(1);
+
+        _bananaman.CollectBananaMine.Remove(this.gameObject);
+
         Destroy(gameObject);
     }
 }

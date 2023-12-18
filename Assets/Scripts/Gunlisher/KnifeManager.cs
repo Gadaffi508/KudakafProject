@@ -113,7 +113,17 @@ public class KnifeManager : MonoBehaviour
         righttalent = true;
     }
 
-    private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos) => Instantiate(InsObj, FirePos.position, FirePos.rotation);
+    private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos)
+    {
+        GameObject bomb = Instantiate(InsObj, FirePos.position, FirePos.rotation);
+
+        if (bomb.GetComponent<BombTalena>())
+        {
+            bomb.GetComponent<BombTalena>().PlayerIndex = _player.PlayerIndex;
+        }
+
+        return bomb;
+    }
 
     private GameObject InstateFireProperty(GameObject InsObj, Transform FirePos, bool parent)
     {

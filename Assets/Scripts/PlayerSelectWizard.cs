@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerSelectWizard : MonoBehaviour
 {
+    public RandomMap map;
+
     public string WizardName;
 
     public Transform[] PlayerOneStartPos;
@@ -180,6 +182,8 @@ public class PlayerSelectWizard : MonoBehaviour
         {
             winText.text = "Winner Player 1";
         }
+
+        StartCoroutine(NewGame());
     }
 
     public void HealthBarImage(int playerIndex,int damage,int HealthCount)
@@ -195,6 +199,12 @@ public class PlayerSelectWizard : MonoBehaviour
         {
             SecondPlayer.fillAmount = healthPercentage;
         }
+    }
+
+    IEnumerator NewGame()
+    {
+        yield return new WaitForSeconds(3);
+        map.RandomGameMapFnc();
     }
 
 }

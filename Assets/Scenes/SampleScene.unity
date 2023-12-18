@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50b5459e1bcee545bd6eda451e9b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneLenght: 0
+  SceneLenght: 6
   ThisScene: 0
 --- !u!1 &419573476
 GameObject:
@@ -5448,7 +5448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971083bf9ab52943973e3760354c10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WizardName: Bomb
+  map: {fileID: 303269133}
+  WizardName: Fire
   PlayerOneStartPos:
   - {fileID: 856410474}
   - {fileID: 50053546}

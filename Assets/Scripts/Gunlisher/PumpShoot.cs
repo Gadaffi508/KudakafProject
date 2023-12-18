@@ -15,7 +15,7 @@ public class PumpShoot : MonoBehaviour
     public Transform[] FirePos;
 
     [Header("Right Talent"), Tooltip("Heal")]
-    public float HealAmount;
+    public int HealAmount;
     public float speedAmount;
 
     [Header("Up Talent"), Tooltip("Classic Bomb")]
@@ -26,6 +26,7 @@ public class PumpShoot : MonoBehaviour
     public float LCoolDownTime, RCoolDownTime, UCoolDownTime;
 
     private Player _player;
+    private PlayerHealth _playerHealth;
     private int f_index;
     private bool FireOne = true;
     private bool press = false;
@@ -45,6 +46,7 @@ public class PumpShoot : MonoBehaviour
     private void Start()
     {
         _player = GetComponentInParent<Player>();
+        _playerHealth = GetComponentInParent<PlayerHealth>();
         wizard = FindObjectOfType<PlayerSelectWizard>();
         rb = GetComponentInParent<Rigidbody2D>();
         _playerSpiteManager.isBlackPlayer = false;
@@ -124,7 +126,14 @@ public class PumpShoot : MonoBehaviour
         }
     }
 
-    private GameObject InstateFireProperty(GameObject InsObj) => Instantiate(InsObj, FirePos[0].position, FirePos[0].rotation);
+    private GameObject InstateFireProperty(GameObject InsObj)
+    {
+        GameObject bomb = Instantiate(InsObj, FirePos[0].position, FirePos[0].rotation);
+
+        bomb.GetComponent<BombTalena>().PlayerIndex = _player.PlayerIndex;
+
+        return bomb;
+    }
 
     private void Shotgunspread()
     {
@@ -159,6 +168,7 @@ public class PumpShoot : MonoBehaviour
     {
         righttalent = false;
         _player.L_speed += speedAmount;
+        _playerHealth.health += HealAmount;
         yield return new WaitForSeconds(RCoolDownTime);
         wizard.SelectTalentPump(0, 1, false);
         _player.L_speed -= speedAmount;
