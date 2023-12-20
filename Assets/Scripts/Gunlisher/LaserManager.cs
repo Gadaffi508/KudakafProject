@@ -15,7 +15,7 @@ public class LaserManager : MonoBehaviour
     public Transform LineFirePos;
     public Transform[] LinePosRs;
     //private Transform[] CurrentLinePosRs = new Transform[LinePosRs.Length];
-    private Transform[] CurrentLinePosRs;
+    public Transform[] CurrentLinePosRs;
 
     [Header("Up Talent"), Tooltip("Classic Bomb")]
     public GameObject Bomb;

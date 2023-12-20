@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     public bool SpeedZero = false;
 
     public int PlayerIndex = 0;
+    public GameObject text;
 
     [SerializeField] private float dashSpeed;
     [Range(0, 1)]
@@ -54,10 +56,15 @@ public class Player : MonoBehaviour
         handler.player.Add(this);
 
         rb = GetComponent<Rigidbody2D>();
+
+
+        
+
     }
 
     private void Update()
     {
+        text.GetComponent<TextMeshPro>().text = $"P{PlayerIndex+ 1}";
         if (!isDashing && !İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityMove();
         if (!isDashing && İsFly && SpeedZero == false) rb.velocity = RigidBodyVelocityFly();
 
