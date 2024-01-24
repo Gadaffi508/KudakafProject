@@ -25,4 +25,4 @@ Oyunu başarıyla çalıştırmak için şu gereksinimlere ihtiyacınız vardır
 
 1. Bu depoyu bilgisayarınıza klonlayın.
    ```bash
-   [https://github.com/Gadaffi508/KudakafProject.git}
+   git clone https://github.com/Gadaffi508/KudakafProject.git
